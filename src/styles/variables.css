@@ -1,0 +1,22 @@
+:root {
+  --cream: #f7f3ed;
+  --brown: #5a4632;
+  --dark: #1b1b1b;
+  --olive: #6b705c;
+
+  --text-light: #ffffff;
+  --text-dark: #1b1b1b;
+
+  --radius: 999px;
+  --transition: all 0.3s ease;
+}
+
+body.light {
+  --bg: var(--cream);
+  --text: var(--text-dark);
+}
+
+body.dark {
+  --bg: var(--dark);
+  --text: var(--text-light);
+}

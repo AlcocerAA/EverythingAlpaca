@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@400;600&display=swap');
+
+/* === CSS ENTRY POINT === */
+@import "./styles/reset.css";
+@import "./styles/variables.css";
+@import "./styles/global.css";
+
+/* COMPONENTES */
+@import "./styles/navbar.css";
+@import "./styles/button.css";
+@import "./styles/carousel.css";

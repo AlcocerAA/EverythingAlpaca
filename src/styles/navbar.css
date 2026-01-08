@@ -1,0 +1,65 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 1000;
+  padding: 0 24px;
+  transition: background 0.3s ease;
+}
+
+body.dark .navbar {
+  background: rgba(27, 27, 27, 0.9);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  padding: 8px 16px;
+  border-radius: 999px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+  background: var(--olive);
+  color: var(--text-light);
+}
+
+.shop-btn {
+  padding: 8px 20px;
+  background: var(--brown);
+  color: white;
+  font-weight: 500;
+}
+
+body.dark .shop-btn {
+  background: var(--olive);
+  color: var(--text-light);
+}
+
+.theme-toggle {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+}

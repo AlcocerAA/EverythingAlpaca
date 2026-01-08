@@ -1,0 +1,27 @@
+@import "./variables.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: var(--transition);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  padding-top: 80px;
+}

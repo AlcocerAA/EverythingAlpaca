@@ -1,65 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@500;600&display=swap");
+
+/* ===============================
+   FIX GLOBAL SCROLL HORIZONTAL
+================================ */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* ===============================
+   NAVBAR BASE
+================================ */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.9);
   z-index: 1000;
-  padding: 0 24px;
-  transition: background 0.3s ease;
+  background: transparent;
+  transition: background 0.4s ease, backdrop-filter 0.4s ease;
 }
 
-body.dark .navbar {
-  background: rgba(27, 27, 27, 0.9);
+/* ===============================
+   ESTADO SCROLL
+================================ */
+.navbar.scrolled {
+  background: rgba(245, 242, 235, 0.92);
+  backdrop-filter: blur(16px);
 }
 
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  height: 80px;
+/* ===============================
+   FILA 1
+================================ */
+.navbar-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 0;
+}
+
+.brand-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.45rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.brand-logo {
+  height: 30px;
+  filter: brightness(0) invert(1);
+  transition: height 0.3s ease;
+}
+
+.navbar.scrolled .brand-logo {
+  height: 24px;
+  filter: none;
+}
+
+.navbar.scrolled .brand-text {
+  font-size: 1.2rem;
+  letter-spacing: 0.22em;
+  color: #1f1f1f;
+}
+
+/* ===============================
+   FILA 2
+================================ */
+.navbar-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 14px 64px 18px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.25rem;
+  color: #ffffff;
 }
 
-.logo {
-  font-weight: 600;
-  font-size: 1.4rem;
-  letter-spacing: 1px;
+.navbar.scrolled .navbar-bottom {
+  color: #1f1f1f;
 }
 
-.nav-links {
+/* ===============================
+   DESKTOP LINKS + UNDERLINE
+================================ */
+.nav-left {
   display: flex;
-  gap: 20px;
+}
+
+.nav-left a {
+  position: relative;
+  margin-right: 32px;
+  text-decoration: none;
+  color: currentColor;
+  letter-spacing: 0.18em;
+  padding-bottom: 6px;
+}
+
+.nav-left a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transform: translateX(-50%);
+  transition: width 0.35s ease;
+}
+
+.nav-left a:hover::after {
+  width: 100%;
+}
+
+/* ===============================
+   ICONOS
+================================ */
+.nav-right {
+  display: flex;
   align-items: center;
 }
 
-.nav-links a {
-  padding: 8px 16px;
-  border-radius: 999px;
-  transition: background 0.3s, color 0.3s;
-}
-
-.nav-links a:hover {
-  background: var(--olive);
-  color: var(--text-light);
-}
-
-.shop-btn {
-  padding: 8px 20px;
-  background: var(--brown);
-  color: white;
-  font-weight: 500;
-}
-
-body.dark .shop-btn {
-  background: var(--olive);
-  color: var(--text-light);
-}
-
-.theme-toggle {
+.nav-right svg {
+  margin-left: 26px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
+  color: currentColor;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* ICONO SHOP */
+.nav-right .shop-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.nav-right .shop-icon:hover svg {
+  transform: scale(1.08);
+  opacity: 0.85;
+}
+
+/* ===============================
+   MOBILE BUTTON
+================================ */
+.menu-button {
+  display: none;
   background: none;
   border: none;
-  font-size: 1.2rem;
+  cursor: pointer;
+  color: currentColor;
+}
+
+/* ===============================
+   MOBILE MENU
+================================ */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 2000;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  padding: 32px 24px;
+  background: #ffffff;
+  transform: translateX(-100%);
+  transition: transform 0.35s ease;
+  z-index: 2001;
+  display: flex;
+  flex-direction: column;
+
+  /* AISLADO DEL SCROLL */
+  backdrop-filter: none !important;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+.close-menu {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 32px;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.mobile-nav a {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.14em;
+  color: #1f1f1f;
+  text-decoration: none;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .nav-left {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .navbar-bottom {
+    padding: 12px 24px;
+  }
 }

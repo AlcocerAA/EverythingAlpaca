@@ -1,12 +1,15 @@
 import Navbar from "./components/Navbar"
-import Home from "./pages/Home"
-import { ThemeProvider } from "./context/ThemeContext"
+import Carousel from "./components/Carousel"
+import Sections from "./components/Sections"
+import AboutMission from "./components/AboutMission"
 
 export default function App() {
   return (
-    <ThemeProvider>
+    <>
       <Navbar />
-      <Home />
-    </ThemeProvider>
+      <Carousel />
+      <Sections />
+      <AboutMission />
+    </>
   )
 }

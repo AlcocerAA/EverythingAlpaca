@@ -1,41 +1,99 @@
-import { motion } from "framer-motion";
-import { useTheme } from "../context/ThemeContext";
+import { useEffect, useState } from "react"
 import "../styles/navbar.css"
+import { User, Globe, Menu, X, ShoppingBag } from "lucide-react"
 
 export default function Navbar() {
-  const { theme, setTheme } = useTheme();
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
-    <motion.nav
-      initial={{ y: -80 }}
-      animate={{ y: 0 }}
-      className="navbar"
-    >
-      <div className="nav-container">
-        <span className="logo">Everything ALPACA</span>
+    <>
+      <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
+        {/* FILA 1 */}
+        <div className="navbar-top">
+          <span className="brand-text">EVERYTHING</span>
 
-        <div className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#products">Products</a>
-          <a href="#contact">Contact</a>
-          <a
-            href="https://shop.everything-alpaca.com/"
-            className="shop-btn"
-          >
-            Shop
-          </a>
+          <img
+            src="/logo/alpaca-logo.png"
+            alt="Everything Alpaca Logo"
+            className="brand-logo"
+            draggable="false"
+          />
 
-          <button
-            className="theme-toggle"
-            onClick={() =>
-              setTheme(theme === "light" ? "dark" : "light")
-            }
-          >
-            {theme === "light" ? "🌙" : "☀️"}
-          </button>
+          <span className="brand-text">ALPACA</span>
         </div>
-      </div>
-    </motion.nav>
-  );
+
+        {/* FILA 2 */}
+        <div className="navbar-bottom">
+          {/* DESKTOP MENU */}
+          <nav className="nav-left">
+            <a href="https://shop.everything-alpaca.com/">SHOP</a>
+            <a href="#">COLLECTIONS</a>
+            <a href="#">SUSTAINABILITY</a>
+            <a href="#">SALE</a>
+            <a href="#">FAQ</a>
+          </nav>
+
+          {/* MOBILE BUTTON */}
+          <button
+            className="menu-button"
+            onClick={() => setMenuOpen(true)}
+            aria-label="Open menu"
+          >
+            <Menu size={26} />
+          </button>
+
+          {/* ICONOS */}
+          <div className="nav-right">
+            {/* SHOPPING BAG */}
+            <a
+              href="https://shop.everything-alpaca.com/"
+              className="nav-icon shop-icon"
+              aria-label="Shop"
+            >
+              <ShoppingBag size={22} strokeWidth={1.4} />
+            </a>
+
+            <Globe strokeWidth={1.5} />
+            <User strokeWidth={1.5} />
+          </div>
+        </div>
+      </header>
+
+      {/* MOBILE MENU */}
+      {menuOpen && (
+        <div className="menu-overlay" onClick={() => setMenuOpen(false)}>
+          <div
+            className="mobile-menu open"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="close-menu"
+              onClick={() => setMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <X size={24} />
+            </button>
+
+            <nav className="mobile-nav">
+              <a href="https://shop.everything-alpaca.com/">SHOP</a>
+              <a href="#">COLLECTIONS</a>
+              <a href="#">SUSTAINABILITY</a>
+              <a href="#">SALE</a>
+              <a href="#">FAQ</a>
+            </nav>
+          </div>
+        </div>
+      )}
+    </>
+  )
 }

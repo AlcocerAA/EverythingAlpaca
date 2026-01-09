@@ -1,27 +1,79 @@
 @import "./variables.css";
 
+/* ===============================
+   RESET
+================================ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ===============================
+   HTML / BODY
+================================ */
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: "Montserrat", system-ui, sans-serif;
-  background: var(--bg);
+  background: var(--bg); /* CORREGIDO */
   color: var(--text);
   transition: var(--transition);
 }
 
+/* ===============================
+   LINKS
+================================ */
 a {
   text-decoration: none;
   color: inherit;
 }
 
+/* ===============================
+   MAIN (ESPACIO NAVBAR)
+================================ */
 main {
-  padding-top: 80px;
+  padding-top: 140px; /* navbar + fila 2 */
+}
+
+/* ===============================
+   ANIMACIÓN ON SCROLL
+================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(70px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+  will-change: opacity, transform;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===============================
+   VARIANTE DESDE ABAJO
+================================ */
+.reveal.from-bottom {
+  transform: translateY(90px);
+}
+
+/* ===============================
+   VARIANTE DESDE ARRIBA
+================================ */
+.reveal.from-top {
+  transform: translateY(-90px);
+}
+
+/* ===============================
+   VARIANTE LATERAL
+================================ */
+.reveal.from-left {
+  transform: translateX(-90px);
+}
+
+.reveal.from-right {
+  transform: translateX(90px);
 }

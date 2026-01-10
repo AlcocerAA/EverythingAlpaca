@@ -122,6 +122,15 @@ body {
   align-items: center;
 }
 
+/* 🔧 FIX BOTONES ICONOS (ELIMINA FONDO BLANCO) */
+.nav-icon {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: currentColor;
+}
+
 .nav-right svg {
   margin-left: 26px;
   width: 24px;
@@ -176,8 +185,6 @@ body {
   z-index: 2001;
   display: flex;
   flex-direction: column;
-
-  /* AISLADO DEL SCROLL */
   backdrop-filter: none !important;
 }
 
@@ -222,4 +229,64 @@ body {
   .navbar-bottom {
     padding: 12px 24px;
   }
+}
+
+/* ===============================
+   MOBILE LOGO FIX
+================================ */
+@media (max-width: 640px) {
+  .navbar {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .navbar-top {
+    padding: 22px 0 16px;
+  }
+
+  .brand-text {
+    font-size: 1.15rem;
+    letter-spacing: 0.22em;
+  }
+
+  .brand-logo {
+    height: 22px;
+  }
+}
+
+/* ===============================
+   LANGUAGE SELECTOR
+================================ */
+.lang-wrapper {
+  position: relative;
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: 42px;
+  right: 0;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 10px 0;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.15);
+  min-width: 160px;
+  z-index: 3000;
+}
+
+.lang-dropdown button {
+  width: 100%;
+  padding: 10px 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  color: #1f1f1f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lang-dropdown button:hover {
+  background: rgba(0, 0, 0, 0.05);
 }

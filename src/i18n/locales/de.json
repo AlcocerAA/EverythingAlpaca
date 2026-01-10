@@ -1,0 +1,33 @@
+{
+  "nav": {
+    "shop": "SHOP",
+    "collections": "KOLLEKTIONEN",
+    "sustainability": "NACHHALTIGKEIT",
+    "sale": "ANGEBOTE",
+    "faq": "FAQ"
+  },
+
+  "sections": {
+    "title": "UNSER ENGAGEMENT ÜBER WEICHHEIT HINAUS",
+    "more": "MEHR ANZEIGEN",
+    "items": {
+      "woman": "DAMEN",
+      "men": "HERREN",
+      "socks": "SOCKEN",
+      "accessories": "ACCESSOIRES",
+      "home": "WOHNEN",
+      "collectables": "SAMMLERSTÜCKE",
+      "andean": "ANDEN-MODE"
+    }
+  },
+
+  "about": {
+    "title": "Über uns",
+    "text": "Everything Alpaca wurde 1998 gegründet. Wir entwerfen und fertigen Textilbekleidung aus natürlichen, feinen Fasern, hauptsächlich Alpakawolle. Unser Hauptsitz und Vertriebszentrum befindet sich in Los Angeles, USA, während sich unser Produktionszentrum in Arequipa, Peru, befindet."
+  },
+
+  "mission": {
+    "title": "Unsere Mission",
+    "text": "Unsere Mission ist es, ausschließlich hochwertige und langlebige Kleidungsstücke anzubieten. Deshalb wachsen wir gemeinsam mit unseren Lieferanten und Kunsthandwerkern. Darüber hinaus stellen wir natürliche und nachhaltige Produkte her, um unseren ökologischen Fußabdruck so gering wie möglich zu halten."
+  }
+}

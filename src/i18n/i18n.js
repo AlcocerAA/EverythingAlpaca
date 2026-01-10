@@ -1,0 +1,31 @@
+import i18n from "i18next"
+import { initReactI18next } from "react-i18next"
+
+import en from "./locales/en.json"
+import es from "./locales/es.json"
+import de from "./locales/de.json"
+import it from "./locales/it.json"
+
+const getBrowserLanguage = () => {
+  const saved = localStorage.getItem("i18nextLng")
+  if (saved) return saved
+
+  const lang = navigator.language.split("-")[0]
+  return ["en", "es", "de", "it"].includes(lang) ? lang : "en"
+}
+
+i18n.use(initReactI18next).init({
+  resources: {
+    en: { translation: en },
+    es: { translation: es },
+    de: { translation: de },
+    it: { translation: it },
+  },
+  lng: getBrowserLanguage(),
+  fallbackLng: "en",
+  interpolation: {
+    escapeValue: false,
+  },
+})
+
+export default i18n

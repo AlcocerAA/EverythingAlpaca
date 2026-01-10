@@ -1,0 +1,83 @@
+.sustainability {
+  background: #fbf8ee;
+  padding: 90px 64px;
+}
+
+/* ================= DESKTOP ================= */
+.sustainability-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+}
+
+.sustain-card {
+  background: #fffdf6;
+  padding: 44px 30px;
+  border-radius: 22px;
+  text-align: center;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  transition: all 0.35s ease;
+}
+
+.icon-circle {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1f1f1f;
+}
+
+.sustain-card h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+}
+
+.sustain-card p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+/* ================= MOBILE ================= */
+.sustainability-mobile {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.sustain-card.mobile {
+  width: 100%;
+  max-width: 320px;
+}
+
+.arrow {
+  background: none;
+  border: none;
+  font-size: 34px;
+  cursor: pointer;
+  color: #1f1f1f;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .sustainability-grid {
+    display: none;
+  }
+
+  .sustainability-mobile {
+    display: flex;
+  }
+}
+
+@media (max-width: 640px) {
+  .sustainability {
+    padding: 70px 24px;
+  }
+}

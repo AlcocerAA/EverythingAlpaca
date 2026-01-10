@@ -1,5 +1,6 @@
 import "../styles/about-mission.css"
 import { motion } from "framer-motion"
+import { useTranslation } from "react-i18next"
 
 const slideLeft = {
   hidden: { opacity: 0, x: -120 },
@@ -14,6 +15,8 @@ const slideRight = {
 }
 
 export default function AboutMission() {
+  const { t } = useTranslation()
+
   return (
     <section className="about-wrapper">
       {/* ABOUT US */}
@@ -27,19 +30,12 @@ export default function AboutMission() {
         transition={{ duration: 0.9, ease: "easeOut" }}
       >
         <div className="about-image">
-          <img src="/about/about-us.jpg" alt="About us" />
+          <img src="/about/about-us.jpg" alt={t("about.title")} />
         </div>
 
         <div className="about-text">
-          <h2>About us</h2>
-          <p>
-            Everything Alpaca was established in 1998. We design and manufacture
-            textile garments focusing on natural fine fibers, mainly alpaca wool.
-            Our main office and distribution center is located in The Angels,
-            United States, while our production center is located in Arequipa,
-            Peru. Everything Alpaca is present in the American, Canadian and South
-            American markets.
-          </p>
+          <h2>{t("about.title")}</h2>
+          <p>{t("about.text")}</p>
         </div>
       </motion.div>
 
@@ -54,19 +50,12 @@ export default function AboutMission() {
         transition={{ duration: 0.9, ease: "easeOut" }}
       >
         <div className="about-text">
-          <h2>Our mission</h2>
-          <p>
-            Our mission is to provide only finished garments of exceptional
-            quality and durability over time. Therefore, it is in our best
-            interest to grow hand in hand with our suppliers and artisans. In
-            addition, we manufacture natural and sustainable products with the
-            intention of generating the smallest possible environmental
-            footprint.
-          </p>
+          <h2>{t("mission.title")}</h2>
+          <p>{t("mission.text")}</p>
         </div>
 
         <div className="about-image">
-          <img src="/about/our-mission.jpg" alt="Our mission" />
+          <img src="/about/our-mission.jpg" alt={t("mission.title")} />
         </div>
       </motion.div>
     </section>

@@ -1,31 +1,35 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { useTranslation } from "react-i18next"
 import "../styles/sections.css"
 
-const items = [
-  { title: "WOMAN", image: "/sections/women.jpg" },
-  { title: "MEN", image: "/sections/men.jpg" },
-  { title: "SOCKS", image: "/sections/socks.jpg" },
-  { title: "ACCESSORIES", image: "/sections/accessories.jpg" },
-  { title: "HOME", image: "/sections/home.jpg" },
-  { title: "COLLECTABLES", image: "/sections/collectibles.jpg" },
-  { title: "ANDEAN FASHION", image: "/sections/andean-fashion.jpg", wide: true },
-]
-
 export default function Sections() {
+  const { t } = useTranslation()
   const [expanded, setExpanded] = useState(false)
+
+  const items = [
+    { key: "woman", image: "/sections/women.jpg" },
+    { key: "men", image: "/sections/men.jpg" },
+    { key: "socks", image: "/sections/socks.jpg" },
+    { key: "accessories", image: "/sections/accessories.jpg" },
+    { key: "home", image: "/sections/home.jpg" },
+    { key: "collectables", image: "/sections/collectibles.jpg" },
+    { key: "andean", image: "/sections/andean-fashion.jpg", wide: true }
+  ]
 
   const visibleItems = expanded ? items : items.slice(0, 4)
 
   return (
     <section className="sections">
-      <h2 className="sections-title">OUR COMMITMENT BEYOND SOFTNESS</h2>
+      <h2 className="sections-title">
+        {t("sections.title")}
+      </h2>
 
       <div className="sections-grid">
         <AnimatePresence>
-          {visibleItems.map((item, i) => (
+          {visibleItems.map((item) => (
             <motion.div
-              key={item.title}
+              key={item.key}
               className={`section-card ${item.wide ? "wide" : ""}`}
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -36,7 +40,9 @@ export default function Sections() {
                 className="section-image"
                 style={{ backgroundImage: `url(${item.image})` }}
               />
-              <span className="section-label">{item.title}</span>
+              <span className="section-label">
+                {t(`sections.items.${item.key}`)}
+              </span>
             </motion.div>
           ))}
         </AnimatePresence>
@@ -44,7 +50,9 @@ export default function Sections() {
 
       {!expanded && (
         <div className="sections-more">
-          <button onClick={() => setExpanded(true)}>SEE MORE</button>
+          <button onClick={() => setExpanded(true)}>
+            {t("sections.more")}
+          </button>
         </div>
       )}
     </section>

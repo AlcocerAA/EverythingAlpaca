@@ -1,0 +1,33 @@
+{
+  "nav": {
+    "shop": "NEGOZIO",
+    "collections": "COLLEZIONI",
+    "sustainability": "SOSTENIBILITÀ",
+    "sale": "SALDI",
+    "faq": "FAQ"
+  },
+
+  "sections": {
+    "title": "IL NOSTRO IMPEGNO OLTRE LA MORBIDEZZA",
+    "more": "VEDI DI PIÙ",
+    "items": {
+      "woman": "DONNA",
+      "men": "UOMO",
+      "socks": "CALZE",
+      "accessories": "ACCESSORI",
+      "home": "CASA",
+      "collectables": "COLLEZIONABILI",
+      "andean": "MODA ANDINA"
+    }
+  },
+
+  "about": {
+    "title": "Chi siamo",
+    "text": "Everything Alpaca è stata fondata nel 1998. Progettiamo e realizziamo capi tessili utilizzando fibre naturali pregiate, principalmente lana di alpaca. La nostra sede principale e centro di distribuzione si trova a Los Angeles, negli Stati Uniti, mentre il centro di produzione è situato ad Arequipa, in Perù."
+  },
+
+  "mission": {
+    "title": "La nostra missione",
+    "text": "La nostra missione è offrire capi finiti di qualità eccezionale e durevoli nel tempo. Per questo cresciamo insieme ai nostri fornitori e artigiani. Inoltre, realizziamo prodotti naturali e sostenibili con l'obiettivo di ridurre al minimo l'impatto ambientale."
+  }
+}

@@ -6,7 +6,6 @@
     "sale": "ANGEBOTE",
     "faq": "FAQ"
   },
-
   "sections": {
     "title": "UNSER ENGAGEMENT ÜBER WEICHHEIT HINAUS",
     "more": "MEHR ANZEIGEN",
@@ -15,19 +14,45 @@
       "men": "HERREN",
       "socks": "SOCKEN",
       "accessories": "ACCESSOIRES",
-      "home": "WOHNEN",
+      "home": "HOME",
       "collectables": "SAMMLERSTÜCKE",
       "andean": "ANDEN-MODE"
     }
   },
-
   "about": {
     "title": "Über uns",
-    "text": "Everything Alpaca wurde 1998 gegründet. Wir entwerfen und fertigen Textilbekleidung aus natürlichen, feinen Fasern, hauptsächlich Alpakawolle. Unser Hauptsitz und Vertriebszentrum befindet sich in Los Angeles, USA, während sich unser Produktionszentrum in Arequipa, Peru, befindet."
+    "text": "Everything Alpaca wurde 1998 gegründet. Wir entwerfen und produzieren Textilbekleidung aus natürlichen, feinen Fasern – vor allem Alpakawolle. Unser Hauptsitz und Distributionszentrum befindet sich in Los Angeles, USA, während unser Produktionszentrum in Arequipa, Peru liegt. Everything Alpaca ist auf den amerikanischen, kanadischen und südamerikanischen Märkten vertreten."
   },
-
   "mission": {
     "title": "Unsere Mission",
-    "text": "Unsere Mission ist es, ausschließlich hochwertige und langlebige Kleidungsstücke anzubieten. Deshalb wachsen wir gemeinsam mit unseren Lieferanten und Kunsthandwerkern. Darüber hinaus stellen wir natürliche und nachhaltige Produkte her, um unseren ökologischen Fußabdruck so gering wie möglich zu halten."
+    "text": "Unsere Mission ist es, ausschließlich fertige Kleidungsstücke von außergewöhnlicher Qualität und Langlebigkeit anzubieten. Deshalb wachsen wir Hand in Hand mit unseren Lieferanten und Kunsthandwerkern. Außerdem stellen wir natürliche und nachhaltige Produkte her, um den kleinsten möglichen ökologischen Fußabdruck zu hinterlassen."
+  },
+  "footer": {
+    "description": "Luxuriöse peruanische Textilien – mit Sorgfalt und Verantwortung gefertigt.",
+    "shop": {
+      "title": "Shop",
+      "new": "Neuheiten",
+      "best": "Bestseller",
+      "sale": "Sale",
+      "offers": "Angebote"
+    },
+    "info": {
+      "title": "Information",
+      "about": "Über uns",
+      "care": "Pflegehinweise",
+      "shipping": "Versand",
+      "returns": "Rückgabe"
+    },
+    "subscribe": {
+      "title": "Kontakt oder Newsletter",
+      "text": "Abonniere exklusive Angebote und Updates",
+      "placeholder": "Deine E-Mail",
+      "button": "Senden",
+      "sent": "Gesendet!",
+      "error": "Etwas ist schiefgelaufen.",
+      "mailSubject": "Newsletter / Kontakt",
+      "mailBody": "Hallo, ich möchte mich mit dieser E-Mail anmelden"
+    },
+    "rights": "Alle Rechte vorbehalten."
   }
 }

@@ -6,7 +6,6 @@
     "sale": "OFERTAS",
     "faq": "PREGUNTAS"
   },
-
   "sections": {
     "title": "NUESTRO COMPROMISO MÁS ALLÁ DE LA SUAVIDAD",
     "more": "VER MÁS",
@@ -20,14 +19,40 @@
       "andean": "MODA ANDINA"
     }
   },
-
   "about": {
     "title": "Sobre nosotros",
     "text": "Everything Alpaca fue fundada en 1998. Diseñamos y fabricamos prendas textiles enfocadas en fibras naturales finas, principalmente lana de alpaca. Nuestra oficina principal y centro de distribución se encuentra en Los Ángeles, Estados Unidos, mientras que nuestro centro de producción está ubicado en Arequipa, Perú. Everything Alpaca está presente en los mercados americano, canadiense y sudamericano."
   },
-
   "mission": {
     "title": "Nuestra misión",
     "text": "Nuestra misión es ofrecer únicamente prendas terminadas de calidad excepcional y durabilidad en el tiempo. Por ello, buscamos crecer de la mano con nuestros proveedores y artesanos. Además, fabricamos productos naturales y sostenibles con la intención de generar la menor huella ambiental posible."
+  },
+  "footer": {
+    "description": "Textiles peruanos de lujo, hechos con cuidado y conciencia.",
+    "shop": {
+      "title": "Tienda",
+      "new": "Novedades",
+      "best": "Más vendidos",
+      "sale": "Ofertas",
+      "offers": "Promociones"
+    },
+    "info": {
+      "title": "Información",
+      "about": "Sobre nosotros",
+      "care": "Guía de cuidado",
+      "shipping": "Envíos",
+      "returns": "Devoluciones"
+    },
+    "subscribe": {
+      "title": "Contáctanos o Suscríbete",
+      "text": "Suscríbete para recibir ofertas y novedades",
+      "placeholder": "Tu correo",
+      "button": "Enviar",
+      "sent": "¡Enviado!",
+      "error": "Ocurrió un error.",
+      "mailSubject": "Suscripción / Contacto",
+      "mailBody": "Hola, quiero suscribirme con este correo"
+    },
+    "rights": "Todos los derechos reservados."
   }
 }

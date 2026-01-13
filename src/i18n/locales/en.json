@@ -6,7 +6,6 @@
     "sale": "SALE",
     "faq": "FAQ"
   },
-
   "sections": {
     "title": "OUR COMMITMENT BEYOND SOFTNESS",
     "more": "SEE MORE",
@@ -20,14 +19,40 @@
       "andean": "ANDEAN FASHION"
     }
   },
-
   "about": {
     "title": "About us",
     "text": "Everything Alpaca was established in 1998. We design and manufacture textile garments focusing on natural fine fibers, mainly alpaca wool. Our main office and distribution center is located in Los Angeles, United States, while our production center is located in Arequipa, Peru. Everything Alpaca is present in the American, Canadian and South American markets."
   },
-
   "mission": {
     "title": "Our mission",
     "text": "Our mission is to provide only finished garments of exceptional quality and durability over time. Therefore, it is in our best interest to grow hand in hand with our suppliers and artisans. In addition, we manufacture natural and sustainable products with the intention of generating the smallest possible environmental footprint."
+  },
+  "footer": {
+    "description": "Luxury Peruvian textiles crafted with care and conscience.",
+    "shop": {
+      "title": "Shop",
+      "new": "New Arrivals",
+      "best": "Bestsellers",
+      "sale": "Sale",
+      "offers": "Offers"
+    },
+    "info": {
+      "title": "Information",
+      "about": "About us",
+      "care": "Care guide",
+      "shipping": "Shipping",
+      "returns": "Returns"
+    },
+    "subscribe": {
+      "title": "Contact us or Subscribe",
+      "text": "Subscribe for exclusive offers and updates",
+      "placeholder": "Your email",
+      "button": "Send",
+      "sent": "Sent!",
+      "error": "Something went wrong.",
+      "mailSubject": "Newsletter / Contact request",
+      "mailBody": "Hello, I want to subscribe with this email"
+    },
+    "rights": "All rights reserved."
   }
 }

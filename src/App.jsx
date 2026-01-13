@@ -3,6 +3,7 @@ import Carousel from "./components/Carousel"
 import Sections from "./components/Sections"
 import AboutMission from "./components/AboutMission"
 import Sustainability from "./components/Sustainability"
+import Footer from "./components/Footer"
 
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
       <Sections />
       <AboutMission />
       <Sustainability />
+      <Footer />
     </>
   )
 }

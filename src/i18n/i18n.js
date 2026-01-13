@@ -6,6 +6,9 @@ import es from "./locales/es.json"
 import de from "./locales/de.json"
 import it from "./locales/it.json"
 
+/* ===============================
+   DETECCIÓN DE IDIOMA
+================================ */
 const getBrowserLanguage = () => {
   const saved = localStorage.getItem("i18nextLng")
   if (saved) return saved
@@ -14,6 +17,9 @@ const getBrowserLanguage = () => {
   return ["en", "es", "de", "it"].includes(lang) ? lang : "en"
 }
 
+/* ===============================
+   INIT I18N
+================================ */
 i18n.use(initReactI18next).init({
   resources: {
     en: { translation: en },
@@ -23,9 +29,20 @@ i18n.use(initReactI18next).init({
   },
   lng: getBrowserLanguage(),
   fallbackLng: "en",
+  supportedLngs: ["en", "es", "de", "it"],
   interpolation: {
     escapeValue: false,
   },
+  react: {
+    useSuspense: false,
+  },
+})
+
+/* ===============================
+   GUARDAR IDIOMA AL CAMBIAR
+================================ */
+i18n.on("languageChanged", (lng) => {
+  localStorage.setItem("i18nextLng", lng)
 })
 
 export default i18n

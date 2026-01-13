@@ -1,78 +1,105 @@
+import { useTranslation } from "react-i18next"
 import "../styles/footer.css"
-import { Facebook, Pinterest } from "lucide-react"
+import { useState } from "react"
+import { Facebook, Instagram, Pin } from "lucide-react"
 
 export default function Footer() {
+  const { t } = useTranslation()
+  const [email, setEmail] = useState("")
+
   const handleSubmit = (e) => {
     e.preventDefault()
-    const email = e.target.email.value
-    if (!email) return
+    if (!email.trim()) return
 
-    // Aquí luego puedes conectar a backend / API real
-    console.log("Email sent:", email)
-    e.target.reset()
+    const subject = encodeURIComponent(t("footer.subscribe.mailSubject"))
+    const body = encodeURIComponent(`${t("footer.subscribe.mailBody")}: ${email}`)
+    window.location.href = `mailto:contact@everything-alpaca.com?subject=${subject}&body=${body}`
+
+    setEmail("")
   }
 
   return (
     <footer className="footer">
-      <div className="footer-content">
+      <div className="footer-container">
         {/* BRAND */}
-        <div className="footer-brand">
-          <h3>
-            everything <span>ALPACA</span>
-          </h3>
-          <p>
-            Luxury Peruvian textiles crafted with care and conscience.
-          </p>
+        <div className="footer-col brand">
+          <h2>everything ALPACA</h2>
+          <p>{t("footer.description")}</p>
 
-          <div className="footer-socials">
-            <a href="#" aria-label="Facebook">
-              <Facebook size={18} strokeWidth={1.6} />
+          <div className="socials">
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Facebook"
+            >
+              <Facebook size={20} strokeWidth={1.5} />
             </a>
-            <a href="#" aria-label="Pinterest">
-              <Pinterest size={18} strokeWidth={1.6} />
+
+            <a
+              href="https://www.pinterest.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Pinterest"
+            >
+              <Pin size={20} strokeWidth={1.5} />
+            </a>
+
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+            >
+              <Instagram size={20} strokeWidth={1.5} />
             </a>
           </div>
         </div>
 
         {/* SHOP */}
-        <div className="footer-column">
-          <h4>Shop</h4>
-          <a href="#">New Arrivals</a>
-          <a href="#">Bestsellers</a>
-          <a href="#">Sale</a>
-          <a href="#">Offers</a>
+        <div className="footer-col">
+          <h4>{t("footer.shop.title")}</h4>
+          <ul>
+            <li>{t("footer.shop.new")}</li>
+            <li>{t("footer.shop.best")}</li>
+            <li>{t("footer.shop.sale")}</li>
+            <li>{t("footer.shop.offers")}</li>
+          </ul>
         </div>
 
-        {/* INFORMATION */}
-        <div className="footer-column">
-          <h4>Information</h4>
-          <a href="#">About us</a>
-          <a href="#">Care guide</a>
-          <a href="#">Shipping</a>
-          <a href="#">Returns</a>
+        {/* INFO */}
+        <div className="footer-col">
+          <h4>{t("footer.info.title")}</h4>
+          <ul>
+            <li>{t("footer.info.about")}</li>
+            <li>{t("footer.info.care")}</li>
+            <li>{t("footer.info.shipping")}</li>
+            <li>{t("footer.info.returns")}</li>
+          </ul>
         </div>
 
-        {/* CONTACT */}
-        <div className="footer-column footer-contact">
-          <h4>Contact us or Subscribe</h4>
-          <p>
-            Subscribe for exclusive offers and updates
-          </p>
+        {/* SUBSCRIBE */}
+        <div className="footer-col subscribe">
+          <h4>{t("footer.subscribe.title")}</h4>
+          <p>{t("footer.subscribe.text")}</p>
 
-          <form onSubmit={handleSubmit} className="footer-form">
+          <form className="subscribe-form" onSubmit={handleSubmit}>
             <input
               type="email"
-              name="email"
-              placeholder="Your email"
+              placeholder={t("footer.subscribe.placeholder")}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <button type="submit">Send</button>
+            <button type="submit">
+              {t("footer.subscribe.button")}
+            </button>
           </form>
         </div>
       </div>
 
       <div className="footer-bottom">
-        © 2026 Everything Alpaca. All rights reserved.
+        © 2026 Everything Alpaca. {t("footer.rights")}
       </div>
     </footer>
   )

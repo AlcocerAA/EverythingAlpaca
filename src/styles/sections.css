@@ -1,154 +1,151 @@
 .sections {
-  background: #fffded; /* color elegante de la página */
-  padding: 110px 72px;
+  background: #fffded; /* tu fondo */
+  padding: 0; /* pegado arriba */
+  margin: 0;
+
+  /* ✅ extra: evita mini overflow horizontal fantasma */
+  overflow-x: hidden;
 }
 
-/* TÍTULO */
-.sections-title {
-  text-align: center;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2.1rem;
-  letter-spacing: 0.14em;
-  margin-bottom: 72px;
-  color: #2b2b2b;
-}
-
-/* GRID */
-.sections-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-/* CARD */
-.section-card {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  border-radius: 22px;
-  background: #e9e7e2; /* gris claro SOLO para la card */
-}
-
-/* IMAGEN */
-.section-image {
+/* ✅ FIXES IMPORTANTES (NO ROMPE NADA) */
+.sections-wrap {
   width: 100%;
-  height: 300px; /* MÁS PEQUEÑO */
+  overflow: hidden; /* ✅ CLAVE: recorta y evita el bloque blanco */
+  position: relative; /* ✅ CLAVE: para que .hold-zone sea relativo a este contenedor */
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y; /* permite scroll vertical normal */
+
+  /* ✅ extra: evita “flash” blanco en algunos navegadores */
+  background: #fffded;
+
+  /* ✅ mejora interacción en mobile */
+  -webkit-tap-highlight-color: transparent;
+
+  /* ✅ evita que el cursor/drag seleccione texto o imagenes */
+  -webkit-user-drag: none;
+}
+
+/* track */
+.sections-track {
+  display: flex;
+  gap: 0; /* sin separación */
+  will-change: transform;
+
+  /* ✅ CLAVE: no permitir que se rompa a otra línea nunca */
+  flex-wrap: nowrap;
+
+  /* ✅ evita “gaps” por render subpixel */
+  transform: translateZ(0);
+}
+
+/* slide grande */
+.section-slide {
+  position: relative;
+  flex: 0 0 auto;
+  height: 560px; /* MÁS GRANDE (PC) */
   background-size: cover;
   background-position: center;
-  transition: transform 0.6s ease;
+  background-repeat: no-repeat;
+  text-decoration: none;
+  overflow: hidden;
+
+  /* ✅ evita espacios blancos por inline/anchor quirks */
+  display: block;
+
+  /* ✅ mejora render y evita cortes raros */
+  transform: translateZ(0);
 }
 
-.section-card:hover .section-image {
-  transform: scale(1.06);
-}
-
-/* TEXTO */
-.section-label {
+/* sombreado elegante */
+.section-slide-shade {
   position: absolute;
-  bottom: 18px;
-  left: 18px;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.58),
+    rgba(0, 0, 0, 0.06)
+  );
+  pointer-events: none;
+}
+
+/* “pop layer” invisible (solo para animar sutilmente el foco) */
+.section-slide-pop {
+  position: absolute;
+  inset: 0;
+  transform-origin: center;
+  pointer-events: none;
+}
+
+/* texto */
+.section-slide-label {
+  position: absolute;
+  left: 34px;
+  bottom: 28px;
+  z-index: 3;
   font-family: "Cormorant Garamond", serif;
   font-size: 1.25rem;
-  letter-spacing: 0.12em;
-  color: #ffffff;
-  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  letter-spacing: 0.18em;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+
+  /* ✅ evita selección accidental al arrastrar */
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-/* CARD ANCHA (DESKTOP) */
-.section-card.wide {
-  grid-column: span 2;
+/* ZONAS INVISIBLES para “mantener click” */
+.hold-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 14%;
+  z-index: 10;
+  /* invisible, pero usable */
+
+  /* ✅ para que se sienta como control (sin seleccionar) */
+  -webkit-tap-highlight-color: transparent;
 }
 
-.section-card.wide .section-image {
-  height: 340px;
+.hold-zone.left {
+  left: 0;
 }
 
-/* ===============================
-   SEE MORE (AGREGADO)
-================================ */
-.sections-more {
-  display: flex;
-  justify-content: center;
-  margin-top: 56px;
+.hold-zone.right {
+  right: 0;
 }
 
-.sections-more button {
-  background: transparent;
-  border: 1px solid #2b2b2b;
-  padding: 14px 42px;
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.22em;
-  color: #2b2b2b;
-  cursor: pointer;
-  transition: all 0.35s ease;
+/* cursor “hint” */
+.hold-zone.left:hover {
+  cursor: w-resize;
+}
+.hold-zone.right:hover {
+  cursor: e-resize;
 }
 
-.sections-more button:hover {
-  background: #2b2b2b;
-  color: #ffffff;
-}
-
-/* ===============================
-   TABLET
-================================ */
+/* Tablet */
 @media (max-width: 1024px) {
-  .sections {
-    padding: 90px 48px;
-  }
-
-  .sections-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
-  }
-
-  .section-image {
-    height: 260px;
-  }
-
-  .section-card.wide {
-    grid-column: span 2;
+  .section-slide {
+    height: 500px;
   }
 }
 
-/* ===============================
-   MOBILE
-================================ */
+/* Mobile: 1 visible y grande */
 @media (max-width: 640px) {
-  .sections {
-    padding: 72px 20px;
+  .section-slide {
+    height: 620px; /* grande en celular */
   }
 
-  .sections-title {
-    font-size: 1.7rem;
-    margin-bottom: 48px;
-    letter-spacing: 0.1em;
+  .section-slide-label {
+    left: 22px;
+    bottom: 20px;
+    font-size: 1.12rem;
+    letter-spacing: 0.14em;
   }
 
-  .sections-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .section-card {
-    border-radius: 18px;
-  }
-
-  .section-image {
-    height: 220px; /* CLAVE: no gigantes */
-  }
-
-  .section-card.wide {
-    grid-column: span 1;
-  }
-
-  .section-label {
-    font-size: 1.15rem;
-    bottom: 16px;
-    left: 16px;
-  }
-
-  .sections-more {
-    margin-top: 42px;
+  .hold-zone {
+    width: 20%;
   }
 }

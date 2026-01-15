@@ -6,15 +6,16 @@ import { useTranslation } from "react-i18next"
 export default function Sections() {
   const { t } = useTranslation()
 
+  // ✅ AQUÍ linkeas cada categoría
   const items = useMemo(
     () => [
-      { key: "woman", image: "/sections/women.jpg" },
-      { key: "men", image: "/sections/men.jpg" },
-      { key: "socks", image: "/sections/socks.jpg" },
-      { key: "accessories", image: "/sections/accessories.jpg" },
-      { key: "home", image: "/sections/home.jpg" },
-      { key: "collectables", image: "/sections/collectibles.jpg" },
-      { key: "andean", image: "/sections/andean-fashion.jpg" },
+      { key: "woman", image: "/sections/women.jpg", href: "https://shop.everything-alpaca.com/Women_c_7.html" },
+      { key: "men", image: "/sections/men.jpg", href: "https://shop.everything-alpaca.com/Men_c_70.html" },
+      { key: "socks", image: "/sections/socks.jpg", href: "https://shop.everything-alpaca.com/Socks_c_56.html" },
+      { key: "accessories", image: "/sections/accessories.jpg", href: "https://shop.everything-alpaca.com/Knitted-Accessories_c_9.html" },
+      { key: "home", image: "/sections/home.jpg", href: "https://shop.everything-alpaca.com/Home-Decor_c_10.html" },
+      { key: "collectables", image: "/sections/collectibles.jpg", href: "https://shop.everything-alpaca.com/Collectables-and-Souvenirs_c_11.html" },
+      { key: "andean", image: "/sections/andean-fashion.jpg", href: "https://shop.everything-alpaca.com/Andean-Fashion_c_15.html" },
     ],
     []
   )
@@ -29,30 +30,40 @@ export default function Sections() {
   const holdTimerRef = useRef(null)
   const autoTimerRef = useRef(null)
 
-  // DRAG
+  // drag
   const draggingRef = useRef(false)
   const dragStartXRef = useRef(0)
-  const didDragRef = useRef(false) // bloquear click real
+  const didDragRef = useRef(false)
   const pointerIdRef = useRef(null)
 
-  const [perView, setPerView] = useState(window.innerWidth <= 640 ? 1 : 3)
   const [cardW, setCardW] = useState(0)
-  const [index, setIndex] = useState(1) // empieza en el primero real
+  const [index, setIndex] = useState(1)
   const [animate, setAnimate] = useState(true)
   const [dragOffset, setDragOffset] = useState(0)
 
+  // ✅ medir bien SIEMPRE (y no explota si width=0)
   const measure = () => {
     const wrap = wrapRef.current
     if (!wrap) return
+
     const pv = window.innerWidth <= 640 ? 1 : 3
-    setPerView(pv)
-    setCardW(wrap.offsetWidth / pv)
+    const w = wrap.getBoundingClientRect().width
+
+    if (!w) return
+    setCardW(w / pv)
   }
 
   useEffect(() => {
     measure()
     window.addEventListener("resize", measure)
-    return () => window.removeEventListener("resize", measure)
+
+    // ✅ por si carga fonts/imágenes y cambia el layout
+    const tmr = setTimeout(measure, 80)
+
+    return () => {
+      clearTimeout(tmr)
+      window.removeEventListener("resize", measure)
+    }
   }, [])
 
   const stopAuto = () => {
@@ -86,7 +97,7 @@ export default function Sections() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slides.length, cardW])
 
-  // Loop invisible: al llegar a clone, salta sin animación
+  // ✅ Loop invisible: al llegar a clone, salta sin animación
   useEffect(() => {
     if (!slides.length) return
 
@@ -124,25 +135,16 @@ export default function Sections() {
     startAuto()
   }
 
-  // ========= rubber band helpers =========
+  // ======== helpers (evitar blanco) ========
   const clamp = (v, min, max) => Math.max(min, Math.min(max, v))
 
-  // resistencia “premium”
-  // si te pasas del límite, solo avanza una fracción (sin mostrar blanco)
   const rubberBand = (value, min, max, factor = 0.22) => {
-    if (value < min) {
-      const over = min - value
-      return min - over * factor
-    }
-    if (value > max) {
-      const over = value - max
-      return max + over * factor
-    }
+    if (value < min) return min - (min - value) * factor
+    if (value > max) return max + (value - max) * factor
     return value
   }
 
-  // límites reales del carrusel (con clones)
-  const minX = -((slides.length - 1) * cardW)
+  const minX = cardW ? -((slides.length - 1) * cardW) : 0
   const maxX = 0
 
   // ===== POINTER EVENTS (mouse + touch sólido) =====
@@ -164,17 +166,13 @@ export default function Sections() {
 
   const onPointerMove = (e) => {
     if (!draggingRef.current) return
-    if (pointerIdRef.current !== null && e.pointerId !== pointerIdRef.current)
-      return
+    if (pointerIdRef.current !== null && e.pointerId !== pointerIdRef.current) return
 
     const delta = e.clientX - dragStartXRef.current
-
     if (Math.abs(delta) > 6) didDragRef.current = true
 
     const baseX = -(index * cardW)
     const desiredX = baseX + delta
-
-    // ✅ rubber band (no blanco, se siente pro)
     const bandedX = rubberBand(desiredX, minX, maxX, 0.22)
 
     setDragOffset(bandedX - baseX)
@@ -191,6 +189,7 @@ export default function Sections() {
 
     const threshold = cardW * 0.14
     const moved = dragOffset
+
     setAnimate(true)
 
     if (moved <= -threshold) {
@@ -212,9 +211,9 @@ export default function Sections() {
     startAuto()
   }
 
-  // seguridad extra: cuando ANIMA, clamp duro para no salir de rango
+  // ✅ clamp duro al animar para que jamás muestre “blanco”
   const rawX = -(index * cardW) + dragOffset
-  const x = animate ? (cardW ? clamp(rawX, minX, maxX) : 0) : rawX
+  const x = animate ? clamp(rawX, minX, maxX) : rawX
 
   return (
     <section className="sections">
@@ -278,7 +277,7 @@ export default function Sections() {
             return (
               <motion.a
                 key={`${item.key}-${i}`}
-                href="#"
+                href={item.href || "#"}   // ✅ AQUÍ LINK REAL
                 className="section-slide"
                 style={{
                   width: `${cardW}px`,
@@ -289,6 +288,7 @@ export default function Sections() {
                 draggable={false}
                 onDragStart={(e) => e.preventDefault()}
                 onClick={(e) => {
+                  // ✅ si venimos de drag, NO navegar
                   if (didDragRef.current) {
                     e.preventDefault()
                     e.stopPropagation()

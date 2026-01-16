@@ -15,7 +15,7 @@
 
   user-select: none;
   -webkit-user-select: none;
-  touch-action: pan-y; /* permite scroll vertical normal */
+  touch-action: pan-y pinch-zoom; /* ✅ scroll vertical normal + zoom, drag horizontal via pointer */
 
   /* ✅ extra: evita “flash” blanco en algunos navegadores */
   background: #fffded;
@@ -125,6 +125,76 @@
   cursor: e-resize;
 }
 
+/* ✅ SEE MORE (solo mobile) - versión más pro */
+.sections-see-more {
+  display: none;
+  text-decoration: none;
+  color: rgba(25, 25, 25, 0.92);
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  padding: 18px 0 16px;
+
+  /* animaciones */
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  opacity: 0.85;
+  position: relative;
+}
+
+/* línea elegante debajo */
+.sections-see-more::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  width: 140px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.22);
+  transform: translateX(-50%) scaleX(0.55);
+  transform-origin: center;
+  transition: transform 0.28s ease, background 0.28s ease;
+}
+
+.sections-see-more:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.sections-see-more:hover::after {
+  transform: translateX(-50%) scaleX(1);
+  background: rgba(0, 0, 0, 0.32);
+}
+
+.sections-see-more:active {
+  transform: translateY(0px);
+}
+
+/* “V” elegante con animación */
+.sections-see-more-icon {
+  font-size: 1.05rem;
+  line-height: 1;
+  transform: translateY(-1px);
+  transition: transform 0.28s ease, opacity 0.28s ease;
+  opacity: 0.85;
+}
+
+.sections-see-more:hover .sections-see-more-icon {
+  transform: translateY(2px);
+  opacity: 1;
+}
+
+/* Mobile: se muestra */
+@media (max-width: 640px) {
+  .sections-see-more {
+    display: flex;
+  }
+}
+
 /* Tablet */
 @media (max-width: 1024px) {
   .section-slide {
@@ -132,20 +202,24 @@
   }
 }
 
-/* Mobile: 1 visible y grande */
+/* Mobile: 1 visible pero MÁS PEQUEÑO y bonito */
 @media (max-width: 640px) {
   .section-slide {
-    height: 620px; /* grande en celular */
+    height: 420px; /* ✅ más pequeño (antes tenías 620px) */
   }
 
   .section-slide-label {
-    left: 22px;
-    bottom: 20px;
-    font-size: 1.12rem;
+    left: 18px;
+    bottom: 16px;
+    font-size: 1.05rem;
     letter-spacing: 0.14em;
   }
 
   .hold-zone {
     width: 20%;
+  }
+
+  .sections-see-more {
+    display: flex;
   }
 }

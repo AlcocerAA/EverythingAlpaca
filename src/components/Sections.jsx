@@ -9,22 +9,58 @@ export default function Sections() {
   // ✅ AQUÍ linkeas cada categoría
   const items = useMemo(
     () => [
-      { key: "woman", image: "/sections/women.jpg", href: "https://shop.everything-alpaca.com/Women_c_7.html" },
-      { key: "men", image: "/sections/men.jpg", href: "https://shop.everything-alpaca.com/Men_c_70.html" },
-      { key: "socks", image: "/sections/socks.jpg", href: "https://shop.everything-alpaca.com/Socks_c_56.html" },
-      { key: "accessories", image: "/sections/accessories.jpg", href: "https://shop.everything-alpaca.com/Knitted-Accessories_c_9.html" },
-      { key: "home", image: "/sections/home.jpg", href: "https://shop.everything-alpaca.com/Home-Decor_c_10.html" },
-      { key: "collectables", image: "/sections/collectibles.jpg", href: "https://shop.everything-alpaca.com/Collectables-and-Souvenirs_c_11.html" },
-      { key: "andean", image: "/sections/andean-fashion.jpg", href: "https://shop.everything-alpaca.com/Andean-Fashion_c_15.html" },
+      {
+        key: "woman",
+        image: "/sections/women.jpg",
+        href: "https://shop.everything-alpaca.com/Women_c_7.html",
+      },
+      {
+        key: "men",
+        image: "/sections/men.jpg",
+        href: "https://shop.everything-alpaca.com/Men_c_70.html",
+      },
+      {
+        key: "socks",
+        image: "/sections/socks.jpg",
+        href: "https://shop.everything-alpaca.com/Socks_c_56.html",
+      },
+      {
+        key: "accessories",
+        image: "/sections/accessories.jpg",
+        href: "https://shop.everything-alpaca.com/Knitted-Accessories_c_9.html",
+      },
+      {
+        key: "home",
+        image: "/sections/home.jpg",
+        href: "https://shop.everything-alpaca.com/Home-Decor_c_10.html",
+      },
+      {
+        key: "collectables",
+        image: "/sections/collectibles.jpg",
+        href: "https://shop.everything-alpaca.com/Collectables-and-Souvenirs_c_11.html",
+      },
+      {
+        key: "andean",
+        image: "/sections/andean-fashion.jpg",
+        href: "https://shop.everything-alpaca.com/Andean-Fashion_c_15.html",
+      },
     ],
     []
   )
 
+  // ✅ MOBILE: solo 3 categorías (men, woman, accessories)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 640)
+
+  const visibleItems = useMemo(() => {
+    if (!isMobile) return items
+    return items.filter((x) => x.key === "men" || x.key === "woman" || x.key === "accessories")
+  }, [items, isMobile])
+
   // loop real con clones: [last, ...items, first]
   const slides = useMemo(() => {
-    if (!items.length) return []
-    return [items[items.length - 1], ...items, items[0]]
-  }, [items])
+    if (!visibleItems.length) return []
+    return [visibleItems[visibleItems.length - 1], ...visibleItems, visibleItems[0]]
+  }, [visibleItems])
 
   const wrapRef = useRef(null)
   const holdTimerRef = useRef(null)
@@ -41,15 +77,18 @@ export default function Sections() {
   const [animate, setAnimate] = useState(true)
   const [dragOffset, setDragOffset] = useState(0)
 
-  // ✅ medir bien SIEMPRE (y no explota si width=0)
+  // ✅ medir bien SIEMPRE (y detectar mobile)
   const measure = () => {
     const wrap = wrapRef.current
     if (!wrap) return
 
-    const pv = window.innerWidth <= 640 ? 1 : 3
-    const w = wrap.getBoundingClientRect().width
+    const mobile = window.innerWidth <= 640
+    setIsMobile(mobile)
 
+    const pv = mobile ? 1 : 3
+    const w = wrap.getBoundingClientRect().width
     if (!w) return
+
     setCardW(w / pv)
   }
 
@@ -65,6 +104,15 @@ export default function Sections() {
       window.removeEventListener("resize", measure)
     }
   }, [])
+
+  // ✅ cuando cambia la lista (por mobile/desktop), resetea index para evitar blancos
+  useEffect(() => {
+    setAnimate(false)
+    setDragOffset(0)
+    setIndex(1)
+    const t = setTimeout(() => setAnimate(true), 30)
+    return () => clearTimeout(t)
+  }, [slides.length])
 
   const stopAuto = () => {
     if (autoTimerRef.current) clearInterval(autoTimerRef.current)
@@ -277,7 +325,9 @@ export default function Sections() {
             return (
               <motion.a
                 key={`${item.key}-${i}`}
-                href={item.href || "#"}   // ✅ AQUÍ LINK REAL
+                href={item.href || "#"}
+                target="_blank"
+                rel="noreferrer"
                 className="section-slide"
                 style={{
                   width: `${cardW}px`,
@@ -288,7 +338,6 @@ export default function Sections() {
                 draggable={false}
                 onDragStart={(e) => e.preventDefault()}
                 onClick={(e) => {
-                  // ✅ si venimos de drag, NO navegar
                   if (didDragRef.current) {
                     e.preventDefault()
                     e.stopPropagation()
@@ -300,15 +349,23 @@ export default function Sections() {
                   animate={isActive ? { scale: 1.06 } : { scale: 1 }}
                   transition={{ type: "spring", stiffness: 260, damping: 18 }}
                 />
-                <span className="section-slide-label">
-                  {t(`sections.items.${item.key}`)}
-                </span>
+                <span className="section-slide-label">{t(`sections.items.${item.key}`)}</span>
                 <span className="section-slide-shade" />
               </motion.a>
             )
           })}
         </motion.div>
       </div>
+
+      {/* ✅ SOLO EN MOBILE: See more con “∨” a tienda */}
+      <a
+        className="sections-see-more"
+        href="https://shop.everything-alpaca.com/category_index.asp"
+        target="_blank"
+        rel="noreferrer"
+      >
+        SEE MORE <span className="sections-see-more-icon">∨</span>
+      </a>
     </section>
   )
 }

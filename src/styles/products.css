@@ -150,9 +150,33 @@
     padding: 56px 22px;
   }
 
+  /* ✅ MOBILE = CARRUSEL HORIZONTAL (sin bugs) */
   .products-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
+    max-width: 100%;          /* ✅ para que no limite el carrusel */
+    margin: 0;                /* ✅ full ancho para deslizar bien */
+    display: flex;            /* ✅ ya no grid en mobile */
+    gap: 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 12px;
+    padding-left: 2px;        /* ✅ evita que se corte la sombra */
+    padding-right: 2px;       /* ✅ evita que se corte la sombra */
+  }
+
+  /* ✅ ocultar scrollbar */
+  .products-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .products-grid {
+    scrollbar-width: none;
+  }
+
+  /* ✅ cada card ocupa casi toda la pantalla (ajustable) */
+  .product-card {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
   }
 
   .product-img {

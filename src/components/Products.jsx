@@ -48,8 +48,7 @@ export default function Products() {
         id: "reversible",
         title: "Reversible Purple",
         href: "https://shop.everything-alpaca.com/Reversible-Purple_p_771.html",
-        // ✅ si solo tienes 1 real, déjalo 1. Si tienes 2, pon 2.
-        images: ["/products/Reversible Purple.jpg"],
+        images: ["/products/Reversible Purple.jpg"], // 1 sola -> no carrusel
       },
       {
         id: "chocolate",
@@ -74,7 +73,8 @@ export default function Products() {
         <p>{t("A curated selection of our best pieces in alpaca fiber.")}</p>
       </div>
 
-      <div className="products-grid">
+      {/* ✅ En PC = grid normal | En mobile = carrusel horizontal (CSS) */}
+      <div className="products-grid" aria-label="Featured products carousel">
         {products.map((p) => (
           <ProductCard key={p.id} p={p} />
         ))}
@@ -98,8 +98,13 @@ function ProductCard({ p }) {
   const [imgIndex, setImgIndex] = useState(0)
   const timerRef = useRef(null)
 
+  // ✅ para evitar que al arrastrar el carrusel (mobile) se abra el link por error
+  const startXRef = useRef(0)
+  const movedRef = useRef(false)
+
   const hasCarousel = Array.isArray(p.images) && p.images.length > 1
 
+  // ✅ preload (evita parpadeo)
   useEffect(() => {
     if (!p.images || p.images.length === 0) return
     p.images.forEach((src) => {
@@ -107,6 +112,13 @@ function ProductCard({ p }) {
       img.src = encodeURI(src)
     })
   }, [p.images])
+
+  // ✅ cleanup de interval (evita leaks)
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current)
+    }
+  }, [])
 
   const stopHover = () => {
     if (timerRef.current) clearInterval(timerRef.current)
@@ -118,6 +130,7 @@ function ProductCard({ p }) {
     if (!hasCarousel) return
     if (timerRef.current) return
 
+    // cambia apenas entra
     setImgIndex(1)
 
     timerRef.current = setInterval(() => {
@@ -128,13 +141,41 @@ function ProductCard({ p }) {
   const currentSrc = p.images?.[imgIndex] ? encodeURI(p.images[imgIndex]) : ""
 
   return (
-    <a className="product-card" href={p.href} target="_blank" rel="noreferrer">
+    <a
+      className="product-card"
+      href={p.href}
+      target="_blank"
+      rel="noreferrer"
+      onClick={(e) => {
+        // ✅ si arrastró horizontal, NO abrir link
+        if (movedRef.current) {
+          e.preventDefault()
+          e.stopPropagation()
+        }
+      }}
+    >
+      {/* ✅ hover SOLO en imagen (y touch también) */}
       <div
         className="product-media"
         onMouseEnter={startHover}
         onMouseLeave={stopHover}
-        onTouchStart={startHover}
-        onTouchEnd={stopHover}
+        onTouchStart={(e) => {
+          startHover()
+          startXRef.current = e.touches?.[0]?.clientX ?? 0
+          movedRef.current = false
+        }}
+        onTouchMove={(e) => {
+          const x = e.touches?.[0]?.clientX ?? 0
+          if (Math.abs(x - startXRef.current) > 8) movedRef.current = true
+        }}
+        onTouchEnd={() => {
+          stopHover()
+          // soltamos el flag luego para no bloquear taps normales
+          setTimeout(() => {
+            movedRef.current = false
+          }, 80)
+        }}
+        onTouchCancel={stopHover}
       >
         <AnimatePresence mode="wait">
           <motion.img

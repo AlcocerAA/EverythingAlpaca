@@ -1,11 +1,6 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import {
-  Leaf,
-  Handshake,
-  Recycle,
-  Heart
-} from "lucide-react"
+import { Leaf, Handshake, Recycle, Heart } from "lucide-react"
 import "../styles/sustainability.css"
 
 const items = [
@@ -23,7 +18,8 @@ const items = [
   },
   {
     icon: Recycle,
-    title: "Zero Waste",
+    title:
+      "Zero Waste",
     text:
       "Our production minimizes waste through responsible sourcing and efficient manufacturing processes.",
   },
@@ -38,17 +34,63 @@ const items = [
 export default function Sustainability() {
   const [index, setIndex] = useState(0)
 
-  useEffect(() => {
-    const interval = setInterval(() => {
+  // ✅ drag helpers
+  const startXRef = useRef(0)
+  const draggingRef = useRef(false)
+  const offsetRef = useRef(0)
+
+  // ✅ auto
+  const intervalRef = useRef(null)
+
+  const stopAuto = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current)
+    intervalRef.current = null
+  }
+
+  const startAuto = () => {
+    stopAuto()
+    intervalRef.current = setInterval(() => {
       setIndex((prev) => (prev + 1) % items.length)
     }, 4500)
+  }
 
-    return () => clearInterval(interval)
+  useEffect(() => {
+    startAuto()
+    return () => stopAuto()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const next = () => setIndex((index + 1) % items.length)
-  const prev = () =>
-    setIndex((index - 1 + items.length) % items.length)
+  const next = () => setIndex((prev) => (prev + 1) % items.length)
+  const prev = () => setIndex((prev) => (prev - 1 + items.length) % items.length)
+
+  // ✅ swipe/drag en mobile (sin flechas)
+  const onPointerDown = (e) => {
+    draggingRef.current = true
+    offsetRef.current = 0
+    stopAuto()
+    startXRef.current = e.clientX
+    e.currentTarget.setPointerCapture?.(e.pointerId)
+  }
+
+  const onPointerMove = (e) => {
+    if (!draggingRef.current) return
+    offsetRef.current = e.clientX - startXRef.current
+  }
+
+  const onPointerUp = (e) => {
+    if (!draggingRef.current) return
+    draggingRef.current = false
+
+    e.currentTarget.releasePointerCapture?.(e.pointerId)
+
+    const delta = offsetRef.current
+    const threshold = 55 // ✅ sensibilidad swipe
+
+    if (delta <= -threshold) next()
+    else if (delta >= threshold) prev()
+
+    startAuto()
+  }
 
   return (
     <section className="sustainability">
@@ -62,7 +104,7 @@ export default function Sustainability() {
               className="sustain-card"
               whileHover={{
                 y: -10,
-                boxShadow: "0 28px 50px rgba(0,0,0,0.18)"
+                boxShadow: "0 28px 50px rgba(0,0,0,0.18)",
               }}
               transition={{ duration: 0.35, ease: "easeOut" }}
             >
@@ -76,12 +118,15 @@ export default function Sustainability() {
         })}
       </div>
 
-      {/* MOBILE */}
-      <div className="sustainability-mobile">
-        <button className="arrow" onClick={prev} aria-label="Previous">
-          ‹
-        </button>
-
+      {/* MOBILE (sin flechas, swipe/drag) */}
+      <div
+        className="sustainability-mobile"
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
+        style={{ cursor: draggingRef.current ? "grabbing" : "grab" }}
+      >
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
@@ -101,10 +146,6 @@ export default function Sustainability() {
             <p>{items[index].text}</p>
           </motion.div>
         </AnimatePresence>
-
-        <button className="arrow" onClick={next} aria-label="Next">
-          ›
-        </button>
       </div>
     </section>
   )

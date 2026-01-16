@@ -1,6 +1,9 @@
 .sustainability {
   background: #fbf8ee;
   padding: 90px 64px;
+
+  /* ✅ extra: evita overflow horizontal fantasma */
+  overflow-x: hidden;
 }
 
 /* ================= DESKTOP ================= */
@@ -17,6 +20,10 @@
   text-align: center;
   box-shadow: 0 12px 28px rgba(0,0,0,0.08);
   transition: all 0.35s ease;
+
+  /* ✅ evita selección rara en algunos móviles */
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .icon-circle {
@@ -50,13 +57,38 @@
   align-items: center;
   justify-content: center;
   gap: 16px;
+
+  /* ✅ CLAVE para swipe pro */
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  /* ✅ permite scroll vertical normal, pero swipe horizontal dentro */
+  touch-action: pan-y;
+
+  /* ✅ evita highlight azul/selección */
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+
+  /* ✅ para que el drag se sienta suave */
+  cursor: grab;
+}
+
+.sustainability-mobile:active {
+  cursor: grabbing;
 }
 
 .sustain-card.mobile {
   width: 100%;
-  max-width: 320px;
+  max-width: 360px; /* un poquito más pro en pantallas medianas */
+  margin: 0 auto;
+
+  /* ✅ más “estable” visualmente */
+  transform: translateZ(0);
 }
 
+/* (lo dejamos por si vuelves a usar flechas, pero ya no se muestran) */
 .arrow {
   background: none;
   border: none;
@@ -79,5 +111,9 @@
 @media (max-width: 640px) {
   .sustainability {
     padding: 70px 24px;
+  }
+
+  .sustain-card.mobile {
+    max-width: 320px; /* como lo tenías, para que se vea bien en celu */
   }
 }

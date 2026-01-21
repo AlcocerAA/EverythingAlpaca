@@ -290,3 +290,77 @@ body {
 .lang-dropdown button:hover {
   background: rgba(0, 0, 0, 0.05);
 }
+
+/* ===== Dropdown blanco / texto negro / tipografía navbar ===== */
+.nav-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-item .nav-link {
+  position: relative;
+}
+
+.nav-dropdown--white {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 0;
+  z-index: 9999;
+
+  min-width: 250px;
+  padding: 10px;
+
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.14);
+  backdrop-filter: blur(10px);
+
+  display: none;
+  animation: dropIn 0.18s ease-out;
+}
+
+.nav-item.open .nav-dropdown--white {
+  display: block;
+}
+
+.nav-dropdown--white a {
+  display: block;
+  text-decoration: none;
+
+  padding: 12px 12px;
+  border-radius: 10px;
+
+  /* ✅ misma vibra del navbar */
+  font-family: inherit;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: #1f1f1f;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.nav-dropdown--white a:hover {
+  background: rgba(0, 0, 0, 0.06);
+  transform: translateX(2px);
+}
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Mobile groups (si no los tenías) ===== */
+.mobile-group {
+  margin-top: 18px;
+}
+
+.mobile-title {
+  font-family: inherit;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}

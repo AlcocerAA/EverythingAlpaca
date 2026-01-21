@@ -1,0 +1,286 @@
+/* ===== PAGE ===== */
+.sus-page {
+  background: #fffded;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== HERO ===== */
+.sus-hero {
+  position: relative;
+  min-height: 64vh;
+  padding-top: 110px; /* deja espacio para tu navbar sticky */
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.sus-hero__bg {
+  position: absolute;
+  inset: 0;
+  background: url("/sustainability/hero.jpg") center/cover no-repeat;
+  z-index: 0;
+}
+
+/* difuminado tipo elegante (como pediste) */
+.sus-hero__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 253, 237, 0.62);
+  z-index: 0;
+}
+
+.sus-hero__content {
+  position: relative;
+  z-index: 1;
+  width: min(980px, 92%);
+  text-align: center;
+  padding: 44px 18px 64px;
+}
+
+.sus-hero__content h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.2rem, 3.6vw, 3.4rem);
+  letter-spacing: 0.06em;
+  color: #1f1f1f;
+  margin: 0 0 14px;
+}
+
+.sus-hero__content p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.68);
+  margin: 0 auto 22px;
+  max-width: 720px;
+}
+
+.sus-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #1f1f1f;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.sus-hero__cta:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+
+/* ===== WRAP ===== */
+.sus-wrap {
+  padding: 72px 64px 96px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* ===== INTRO ===== */
+.sus-intro {
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 22px;
+  padding: 30px 28px;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.08);
+  margin-bottom: 28px;
+}
+
+.sus-intro h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  letter-spacing: 0.06em;
+  margin: 0 0 10px;
+  color: #1f1f1f;
+}
+
+.sus-intro p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.68);
+  margin: 0;
+}
+
+/* ===== BLOCKS ===== */
+.sus-blocks {
+  display: grid;
+  gap: 22px;
+  margin: 28px 0 34px;
+}
+
+.sus-block {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.sus-block.flip {
+  grid-template-columns: 0.95fr 1.05fr;
+}
+
+.sus-block.flip .sus-block__text {
+  order: 2;
+}
+.sus-block.flip .sus-img {
+  order: 1;
+}
+
+.sus-block__text {
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 22px;
+  padding: 28px 26px;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.08);
+}
+
+.sus-kicker {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.55);
+  margin-bottom: 10px;
+}
+
+.sus-block__text h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.7rem;
+  letter-spacing: 0.05em;
+  margin: 0 0 10px;
+  color: #1f1f1f;
+}
+
+.sus-block__text p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.68);
+  margin: 0;
+}
+
+/* ===== IMAGES ===== */
+.sus-img {
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.08);
+  min-height: 320px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.sus-img.s1 { background-image: url("/sustainability/section-1.jpg"); }
+.sus-img.s2 { background-image: url("/sustainability/section-2.jpg"); }
+.sus-img.s3 { background-image: url("/sustainability/section-3.jpg"); }
+.sus-img.s4 { background-image: url("/sustainability/section-4.jpg"); }
+
+/* ===== CONTACT ===== */
+.sus-contact {
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 22px;
+  padding: 32px 28px;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.08);
+}
+
+.sus-contact__kicker {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.55);
+  margin-bottom: 18px;
+}
+
+.sus-contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.sus-contact__label {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #1f1f1f;
+  margin-bottom: 6px;
+}
+
+.sus-contact__text {
+  font-family: "Montserrat", sans-serif;
+  color: rgba(0, 0, 0, 0.66);
+  line-height: 1.6;
+}
+
+.sus-contact__link {
+  font-family: "Montserrat", sans-serif;
+  color: #1f1f1f;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.sus-contact__link:hover {
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+}
+
+.sus-contact__btn {
+  display: inline-flex;
+  text-decoration: none;
+  padding: 13px 22px;
+  border-radius: 10px;
+  background: #1f1f1f;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.88rem;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.sus-contact__btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .sus-wrap {
+    padding: 64px 32px 82px;
+  }
+
+  .sus-block,
+  .sus-block.flip {
+    grid-template-columns: 1fr;
+  }
+
+  .sus-block.flip .sus-block__text,
+  .sus-block.flip .sus-img {
+    order: initial;
+  }
+
+  .sus-contact__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .sus-hero {
+    padding-top: 104px;
+  }
+  .sus-wrap {
+    padding: 56px 18px 74px;
+  }
+  .sus-img {
+    min-height: 280px;
+  }
+}

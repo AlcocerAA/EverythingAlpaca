@@ -6,12 +6,10 @@ export default function Us() {
     <main className="us-page" id="us">
       {/* HERO */}
       <section className="us-hero">
-        {/* ✅ Imagen real (antes era un div vacío) */}
-        <div
-          className="us-hero__bg"
-          aria-hidden="true"
-          style={{ backgroundImage: "url(/us/hero.jpg)" }}
-        />
+        {/* ✅ Imagen:
+            /public/us/hero.jpg
+        */}
+        <div className="us-hero__bg" aria-hidden="true" />
 
         <div className="us-hero__content">
           <motion.h1
@@ -46,7 +44,6 @@ export default function Us() {
 
       {/* CONTENT */}
       <section className="us-wrap">
-        {/* ABOUT */}
         <div className="us-grid">
           <motion.section
             className="us-card"
@@ -70,7 +67,6 @@ export default function Us() {
             </p>
           </motion.section>
 
-          {/* IMAGE SIDE */}
           <motion.aside
             className="us-side"
             initial={{ opacity: 0, y: 18 }}
@@ -78,20 +74,16 @@ export default function Us() {
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.55, delay: 0.05, ease: "easeOut" }}
           >
-            {/* ✅ Imagen real (antes era un div vacío) */}
-            <div
-              className="us-side__img"
-              aria-hidden="true"
-              style={{ backgroundImage: "url(/us/about.jpg)" }}
-            />
-
+            {/* ✅ Imagen:
+                /public/us/about.jpg
+            */}
+            <div className="us-side__img" aria-hidden="true" />
             <div className="us-side__note">
               Designed in the U.S. • Crafted in Arequipa, Peru
             </div>
           </motion.aside>
         </div>
 
-        {/* MISSION + VISION */}
         <div className="us-two">
           <motion.section
             className="us-panel"
@@ -130,7 +122,6 @@ export default function Us() {
           </motion.section>
         </div>
 
-        {/* CONTACT */}
         <motion.section
           className="us-contact"
           initial={{ opacity: 0, y: 18 }}
@@ -168,7 +159,7 @@ export default function Us() {
             </div>
           </div>
 
-          <a className="us-contact__btn" href="https://everything-alpaca.com/contact-us/">
+          <a className="us-contact__btn" href="https://shop.everything-alpaca.com/crm.asp?action=contactus">
             CONTACT FORM
           </a>
         </motion.section>

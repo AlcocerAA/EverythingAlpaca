@@ -63,7 +63,7 @@ export default function Navbar() {
   const usLinks = useMemo(
     () => [
       { label: "Contact Us", href: "https://shop.everything-alpaca.com/crm.asp?action=contactus" },
-      { label: "Sustainability", href: "#" },
+      { label: "Sustainability", href: "/sustainability" },
       { label: "Our Vision & Mission", href: "/us" },
     ],
     []

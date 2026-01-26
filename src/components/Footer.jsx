@@ -27,7 +27,13 @@ export default function Footer() {
         {/* BRAND / LOGO */}
         <div className="footer-col brand">
           <a href="/" className="footer-logo" aria-label="Everything Alpaca Home">
-            <img src={LOGO_SRC} alt="Everything Alpaca" />
+            <img
+              src={LOGO_SRC}
+              alt="Everything Alpaca"
+              loading="lazy"
+              decoding="async"
+              draggable="false"
+            />
           </a>
 
           <p className="footer-desc">{t("footer.description")}</p>
@@ -89,26 +95,44 @@ export default function Footer() {
 
         {/* LINKS (lo que “tienen”) */}
         <div className="footer-col">
-          <h4 className="footer-title">{t("Links")}</h4>
+          {/* ✅ mejor usar keys reales; si no las tienes, al menos queda estable */}
+          <h4 className="footer-title">{t("footer.links.title", "LINKS")}</h4>
+
           <ul className="footer-list">
             <li>
-              <a href="https://shop.everything-alpaca.com/Terms-and-Conditions_ep_2-1.html" target="_blank" rel="noreferrer">
-                {t("Terms and Conditions")}
+              <a
+                href="https://shop.everything-alpaca.com/Terms-and-Conditions_ep_2-1.html"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {t("footer.links.terms", "Terms and Conditions")}
               </a>
             </li>
             <li>
-              <a href="https://shop.everything-alpaca.com/product_index.asp" target="_blank" rel="noreferrer">
-                {t("Product Index")}
+              <a
+                href="https://shop.everything-alpaca.com/product_index.asp"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {t("footer.links.productIndex", "Product Index")}
               </a>
             </li>
             <li>
-              <a href="https://shop.everything-alpaca.com/affiliateInfo.asp" target="_blank" rel="noreferrer">
-                {t("Become an Affiliate")}
+              <a
+                href="https://shop.everything-alpaca.com/affiliateInfo.asp"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {t("footer.links.affiliate", "Become an Affiliate")}
               </a>
             </li>
             <li>
-              <a href="https://shop.everything-alpaca.com/category_index.asp" target="_blank" rel="noreferrer">
-                {t("Category Index")}
+              <a
+                href="https://shop.everything-alpaca.com/category_index.asp"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {t("footer.links.categoryIndex", "Category Index")}
               </a>
             </li>
           </ul>
@@ -125,6 +149,8 @@ export default function Footer() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              autoComplete="email"
+              inputMode="email"
             />
             <button type="submit">{t("footer.subscribe.button")}</button>
           </form>

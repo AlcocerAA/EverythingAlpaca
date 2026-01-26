@@ -10,7 +10,10 @@ import i18n from "./i18n/i18n"
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <I18nextProvider i18n={i18n}>
-      <App />
+      {/* ✅ FIX: evita “white flash” por drag lateral */}
+      <div style={{ width: "100%", overflowX: "hidden" }}>
+        <App />
+      </div>
     </I18nextProvider>
   </React.StrictMode>
 )

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react"
 import "../styles/navbar.css"
 import { User, Globe, Menu, X, ShoppingBag, Check } from "lucide-react"
 import { useTranslation } from "react-i18next"
+import { Link } from "react-router-dom"
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -55,10 +56,7 @@ export default function Navbar() {
     []
   )
 
-  const collectionsLinks = useMemo(
-    () => [{ label: "2026", href: "#" }],
-    []
-  )
+  const collectionsLinks = useMemo(() => [{ label: "2026", href: "#" }], [])
 
   const usLinks = useMemo(
     () => [
@@ -73,7 +71,8 @@ export default function Navbar() {
     <>
       <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
         {/* FILA 1 */}
-        <div className="navbar-top">
+        {/* ✅ AHORA TODO EL BRAND ES CLICKEABLE Y TE LLEVA A HOME */}
+        <Link to="/" className="navbar-top" aria-label="Go to Home">
           <span className="brand-text">EVERYTHING</span>
 
           <img
@@ -84,7 +83,7 @@ export default function Navbar() {
           />
 
           <span className="brand-text">ALPACA</span>
-        </div>
+        </Link>
 
         {/* FILA 2 */}
         <div className="navbar-bottom">
@@ -163,17 +162,17 @@ export default function Navbar() {
           </nav>
 
           {/* MOBILE BUTTON */}
-          <button
-            className="menu-button"
-            onClick={() => setMenuOpen(true)}
-            aria-label="Open menu"
-          >
+          <button className="menu-button" onClick={() => setMenuOpen(true)} aria-label="Open menu">
             <Menu size={26} />
           </button>
 
           {/* ICONOS */}
           <div className="nav-right">
-            <a href="https://shop.everything-alpaca.com/" className="nav-icon shop-icon" aria-label="Shop">
+            <a
+              href="https://shop.everything-alpaca.com/"
+              className="nav-icon shop-icon"
+              aria-label="Shop"
+            >
               <ShoppingBag size={22} strokeWidth={1.4} />
             </a>
 
@@ -206,7 +205,7 @@ export default function Navbar() {
 
             {/* ✅ ICONO PERSONA ALINEADO Y LINKEADO */}
             <a
-              href="https://shop.everything-alpaca.com/myaccount.asp"        // 🔹 aquí pones el link que quieras
+              href="https://shop.everything-alpaca.com/myaccount.asp"
               className="nav-icon"
               aria-label="Account"
             >
@@ -220,11 +219,7 @@ export default function Navbar() {
       {menuOpen && (
         <div className="menu-overlay" onClick={() => setMenuOpen(false)}>
           <div className="mobile-menu open" onClick={(e) => e.stopPropagation()}>
-            <button
-              className="close-menu"
-              onClick={() => setMenuOpen(false)}
-              aria-label="Close menu"
-            >
+            <button className="close-menu" onClick={() => setMenuOpen(false)} aria-label="Close menu">
               <X size={24} />
             </button>
 
@@ -232,21 +227,27 @@ export default function Navbar() {
               <div className="mobile-group">
                 <div className="mobile-title">{t("nav.shop")}</div>
                 {shopLinks.map((l) => (
-                  <a key={l.label} href={l.href}>{l.label}</a>
+                  <a key={l.label} href={l.href}>
+                    {l.label}
+                  </a>
                 ))}
               </div>
 
               <div className="mobile-group">
                 <div className="mobile-title">{t("nav.collections")}</div>
                 {collectionsLinks.map((l) => (
-                  <a key={l.label} href={l.href}>{l.label}</a>
+                  <a key={l.label} href={l.href}>
+                    {l.label}
+                  </a>
                 ))}
               </div>
 
               <div className="mobile-group">
                 <div className="mobile-title">US</div>
                 {usLinks.map((l) => (
-                  <a key={l.label} href={l.href}>{l.label}</a>
+                  <a key={l.label} href={l.href}>
+                    {l.label}
+                  </a>
                 ))}
               </div>
             </nav>

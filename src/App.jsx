@@ -7,8 +7,8 @@ import Products from "./components/Products"
 import Sustainability from "./components/Sustainability"
 import Footer from "./components/Footer"
 
-// ✅ IMPORTA TU VISTA (ajusta la ruta si tu archivo está en otra carpeta)
 import Us from "./pages/Us"
+import SustainabilityPage from "./pages/SustainabilityPage" // ✅ ESTE ES TU ARCHIVO REAL
 
 function Home() {
   return (
@@ -29,6 +29,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/us" element={<Us />} />
+        <Route path="/sustainability" element={<SustainabilityPage />} /> {/* ✅ */}
       </Routes>
 
       <Footer />

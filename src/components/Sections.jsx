@@ -6,49 +6,20 @@ import { useTranslation } from "react-i18next"
 export default function Sections() {
   const { t } = useTranslation()
 
-  // ✅ AQUÍ linkeas cada categoría
   const items = useMemo(
     () => [
-      {
-        key: "woman",
-        image: "/sections/women.jpg",
-        href: "https://shop.everything-alpaca.com/Women_c_7.html",
-      },
-      {
-        key: "men",
-        image: "/sections/men.jpg",
-        href: "https://shop.everything-alpaca.com/Men_c_70.html",
-      },
-      {
-        key: "socks",
-        image: "/sections/socks.jpg",
-        href: "https://shop.everything-alpaca.com/Socks_c_56.html",
-      },
-      {
-        key: "accessories",
-        image: "/sections/accessories.jpg",
-        href: "https://shop.everything-alpaca.com/Knitted-Accessories_c_9.html",
-      },
-      {
-        key: "home",
-        image: "/sections/home.jpg",
-        href: "https://shop.everything-alpaca.com/Home-Decor_c_10.html",
-      },
-      {
-        key: "collectables",
-        image: "/sections/collectibles.jpg",
-        href: "https://shop.everything-alpaca.com/Collectables-and-Souvenirs_c_11.html",
-      },
-      {
-        key: "andean",
-        image: "/sections/andean-fashion.jpg",
-        href: "https://shop.everything-alpaca.com/Andean-Fashion_c_15.html",
-      },
+      { key: "woman", image: "/sections/women.jpg", href: "https://shop.everything-alpaca.com/Women_c_7.html" },
+      { key: "men", image: "/sections/men.jpg", href: "https://shop.everything-alpaca.com/Men_c_70.html" },
+      { key: "socks", image: "/sections/socks.jpg", href: "https://shop.everything-alpaca.com/Socks_c_56.html" },
+      { key: "accessories", image: "/sections/accessories.jpg", href: "https://shop.everything-alpaca.com/Knitted-Accessories_c_9.html" },
+      { key: "home", image: "/sections/home.jpg", href: "https://shop.everything-alpaca.com/Home-Decor_c_10.html" },
+      { key: "collectables", image: "/sections/collectibles.jpg", href: "https://shop.everything-alpaca.com/Collectables-and-Souvenirs_c_11.html" },
+      { key: "andean", image: "/sections/andean-fashion.jpg", href: "https://shop.everything-alpaca.com/Andean-Fashion_c_15.html" },
     ],
     []
   )
 
-  // ✅ MOBILE: solo 3 categorías (men, woman, accessories)
+  // ✅ mobile detect robusto
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 640)
 
   const visibleItems = useMemo(() => {
@@ -56,7 +27,7 @@ export default function Sections() {
     return items.filter((x) => x.key === "men" || x.key === "woman" || x.key === "accessories")
   }, [items, isMobile])
 
-  // loop real con clones: [last, ...items, first]
+  // loop con clones: [last, ...items, first]
   const slides = useMemo(() => {
     if (!visibleItems.length) return []
     return [visibleItems[visibleItems.length - 1], ...visibleItems, visibleItems[0]]
@@ -66,7 +37,6 @@ export default function Sections() {
   const holdTimerRef = useRef(null)
   const autoTimerRef = useRef(null)
 
-  // drag
   const draggingRef = useRef(false)
   const dragStartXRef = useRef(0)
   const didDragRef = useRef(false)
@@ -77,7 +47,9 @@ export default function Sections() {
   const [animate, setAnimate] = useState(true)
   const [dragOffset, setDragOffset] = useState(0)
 
-  // ✅ medir bien SIEMPRE (y detectar mobile)
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v))
+
+  // ✅ MEDIDA REAL (enteros) + recalcular mobile
   const measure = () => {
     const wrap = wrapRef.current
     if (!wrap) return
@@ -86,26 +58,25 @@ export default function Sections() {
     setIsMobile(mobile)
 
     const pv = mobile ? 1 : 3
-    const w = wrap.getBoundingClientRect().width
+    const w = Math.floor(wrap.getBoundingClientRect().width)
     if (!w) return
 
-    setCardW(w / pv)
+    // ✅ clave: enteros para evitar huecos por acumulación de decimales
+    const cw = Math.floor(w / pv)
+    setCardW(cw)
   }
 
   useEffect(() => {
     measure()
     window.addEventListener("resize", measure)
-
-    // ✅ por si carga fonts/imágenes y cambia el layout
-    const tmr = setTimeout(measure, 80)
-
+    const tmr = setTimeout(measure, 120)
     return () => {
       clearTimeout(tmr)
       window.removeEventListener("resize", measure)
     }
   }, [])
 
-  // ✅ cuando cambia la lista (por mobile/desktop), resetea index para evitar blancos
+  // ✅ cuando cambia slides, resetea index para evitar “saltos raros”
   useEffect(() => {
     setAnimate(false)
     setDragOffset(0)
@@ -145,7 +116,7 @@ export default function Sections() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slides.length, cardW])
 
-  // ✅ Loop invisible: al llegar a clone, salta sin animación
+  // ✅ loop invisible (clones)
   useEffect(() => {
     if (!slides.length) return
 
@@ -168,7 +139,7 @@ export default function Sections() {
     }
   }, [index, slides.length, slides])
 
-  // Mantener click (zonas invisibles)
+  // hold zones
   const startHold = (dir) => {
     stopHold()
     stopAuto()
@@ -183,19 +154,10 @@ export default function Sections() {
     startAuto()
   }
 
-  // ======== helpers (evitar blanco) ========
-  const clamp = (v, min, max) => Math.max(min, Math.min(max, v))
-
-  const rubberBand = (value, min, max, factor = 0.22) => {
-    if (value < min) return min - (min - value) * factor
-    if (value > max) return max + (value - max) * factor
-    return value
-  }
-
+  // ✅ límites reales (con cardW entero)
   const minX = cardW ? -((slides.length - 1) * cardW) : 0
   const maxX = 0
 
-  // ===== POINTER EVENTS (mouse + touch sólido) =====
   const onPointerDown = (e) => {
     if (!cardW || !slides.length) return
     if (e.button !== undefined && e.button !== 0) return
@@ -221,9 +183,10 @@ export default function Sections() {
 
     const baseX = -(index * cardW)
     const desiredX = baseX + delta
-    const bandedX = rubberBand(desiredX, minX, maxX, 0.22)
 
-    setDragOffset(bandedX - baseX)
+    // ✅ clamp duro SIEMPRE
+    const clampedX = clamp(desiredX, minX, maxX)
+    setDragOffset(clampedX - baseX)
   }
 
   const onPointerUp = (e) => {
@@ -259,9 +222,12 @@ export default function Sections() {
     startAuto()
   }
 
-  // ✅ clamp duro al animar para que jamás muestre “blanco”
+  // ✅ clamp final (siempre)
   const rawX = -(index * cardW) + dragOffset
-  const x = animate ? clamp(rawX, minX, maxX) : rawX
+  const x = clamp(rawX, minX, maxX)
+
+  // ✅ track width REAL (esto mata el blanco)
+  const trackW = cardW ? slides.length * cardW : "auto"
 
   return (
     <section className="sections">
@@ -274,7 +240,7 @@ export default function Sections() {
         onPointerCancel={onPointerUp}
         style={{ cursor: draggingRef.current ? "grabbing" : "grab" }}
       >
-        {/* ZONA HOLD IZQUIERDA (invisible) */}
+        {/* ZONA HOLD IZQUIERDA */}
         <div
           className="hold-zone left"
           onPointerDown={(e) => {
@@ -292,7 +258,7 @@ export default function Sections() {
           aria-hidden="true"
         />
 
-        {/* ZONA HOLD DERECHA (invisible) */}
+        {/* ZONA HOLD DERECHA */}
         <div
           className="hold-zone right"
           onPointerDown={(e) => {
@@ -312,12 +278,9 @@ export default function Sections() {
 
         <motion.div
           className="sections-track"
+          style={{ width: trackW }} // ✅ clave
           animate={{ x }}
-          transition={
-            animate
-              ? { type: "spring", stiffness: 140, damping: 18 }
-              : { duration: 0 }
-          }
+          transition={animate ? { type: "spring", stiffness: 140, damping: 18 } : { duration: 0 }}
         >
           {slides.map((item, i) => {
             const isActive = i === index
@@ -357,7 +320,7 @@ export default function Sections() {
         </motion.div>
       </div>
 
-      {/* ✅ SOLO EN MOBILE: See more con “∨” a tienda */}
+      {/* ✅ SOLO EN MOBILE: See more */}
       <a
         className="sections-see-more"
         href="https://shop.everything-alpaca.com/category_index.asp"

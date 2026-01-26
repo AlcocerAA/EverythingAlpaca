@@ -9,18 +9,30 @@
   box-sizing: border-box;
 }
 
-/* ===============================
-   HTML / BODY
-================================ */
+/* ✅ FIX GLOBAL REAL (anti blanco + altura completa) */
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  background: var(--bg); /* ✅ el fondo siempre será el mismo */
+  overflow-x: hidden;             /* ✅ evita “blanco” por arrastre lateral */
+  overscroll-behavior-x: none;    /* ✅ evita rebote horizontal */
+}
+
 html {
   scroll-behavior: smooth;
 }
 
+/* ===============================
+   BODY
+================================ */
 body {
   font-family: "Montserrat", system-ui, sans-serif;
-  background: var(--bg); /* CORREGIDO */
   color: var(--text);
   transition: var(--transition);
+  -webkit-overflow-scrolling: touch;
+  position: relative;
 }
 
 /* ===============================
@@ -36,6 +48,7 @@ a {
 ================================ */
 main {
   padding-top: 140px; /* navbar + fila 2 */
+  background: var(--bg); /* ✅ por si alguna vista no pone fondo */
 }
 
 /* ===============================
@@ -53,23 +66,14 @@ main {
   transform: translateY(0);
 }
 
-/* ===============================
-   VARIANTE DESDE ABAJO
-================================ */
 .reveal.from-bottom {
   transform: translateY(90px);
 }
 
-/* ===============================
-   VARIANTE DESDE ARRIBA
-================================ */
 .reveal.from-top {
   transform: translateY(-90px);
 }
 
-/* ===============================
-   VARIANTE LATERAL
-================================ */
 .reveal.from-left {
   transform: translateX(-90px);
 }

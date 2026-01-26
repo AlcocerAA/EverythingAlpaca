@@ -25,6 +25,9 @@
 
   /* ✅ evita que el cursor/drag seleccione texto o imagenes */
   -webkit-user-drag: none;
+
+  /* ✅ extra FIX: recorta 1px raro en algunos browsers */
+  contain: paint;
 }
 
 /* track */
@@ -37,7 +40,15 @@
   flex-wrap: nowrap;
 
   /* ✅ evita “gaps” por render subpixel */
-  transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  /* ✅ FIX REAL: el track también debe tener fondo */
+  background: #fffded;
+
+  /* ✅ FIX REAL: evita que se “vea” un borde blanco al mover fuerte */
+  padding-right: 2px;
 }
 
 /* slide grande */
@@ -55,7 +66,9 @@
   display: block;
 
   /* ✅ mejora render y evita cortes raros */
-  transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* sombreado elegante */
@@ -103,7 +116,6 @@
   bottom: 0;
   width: 14%;
   z-index: 10;
-  /* invisible, pero usable */
 
   /* ✅ para que se sienta como control (sin seleccionar) */
   -webkit-tap-highlight-color: transparent;

@@ -6,6 +6,9 @@
   --brown: #5a4632;
   --dark: #1b1b1b;
   --olive: #6b705c;
+  --bg: #fffded;
+  --text: #1f1f1f;
+  --transition: 0.25s ease;
 
   /* ===============================
      TEXTO

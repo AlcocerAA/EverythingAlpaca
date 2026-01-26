@@ -10,7 +10,7 @@ export default function SustainabilityPage() {
         subtitle: "Crafted with respect for nature, people, and alpacas.",
         cta: "VISIT THE SHOP",
         href: "https://shop.everything-alpaca.com/",
-        image: "/sustainability/hero/hero-1.jpg",
+        image: "/bannersustainability/hero/hero-1.jpg",
       },
     ],
     []

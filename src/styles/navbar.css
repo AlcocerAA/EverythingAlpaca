@@ -41,27 +41,35 @@ body {
 
 .brand-text {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.45rem;
+  font-size: 1.4rem;
   font-weight: 500;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.28em;
   color: #ffffff;
   transition: all 0.3s ease;
 }
 
+/* ===============================
+   LOGO (FIX: blanco arriba / negro al hacer scroll)
+================================ */
 .brand-logo {
-  height: 30px;
+  height: 50px;
+  transition: height 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+
+  /* ✅ En hero/transparente: blanco */
   filter: brightness(0) invert(1);
-  transition: height 0.3s ease;
 }
 
 .navbar.scrolled .brand-logo {
-  height: 24px;
-  filter: none;
+  height: 40px;
+
+  /* ✅ Forzar a negro real (aunque el archivo sea blanco/coloreado) */
+  filter: brightness(0) saturate(100%);
+  opacity: 0.95;
 }
 
 .navbar.scrolled .brand-text {
   font-size: 1.2rem;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.14em;
   color: #1f1f1f;
 }
 
@@ -235,21 +243,17 @@ body {
    MOBILE LOGO FIX
 ================================ */
 @media (max-width: 640px) {
-  .navbar {
-    padding-top: env(safe-area-inset-top);
-  }
-
   .navbar-top {
-    padding: 22px 0 16px;
-  }
-
-  .brand-text {
-    font-size: 1.15rem;
-    letter-spacing: 0.22em;
+    gap: 10px;
   }
 
   .brand-logo {
-    height: 22px;
+    height: 28px;
+  }
+
+  .brand-text {
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
   }
 }
 

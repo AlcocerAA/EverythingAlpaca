@@ -4,11 +4,11 @@
   margin: 0;
 }
 
-/* ✅ altura más pequeña tipo "Us" */
+/* ✅ altura GRANDE como antes */
 .hero__wrap {
   position: relative;
   width: 100%;
-  height: clamp(420px, 100vh, 620px);
+  height: clamp(720px, 100vh, 980px); /* ✅ antes era más grande */
   overflow: hidden;
   background: #fffded;
 }
@@ -142,7 +142,7 @@
 /* responsive */
 @media (max-width: 640px) {
   .hero__wrap {
-    height: clamp(320px, 52vh, 440px);
+    height: clamp(520px, 78vh, 680px); /* ✅ mobile también grande */
   }
 
   .hero__content {

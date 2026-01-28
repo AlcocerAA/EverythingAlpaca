@@ -1,12 +1,14 @@
 .products {
   background: #fffded;
-  padding: 72px 64px;
+  padding: 72px 0;
+  overflow-x: hidden;
 }
 
 /* Header */
 .products-head {
   text-align: center;
   margin-bottom: 40px;
+  padding: 0 64px;
 }
 
 .products-head h2 {
@@ -24,47 +26,124 @@
   font-size: 0.95rem;
 }
 
-/* Grid */
-.products-grid {
-  max-width: 1240px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
+/* =========================================================
+   CARRUSEL
+========================================================= */
+.products-wrap {
+  width: 100%;
+  margin: 0;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y pinch-zoom;
+  background: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Card */
+.products-viewport {
+  width: 100%;
+  overflow: hidden;
+  background: #fffded; /* evita blanco */
+}
+
+.products-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.products-slide {
+  flex: 0 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hold zones */
+.products-hold-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 12%;
+  z-index: 10;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.products-hold-zone.left {
+  left: 0;
+}
+
+.products-hold-zone.right {
+  right: 0;
+}
+
+.products-hold-zone.left:hover {
+  cursor: w-resize;
+}
+.products-hold-zone.right:hover {
+  cursor: e-resize;
+}
+
+/* =========================================================
+   Cards
+========================================================= */
 .product-card {
   display: block;
   text-decoration: none;
   color: #1f1f1f;
 }
 
-/* Media */
 .product-media {
   width: 100%;
   aspect-ratio: 3 / 4;
-  background: #ffffff;
+  background: #fffded;
   overflow: hidden;
   position: relative;
   border-radius: 0;
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.08);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
+
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
 }
 
 .product-card:hover .product-media {
-  transform: translateY(-4px);
-  box-shadow: 0 24px 58px rgba(0, 0, 0, 0.11);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
-/* PNG sin fondo */
+/* capas */
 .product-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: center;
-  padding: 34px;
+  padding: 22px;
   background: transparent;
+
+  -webkit-user-drag: none;
+  user-select: none;
+
+  transform: translateZ(0);
+}
+
+.product-img-base {
+  opacity: 1;
+}
+
+.product-img-incoming {
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+
+.product-img-incoming.is-visible {
+  opacity: 1;
 }
 
 /* Ojito */
@@ -91,23 +170,24 @@
 
 /* Texto abajo */
 .product-meta {
-  margin-top: 16px;
+  margin-top: 14px;
   display: flex;
   justify-content: center;
-  padding-top: 8px;
+  padding: 0 8px 12px;
 }
 
 .product-name {
   text-align: center;
   width: 100%;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.05rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 1.02rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  color: rgba(0, 0, 0, 0.78);
 }
 
-/* Botón SEE MORE (rectangular elegante) */
+/* Botón SEE MORE */
 .products-more {
   display: flex;
   justify-content: center;
@@ -133,53 +213,41 @@
   opacity: 0.92;
 }
 
-/* Responsive */
+/* =========================================================
+   Responsive
+========================================================= */
 @media (max-width: 1024px) {
   .products {
-    padding: 64px 32px;
+    padding: 64px 0;
   }
 
-  .products-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
+  .products-head {
+    padding: 0 32px;
+  }
+
+  .products-hold-zone {
+    width: 16%;
+  }
+
+  .product-img {
+    padding: 20px;
   }
 }
 
 @media (max-width: 640px) {
   .products {
-    padding: 56px 22px;
+    padding: 56px 0;
   }
 
-  /* ✅ MOBILE = CARRUSEL HORIZONTAL (sin bugs) */
-  .products-grid {
-    max-width: 100%;          /* ✅ para que no limite el carrusel */
-    margin: 0;                /* ✅ full ancho para deslizar bien */
-    display: flex;            /* ✅ ya no grid en mobile */
-    gap: 16px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 12px;
-    padding-left: 2px;        /* ✅ evita que se corte la sombra */
-    padding-right: 2px;       /* ✅ evita que se corte la sombra */
+  .products-head {
+    padding: 0 22px;
   }
 
-  /* ✅ ocultar scrollbar */
-  .products-grid::-webkit-scrollbar {
-    display: none;
-  }
-  .products-grid {
-    scrollbar-width: none;
-  }
-
-  /* ✅ cada card ocupa casi toda la pantalla (ajustable) */
-  .product-card {
-    flex: 0 0 82%;
-    scroll-snap-align: start;
+  .products-hold-zone {
+    width: 20%;
   }
 
   .product-img {
-    padding: 26px;
+    padding: 18px;
   }
 }

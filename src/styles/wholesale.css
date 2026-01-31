@@ -8,33 +8,24 @@
   background: #fffded;
 }
 
-/* VIDEO FONDO */
+/* VIDEO */
 .wholesale-bgvid {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
   z-index: 0;
 }
 
-/* OVERLAY OSCURO PERO VISIBLE */
+/* OVERLAY */
 .wholesale-overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
   background:
-    radial-gradient(
-      900px 520px at 50% 35%,
-      rgba(0, 0, 0, 0.425),
-      rgba(0, 0, 0, 0.13)
-    ),
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.075),
-      rgba(0, 0, 0, 0.123)
-    );
+    radial-gradient(900px 520px at 50% 35%, rgba(0,0,0,0.42), rgba(0,0,0,0.13)),
+    linear-gradient(to bottom, rgba(0,0,0,0.08), rgba(0,0,0,0.12));
 }
 
 /* CONTENIDO */
@@ -46,13 +37,12 @@
   padding: 130px 0 80px;
 }
 
-/* TEXTO SUPERIOR BLANCO */
 .wholesale-title {
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(2.6rem, 5vw, 3.6rem);
   letter-spacing: 0.18em;
-  margin: 0 0 16px;
-  color: #ffffff;
+  margin-bottom: 16px;
+  color: #fff;
 }
 
 .wholesale-subtitle {
@@ -64,15 +54,15 @@
   color: rgba(255,255,255,0.9);
 }
 
-/* CARD BLANCA (INTACTA) */
+/* CARD */
 .wholesale-card {
   background: rgba(255,255,255,0.86);
-  border: 1px solid rgba(0,0,0,0.10);
   border-radius: 22px;
   padding: 42px 38px 48px;
   box-shadow: 0 18px 44px rgba(0,0,0,0.18);
 }
 
+/* GRID INFO */
 .wholesale-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -81,7 +71,6 @@
 
 .wholesale-box {
   background: rgba(255,255,255,0.92);
-  border: 1px solid rgba(0,0,0,0.10);
   border-radius: 16px;
   padding: 22px 20px;
   text-align: left;
@@ -91,8 +80,7 @@
   font-family: "Montserrat", sans-serif;
   font-size: 0.85rem;
   letter-spacing: 0.18em;
-  margin: 0 0 10px;
-  color: #1f1f1f;
+  margin-bottom: 10px;
   text-transform: uppercase;
 }
 
@@ -100,25 +88,53 @@
   font-family: "Montserrat", sans-serif;
   font-size: 0.92rem;
   line-height: 1.55;
-  margin: 0;
+}
+
+/* CTA ROW */
+.wholesale-cta-row {
+  margin-top: 44px;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+}
+
+.wholesale-cta-block {
+  text-align: center;
+  max-width: 280px;
+}
+
+.wholesale-cta-block p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+  margin-bottom: 14px;
   color: #1f1f1f;
 }
 
+/* BOTONES NEGROS */
 .wholesale-btn {
   display: inline-block;
-  margin-top: 36px;
   padding: 14px 36px;
   border-radius: 999px;
   background: #1f1f1f;
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   font-family: "Montserrat", sans-serif;
   font-size: 0.85rem;
   letter-spacing: 0.2em;
 }
 
+/* MOBILE */
 @media (max-width: 768px) {
-  .wholesale-grid { grid-template-columns: 1fr; }
-  .wholesale-card { padding: 32px 22px 36px; }
-  .wholesale-content { padding: 120px 0 70px; }
+  .wholesale-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wholesale-cta-row {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .wholesale-card {
+    padding: 32px 22px 36px;
+  }
 }

@@ -9,14 +9,20 @@ export default function Carousel() {
       {
         id: "s1",
         image: "/hero/slide-1.jpg",
-        href: "https://shop.everything-alpaca.com/Knitted-Mens-Infinity-Scarf-_p_685.html", // <-- cambia
-        title: "Knitted Men's Infinity Scarf",
+        href: "https://shop.everything-alpaca.com/Reversible-LILAC-_p_768.html", // <-- cambia
+        title: "Reversible LILAC",
       },
       {
         id: "s2",
         image: "/hero/slide-2.jpg",
-        href: "https://shop.everything-alpaca.com/Plaid-Scarf_p_214.html", // <-- cambia
-        title: "Plaid Scarf",
+        href: "https://shop.everything-alpaca.com/Ribbed-Beanie_p_876.html", // <-- cambia
+        title: "Ribbed Beanie",
+      },
+      {
+        id: "s3",
+        image: "/hero/slide-3.jpg",
+        href: "https://shop.everything-alpaca.com/Reversible-Fingerless-Gloves-_p_875.html", // <-- cambia
+        title: "Reversible Fingerless Gloves",
       },
     ],
     []

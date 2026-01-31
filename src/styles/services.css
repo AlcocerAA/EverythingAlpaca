@@ -61,7 +61,7 @@
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* CARD BLANCA (INTACTA) */
@@ -104,6 +104,30 @@
   color: #1f1f1f;
 }
 
+/* ✅ SUBSECCIÓN (KNIT dentro de MANUFACTURING) */
+.service-sub {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.service-sub h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  margin: 0 0 8px;
+  color: #1f1f1f;
+  text-transform: uppercase;
+}
+
+.service-sub p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin: 0;
+  color: #1f1f1f;
+}
+
 .services-btn {
   display: inline-block;
   margin-top: 34px;
@@ -118,7 +142,13 @@
 }
 
 @media (max-width: 768px) {
-  .services-grid { grid-template-columns: 1fr; }
-  .services-card { padding: 32px 22px 36px; }
-  .services-content { padding: 110px 0 60px; }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .services-card {
+    padding: 32px 22px 36px;
+  }
+  .services-content {
+    padding: 110px 0 60px;
+  }
 }

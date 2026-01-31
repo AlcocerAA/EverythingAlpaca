@@ -6,7 +6,7 @@ export default function Wholesale() {
 
   return (
     <section className="wholesale-hero">
-      {/* VIDEO FONDO (loop) */}
+      {/* VIDEO FONDO */}
       <video
         className="wholesale-bgvid"
         src="/wholesale-bg.mp4"
@@ -74,14 +74,32 @@ export default function Wholesale() {
             </div>
           </div>
 
-          <a
-            className="wholesale-btn"
-            href="https://shop.everything-alpaca.com/crm.asp?action=contactus"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {t("pages.wholesale.cta", "CLICK HERE")}
-          </a>
+          {/* CTA HORIZONTAL */}
+          <div className="wholesale-cta-row">
+            <div className="wholesale-cta-block">
+              <p>Become a wholesale customer. Contact us now.</p>
+              <a
+                href="https://shop.everything-alpaca.com/crm.asp?action=contactus"
+                target="_blank"
+                rel="noreferrer"
+                className="wholesale-btn"
+              >
+                CONTACT US NOW
+              </a>
+            </div>
+
+            <div className="wholesale-cta-block">
+              <p>Wholesale account holders access your account here.</p>
+              <a
+                href="https://shop.everything-alpaca.com"
+                target="_blank"
+                rel="noreferrer"
+                className="wholesale-btn"
+              >
+                ACCESS ACCOUNT
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

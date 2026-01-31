@@ -35,7 +35,12 @@ export default function Services() {
         <div className="services-card">
           <div className="services-grid">
             <div className="service-box">
-              <h3>{t("pages.services.items.privateLabel.title", "PROTOTYPING AND SAMPLING")}</h3>
+              <h3>
+                {t(
+                  "pages.services.items.privateLabel.title",
+                  "PROTOTYPING AND SAMPLING"
+                )}
+              </h3>
               <p>
                 {t(
                   "pages.services.items.privateLabel.text",
@@ -44,24 +49,28 @@ export default function Services() {
               </p>
             </div>
 
+            {/* ✅ MANUFACTURING ahora incluye KNIT dentro */}
             <div className="service-box">
-              <h3>{t("pages.services.items.customization.title", "MANUFACTURING")}</h3>
+              <h3>
+                {t("pages.services.items.customization.title", "MANUFACTURING")}
+              </h3>
+
               <p>
                 {t(
                   "pages.services.items.customization.text",
                   "Woven - Scarves - Shawls - Throws - Blankets GSM capabilities vary from super lightweight pashminas to robust blankets and reversible fabrics"
                 )}
               </p>
-            </div>
 
-            <div className="service-box">
-              <h3>{t("pages.services.items.sourcing.title", "KNIT")}</h3>
-              <p>
-                {t(
-                  "pages.services.items.sourcing.text",
-                  "Knit gauge 3 to gauge 14 - Sweater - Cardigans - Jackets - Shirts - Hats - Scarves - Gloves - Socks - Capes/Wraps"
-                )}
-              </p>
+              <div className="service-sub">
+                <h4>{t("pages.services.items.sourcing.title", "KNIT")}</h4>
+                <p>
+                  {t(
+                    "pages.services.items.sourcing.text",
+                    "Knit gauge 3 to gauge 14 - Sweater - Cardigans - Jackets - Shirts - Hats - Scarves - Gloves - Socks - Capes/Wraps"
+                  )}
+                </p>
+              </div>
             </div>
 
             <div className="service-box">

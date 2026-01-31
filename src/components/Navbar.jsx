@@ -44,6 +44,8 @@ export default function Navbar() {
       { key: "home", href: "https://shop.everything-alpaca.com/Home-Decor_c_10.html" },
       { key: "socks", href: "https://shop.everything-alpaca.com/Socks_c_56.html" },
       { key: "accessories", href: "https://shop.everything-alpaca.com/Knitted-Accessories_c_9.html" },
+      { key: "Shawls", href: "https://shop.everything-alpaca.com/Woven-Scarves-and-Shawls-_c_14.html" },
+
     ],
     []
   )

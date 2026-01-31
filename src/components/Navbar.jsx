@@ -1,19 +1,17 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import "../styles/navbar.css"
-import { User, Globe, Menu, X, Check } from "lucide-react"
+import { User, Menu, X } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { Link, NavLink } from "react-router-dom"
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const [langOpen, setLangOpen] = useState(false)
   const [categoriesOpen, setCategoriesOpen] = useState(false)
   const [usOpen, setUsOpen] = useState(false)
 
   const closeTimer = useRef(null)
-  const { t, i18n } = useTranslation()
-  const currentLang = (i18n.resolvedLanguage || i18n.language || "en").split("-")[0]
+  const { t } = useTranslation()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40)
@@ -28,11 +26,6 @@ export default function Navbar() {
   const scheduleClose = (fn) => {
     clearCloseTimer()
     closeTimer.current = setTimeout(() => fn(false), 140)
-  }
-
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng)
-    setLangOpen(false)
   }
 
   const categoriesLinks = useMemo(
@@ -75,7 +68,7 @@ export default function Navbar() {
         {/* NAV */}
         <div className="navbar-bottom">
           <nav className="nav-left" onPointerEnter={clearCloseTimer}>
-            {/* ✅ 1) CATALOGO (mismo key nav.categories) */}
+            {/* 1) CATEGORIES */}
             <div
               className={`nav-item ${categoriesOpen ? "open" : ""}`}
               onPointerEnter={() => {
@@ -86,7 +79,7 @@ export default function Navbar() {
               onPointerLeave={() => scheduleClose(setCategoriesOpen)}
             >
               <a href="#" className="nav-link" onClick={(e) => e.preventDefault()}>
-                {t("nav.categories", "CATALOGO")}
+                {t("nav.categories", "CATALOG")}
               </a>
 
               <div className="nav-dropdown nav-dropdown--white">
@@ -98,17 +91,17 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* ✅ 2) SERVICES */}
+            {/* SERVICES */}
             <NavLink to="/services" className="nav-link" onPointerEnter={closeAll}>
               {t("nav.services", "SERVICES")}
             </NavLink>
 
-            {/* ✅ 3) WHOLESALE */}
+            {/* WHOLESALE */}
             <NavLink to="/wholesale" className="nav-link" onPointerEnter={closeAll}>
               {t("nav.wholesale", "WHOLESALE")}
             </NavLink>
 
-            {/* ✅ 4) US (al final) */}
+            {/* US */}
             <div
               className={`nav-item ${usOpen ? "open" : ""}`}
               onPointerEnter={() => {
@@ -145,22 +138,6 @@ export default function Navbar() {
 
           {/* RIGHT */}
           <div className="nav-right">
-            <div className="lang-wrapper">
-              <button className="nav-icon" onClick={() => setLangOpen(!langOpen)}>
-                <Globe />
-              </button>
-
-              {langOpen && (
-                <div className="lang-dropdown">
-                  {["en", "es", "de", "it"].map((lng) => (
-                    <button key={lng} onClick={() => changeLanguage(lng)}>
-                      {lng.toUpperCase()} {currentLang === lng && <Check size={14} />}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-
             <a href="https://shop.everything-alpaca.com/myaccount.asp" className="nav-icon">
               <User />
             </a>
@@ -177,9 +154,8 @@ export default function Navbar() {
             </button>
 
             <nav className="mobile-nav">
-              {/* ✅ 1) CATALOGO (mismo key nav.categories) */}
               <div className="mobile-group">
-                <div className="mobile-title">{t("nav.categories", "CATALOGO")}</div>
+                <div className="mobile-title">{t("nav.categories", "CATALOG")}</div>
                 {categoriesLinks.map((l) => (
                   <a key={l.key} href={l.href} target="_blank">
                     {t(`categories.${l.key}`, l.key)}
@@ -187,21 +163,18 @@ export default function Navbar() {
                 ))}
               </div>
 
-              {/* ✅ 2) SERVICES */}
               <div className="mobile-group">
                 <Link to="/services" onClick={() => setMenuOpen(false)}>
                   {t("nav.services", "SERVICES")}
                 </Link>
               </div>
 
-              {/* ✅ 3) WHOLESALE */}
               <div className="mobile-group">
                 <Link to="/wholesale" onClick={() => setMenuOpen(false)}>
                   {t("nav.wholesale", "WHOLESALE")}
                 </Link>
               </div>
 
-              {/* ✅ 4) US al final */}
               <div className="mobile-group">
                 <div className="mobile-title">{t("nav.us", "US")}</div>
                 {usLinks.map((l) =>

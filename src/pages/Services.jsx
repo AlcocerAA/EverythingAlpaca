@@ -48,25 +48,34 @@ export default function Services() {
               </p>
             </div>
 
-            {/* MANUFACTURING (intacto) */}
+            {/* MANUFACTURING (intacto, solo formateado como pediste) */}
             <div className="service-box">
               <h3>
                 {t("pages.services.items.customization.title", "MANUFACTURING")}
               </h3>
 
-              <p>
-                {t(
-                  "pages.services.items.customization.text",
-                  "Woven - Scarves - Shawls - Throws - Blankets GSM capabilities vary from super lightweight pashminas to robust blankets and reversible fabrics"
-                )}
-              </p>
+              {/* ✅ Woven editado como KNIT */}
+              <div className="service-sub service-sub-woven">
+                <h4>WOVEN</h4>
+                <p>
+                  Scarves - Shawls - Throws - Blankets
+                  <br />
+                  {t(
+                    "pages.services.items.customization.text",
+                    "GSM capabilities vary from super lightweight pashminas to robust blankets and reversible fabrics"
+                  )}
+                </p>
+              </div>
 
+              {/* ✅ KNIT con salto después de gauge 14 */}
               <div className="service-sub">
                 <h4>{t("pages.services.items.sourcing.title", "KNIT")}</h4>
                 <p>
+                  Knit gauge 3 to gauge 14
+                  <br />
                   {t(
                     "pages.services.items.sourcing.text",
-                    "Knit gauge 3 to gauge 14 - Sweater - Cardigans - Jackets - Shirts - Hats - Scarves - Gloves - Socks - Capes/Wraps"
+                    "Sweater - Cardigans - Jackets - Shirts - Hats - Scarves - Gloves - Socks - Capes/Wraps"
                   )}
                 </p>
               </div>

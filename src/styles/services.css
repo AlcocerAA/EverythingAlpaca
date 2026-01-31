@@ -104,7 +104,7 @@
   color: #1f1f1f;
 }
 
-/* SUB KNIT */
+/* SUBSECCIONES (WOVEN / KNIT) */
 .service-sub {
   margin-top: 14px;
   padding-top: 12px;
@@ -120,6 +120,13 @@
   text-transform: uppercase;
 }
 
+/* WOVEN: sin línea superior (es la primera) */
+.service-sub-woven {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
 /* LOW MOQ BOX */
 .service-box-center {
   text-align: center;
@@ -128,7 +135,7 @@
   justify-content: center;
 }
 
-/* 🔥 GARMENT LABELING — SOLO TEXTO + PARPADEO */
+/* GARMENT LABELING – solo texto con parpadeo */
 .service-big {
   margin-top: 8px;
   font-family: "Montserrat", sans-serif;
@@ -137,11 +144,10 @@
   text-transform: uppercase;
   letter-spacing: 0.22em;
   color: #1f1f1f;
-
   animation: textBlink 1.6s ease-in-out infinite;
 }
 
-/* Parpadeo limpio */
+/* Parpadeo */
 @keyframes textBlink {
   0% {
     opacity: 1;
@@ -154,7 +160,7 @@
   }
 }
 
-/* BOTON */
+/* BOTÓN */
 .services-btn {
   display: inline-block;
   margin-top: 34px;
@@ -173,9 +179,11 @@
   .services-grid {
     grid-template-columns: 1fr;
   }
+
   .services-card {
     padding: 32px 22px 36px;
   }
+
   .services-content {
     padding: 110px 0 60px;
   }

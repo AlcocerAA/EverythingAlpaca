@@ -6,25 +6,21 @@
     "wholesale": "WHOLESALE"
   },
   "categories": {
-    "women": "WOMEN",
-    "men": "MEN",
-    "collectables": "COLLECTABLES",
-    "andean": "ANDEAN FASHION",
-    "home": "HOME",
-    "socks": "SOCKS",
-    "accessories": "ACCESSORIES"
+    "women": "Women",
+    "men": "Men",
+    "collectables": "Collectables",
+    "andean": "Andean Fashion",
+    "home": "Home Decor",
+    "socks": "Socks",
+    "accessories": "Accessories"
+  },
+  "us": {
+    "contact": "Contact Us",
+    "sustainability": "Sustainability",
+    "visionMission": "Our Vision & Mission"
   },
   "sections": {
-    "title": "OUR COMMITMENT BEYOND SOFTNESS",
-    "more": "VIEW MORE"
-  },
-  "about": {
-    "title": "About us",
-    "text": "Everything Alpaca was founded in 1998. We design and manufacture premium textiles focused on fine natural fibers, primarily alpaca wool. Our main office and distribution center are located in Los Angeles, United States, while our production center is based in Arequipa, Peru. We serve the American, Canadian, and South American markets."
-  },
-  "mission": {
-    "title": "Our mission",
-    "text": "Our mission is to deliver finished products of exceptional quality and long-lasting durability. We grow alongside our suppliers and artisans while promoting ethical and sustainable production with minimal environmental impact."
+    "more": "SEE MORE"
   },
   "products": {
     "featuredTitle": "Featured Products",
@@ -39,45 +35,136 @@
       "thermal": "Thermal Underwear"
     }
   },
-  "sustainability": {
-    "items": {
-      "eco": {
-        "title": "Eco-Friendly",
-        "text": "Alpaca fiber is one of the most sustainable natural fibers, biodegradable and requiring minimal environmental impact."
-      },
-      "fair": {
-        "title": "Fair Trade",
-        "text": "We work closely with artisans and suppliers, ensuring ethical and fair trade practices at every stage."
-      },
-      "zero": {
-        "title": "Zero Waste",
-        "text": "Our production minimizes waste through responsible sourcing and efficient manufacturing processes."
-      },
-      "animal": {
-        "title": "Animal Welfare",
-        "text": "We are committed to ethical treatment and respectful care of alpacas throughout the supply chain."
-      }
-    }
-  },
   "footer": {
-    "description": "Luxury Peruvian textiles, crafted with care and consciousness.",
+    "description": "Timeless alpaca garments crafted with care and responsibility.",
+    "rights": "All rights reserved.",
     "links": {
       "title": "LINKS",
       "terms": "Terms and Conditions",
       "productIndex": "Product Index",
       "affiliate": "Become an Affiliate",
       "categoryIndex": "Category Index"
+    }
+  },
+  "pages": {
+    "services": {
+      "heroTitle": "SERVICES",
+      "heroSubtitle": "We offer tailored alpaca solutions for brands, boutiques, and custom projects — from product sourcing to private label.",
+      "contactCta": "CONTACT US",
+      "items": {
+        "privateLabel": {
+          "title": "PRIVATE LABEL",
+          "text": "Custom products with your brand identity: labels, packaging, and curated materials."
+        },
+        "customization": {
+          "title": "CUSTOMIZATION",
+          "text": "Colors, patterns, and finishes adapted to your collection and market needs."
+        },
+        "sourcing": {
+          "title": "PRODUCT SOURCING",
+          "text": "Help selecting the right alpaca items for your audience: apparel, accessories and home decor."
+        },
+        "logistics": {
+          "title": "LOGISTICS SUPPORT",
+          "text": "Guidance for shipping, packing, documentation and order planning."
+        }
+      }
     },
-    "subscribe": {
-      "title": "Contact or Subscribe",
-      "text": "Subscribe to receive exclusive offers and updates.",
-      "placeholder": "Your email",
-      "button": "Send",
-      "sent": "Sent!",
-      "error": "An error occurred.",
-      "mailSubject": "Subscription / Contact",
-      "mailBody": "Hello, I would like to subscribe and receive information."
+    "wholesale": {
+      "heroTitle": "WHOLESALE",
+      "heroSubtitle": "Wholesale options for retailers and distributors. Build your assortment with premium alpaca pieces and consistent stock planning.",
+      "cta": "REQUEST INFO",
+      "items": {
+        "retail": {
+          "title": "Retail Programs",
+          "text": "Assortment recommendations based on season, location and target customers."
+        },
+        "volume": {
+          "title": "Volume Pricing",
+          "text": "Competitive wholesale rates for bulk purchases and long-term partnerships."
+        },
+        "catalog": {
+          "title": "Catalog Planning",
+          "text": "We help you select best-sellers and organize collections for your store."
+        },
+        "support": {
+          "title": "Support",
+          "text": "Reliable communication, order tracking, and post-sale assistance."
+        }
+      }
     },
-    "rights": "All rights reserved."
+    "us": {
+      "hero": {
+        "title": "Our Vision & Mission",
+        "subtitle": "Timeless alpaca pieces crafted in Peru — designed to last, made with care.",
+        "cta": "VISIT THE SHOP"
+      },
+      "about": {
+        "kicker": "ABOUT US",
+        "title": "Everything Alpaca",
+        "p1": "Everything Alpaca was established in 1998. We design and manufacture textile garments focusing on natural fine fibers, mainly alpaca wool.",
+        "p2": "Everything Alpaca is present in the American, Canadian and South American markets.",
+        "note": "Designed in the U.S. • Crafted in Arequipa, Peru"
+      },
+      "mission": {
+        "kicker": "OUR MISSION",
+        "p1": "Our mission is to provide finished garments of exceptional quality and durability.",
+        "p2": "We have 4 production lines: Garments, Accessories, Home Decor and Andean Fashion."
+      },
+      "vision": {
+        "kicker": "OUR VISION",
+        "p1": "To be a trusted alpaca brand worldwide.",
+        "quote": "OUR COMMITMENT IS AIMED AT EXCELLENT CUSTOMER SERVICE AND YOUR COMPLETE SATISFACTION."
+      },
+      "contact": {
+        "kicker": "CONTACT US",
+        "wholesaleLabel": "Wholesale (USA)",
+        "otherLabel": "Other Countries",
+        "hoursLabel": "Hours",
+        "hoursText": "9.00 to 6.00 WEST.",
+        "addressLabel": "Address",
+        "addressText": "Ayacucho Street 204, Cercado, Arequipa – Perú"
+      }
+    },
+    "sus": {
+      "hero": {
+        "title": "Sustainability",
+        "subtitle": "Crafted with respect for nature, people, and alpacas.",
+        "cta": "VISIT THE SHOP"
+      },
+      "quick": {
+        "vision": "Our Vision & Mission",
+        "contact": "Contact Us",
+        "shop": "Shop"
+      },
+      "approach": {
+        "kicker": "OUR APPROACH",
+        "title": "Sustainability at Everything Alpaca",
+        "text": "We focus on natural fine fibers, responsible production, and long-term quality."
+      },
+      "sideNote": "Natural fiber • Ethical production • Designed to last",
+      "commit": {
+        "kicker": "OUR COMMITMENTS",
+        "title": "What we stand for",
+        "items": {
+          "animal": {
+            "title": "Animal Welfare",
+            "text": "Respectful care and ethical treatment of alpacas."
+          },
+          "sourcing": {
+            "title": "Responsible Sourcing",
+            "text": "Natural fibers and mindful sourcing."
+          },
+          "process": {
+            "title": "Low-Impact Process",
+            "text": "Efficiency to reduce waste."
+          },
+          "quality": {
+            "title": "Long-Term Quality",
+            "text": "Durability is sustainability."
+          }
+        }
+      }
+    }
   }
 }

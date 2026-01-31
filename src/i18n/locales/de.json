@@ -6,78 +6,165 @@
     "wholesale": "GROSSHANDEL"
   },
   "categories": {
-    "women": "DAMEN",
-    "men": "HERREN",
-    "collectables": "SAMMLERSTÜCKE",
-    "andean": "ANDEEN-MODE",
-    "home": "ZUHAUSE",
-    "socks": "SOCKEN",
-    "accessories": "ACCESSOIRES"
+    "women": "Damen",
+    "men": "Herren",
+    "collectables": "Sammlerstücke",
+    "andean": "Andine Mode",
+    "home": "Wohnaccessoires",
+    "socks": "Socken",
+    "accessories": "Accessoires"
+  },
+  "us": {
+    "contact": "Kontakt",
+    "sustainability": "Nachhaltigkeit",
+    "visionMission": "Unsere Vision & Mission"
   },
   "sections": {
-    "title": "UNSER ENGAGEMENT ÜBER WEICHHEIT HINAUS",
-    "more": "MEHR ANSEHEN"
-  },
-  "about": {
-    "title": "Über uns",
-    "text": "Everything Alpaca wurde 1998 gegründet. Wir entwerfen und produzieren Premium-Textilien aus feinen Naturfasern, vor allem Alpakawolle. Unser Hauptbüro und Distributionszentrum befinden sich in Los Angeles (USA), unser Produktionszentrum in Arequipa (Peru). Wir bedienen den US-, kanadischen und südamerikanischen Markt."
-  },
-  "mission": {
-    "title": "Unsere Mission",
-    "text": "Unsere Mission ist es, Produkte von außergewöhnlicher Qualität und langer Haltbarkeit zu liefern. Wir wachsen gemeinsam mit Lieferanten und Kunsthandwerkern und fördern eine ethische, nachhaltige Produktion mit minimaler Umweltbelastung."
+    "more": "MEHR ANZEIGEN"
   },
   "products": {
     "featuredTitle": "Ausgewählte Produkte",
     "featuredSubtitle": "Eine kuratierte Auswahl unserer besten Stücke aus Alpakafaser.",
-    "seeMore": "MEHR PRODUKTE ANSEHEN",
+    "seeMore": "MEHR PRODUKTE ANZEIGEN",
     "items": {
       "blanket": "Decke",
-      "hat": "Molinet-Mütze",
-      "hatChunky": "Chunky-Mütze mit Pompon",
-      "reversible": "Wendeschal Lila",
-      "chocolate": "Fischgrät-Sofaüberwurf",
-      "thermal": "Thermo-Unterwäsche"
-    }
-  },
-  "sustainability": {
-    "items": {
-      "eco": {
-        "title": "Umweltfreundlich",
-        "text": "Alpakafaser ist eine der nachhaltigsten Naturfasern: biologisch abbaubar und mit minimaler Umweltbelastung."
-      },
-      "fair": {
-        "title": "Fair Trade",
-        "text": "Wir arbeiten eng mit Kunsthandwerkern und Lieferanten zusammen und achten in jeder Phase auf faire und ethische Praktiken."
-      },
-      "zero": {
-        "title": "Zero Waste",
-        "text": "Unsere Produktion minimiert Abfall durch verantwortungsvolle Beschaffung und effiziente Herstellungsprozesse."
-      },
-      "animal": {
-        "title": "Tierschutz",
-        "text": "Wir setzen uns für eine ethische Behandlung und respektvolle Pflege der Alpakas entlang der gesamten Lieferkette ein."
-      }
+      "hat": "Molinet-Hut",
+      "hatChunky": "Chunky-Hut mit Pompon",
+      "reversible": "Wendbar Lila",
+      "chocolate": "Fischgrät-Sofadecke",
+      "thermal": "Thermounterwäsche"
     }
   },
   "footer": {
-    "description": "Luxuriöse peruanische Textilien, mit Sorgfalt und Bewusstsein gefertigt.",
+    "description": "Zeitlose Alpakabekleidung, mit Sorgfalt und Verantwortung gefertigt.",
+    "rights": "Alle Rechte vorbehalten.",
     "links": {
       "title": "LINKS",
       "terms": "Allgemeine Geschäftsbedingungen",
       "productIndex": "Produktindex",
       "affiliate": "Affiliate werden",
-      "categoryIndex": "Kategorienindex"
+      "categoryIndex": "Kategorieindex"
+    }
+  },
+  "pages": {
+    "services": {
+      "heroTitle": "DIENSTLEISTUNGEN",
+      "heroSubtitle": "Wir bieten maßgeschneiderte Alpakalösungen für Marken, Boutiquen und individuelle Projekte — von der Produktauswahl bis zum Private Label.",
+      "contactCta": "KONTAKTIEREN SIE UNS",
+      "items": {
+        "privateLabel": {
+          "title": "PRIVATE LABEL",
+          "text": "Individuelle Produkte mit Ihrer Markenidentität: Etiketten, Verpackungen und ausgewählte Materialien."
+        },
+        "customization": {
+          "title": "ANPASSUNG",
+          "text": "Farben, Muster und Veredelungen angepasst an Ihre Kollektion und Ihren Markt."
+        },
+        "sourcing": {
+          "title": "PRODUKTAUSWAHL",
+          "text": "Unterstützung bei der Auswahl der passenden Alpakaprodukte für Ihre Zielgruppe: Bekleidung, Accessoires und Wohnaccessoires."
+        },
+        "logistics": {
+          "title": "LOGISTISCHE UNTERSTÜTZUNG",
+          "text": "Beratung zu Versand, Verpackung, Dokumentation und Bestellplanung."
+        }
+      }
     },
-    "subscribe": {
-      "title": "Kontakt oder Abonnieren",
-      "text": "Abonnieren Sie, um exklusive Angebote und Updates zu erhalten.",
-      "placeholder": "Ihre E-Mail",
-      "button": "Senden",
-      "sent": "Gesendet!",
-      "error": "Ein Fehler ist aufgetreten.",
-      "mailSubject": "Abonnement / Kontakt",
-      "mailBody": "Hallo, ich möchte abonnieren und Informationen erhalten."
+    "wholesale": {
+      "heroTitle": "GROSSHANDEL",
+      "heroSubtitle": "Großhandelsoptionen für Einzelhändler und Distributoren. Stellen Sie Ihr Sortiment mit hochwertigen Alpakaprodukten und konstanter Lagerplanung zusammen.",
+      "cta": "INFORMATIONEN ANFORDERN",
+      "items": {
+        "retail": {
+          "title": "Einzelhandelsprogramme",
+          "text": "Sortimentsempfehlungen basierend auf Saison, Standort und Zielkunden."
+        },
+        "volume": {
+          "title": "Mengenpreise",
+          "text": "Wettbewerbsfähige Großhandelspreise für Großbestellungen und langfristige Partnerschaften."
+        },
+        "catalog": {
+          "title": "Katalogplanung",
+          "text": "Wir helfen Ihnen bei der Auswahl der Bestseller und der Organisation der Kollektionen für Ihr Geschäft."
+        },
+        "support": {
+          "title": "Support",
+          "text": "Zuverlässige Kommunikation, Auftragsverfolgung und After-Sales-Service."
+        }
+      }
     },
-    "rights": "Alle Rechte vorbehalten."
+    "us": {
+      "hero": {
+        "title": "Unsere Vision & Mission",
+        "subtitle": "Zeitlose Alpakaprodukte aus Peru — entworfen für Langlebigkeit.",
+        "cta": "ZUM SHOP"
+      },
+      "about": {
+        "kicker": "ÜBER UNS",
+        "title": "Everything Alpaca",
+        "p1": "Everything Alpaca wurde 1998 gegründet. Wir entwerfen und produzieren Textilbekleidung mit Fokus auf feine Naturfasern, hauptsächlich Alpakawolle.",
+        "p2": "Everything Alpaca ist auf den amerikanischen, kanadischen und südamerikanischen Märkten vertreten.",
+        "note": "Entworfen in den USA • Gefertigt in Arequipa, Peru"
+      },
+      "mission": {
+        "kicker": "UNSERE MISSION",
+        "p1": "Unsere Mission ist es, fertige Kleidungsstücke von außergewöhnlicher Qualität und Langlebigkeit anzubieten.",
+        "p2": "Wir verfügen über 4 Produktionslinien: Bekleidung, Accessoires, Wohnaccessoires und Andine Mode."
+      },
+      "vision": {
+        "kicker": "UNSERE VISION",
+        "p1": "Eine weltweit vertrauenswürdige Alpakamarke zu werden.",
+        "quote": "UNSER ENGAGEMENT GILT EXZELLENTEM KUNDENSERVICE UND IHRER VOLLSTÄNDIGEN ZUFRIEDENHEIT."
+      },
+      "contact": {
+        "kicker": "KONTAKT",
+        "wholesaleLabel": "Großhandel (USA)",
+        "otherLabel": "Andere Länder",
+        "hoursLabel": "Öffnungszeiten",
+        "hoursText": "9:00 – 18:00 WESTLICHE ZEIT.",
+        "addressLabel": "Adresse",
+        "addressText": "Ayacucho-Straße 204, Cercado, Arequipa – Peru"
+      }
+    },
+    "sus": {
+      "hero": {
+        "title": "Nachhaltigkeit",
+        "subtitle": "Mit Respekt für Natur, Menschen und Alpakas gefertigt.",
+        "cta": "ZUM SHOP"
+      },
+      "quick": {
+        "vision": "Unsere Vision & Mission",
+        "contact": "Kontakt",
+        "shop": "Shop"
+      },
+      "approach": {
+        "kicker": "UNSER ANSATZ",
+        "title": "Nachhaltigkeit bei Everything Alpaca",
+        "text": "Wir konzentrieren uns auf feine Naturfasern, verantwortungsvolle Produktion und langfristige Qualität."
+      },
+      "sideNote": "Naturfaser • Ethische Produktion • Für Langlebigkeit entworfen",
+      "commit": {
+        "kicker": "UNSERE VERPFLICHTUNGEN",
+        "title": "Wofür wir stehen",
+        "items": {
+          "animal": {
+            "title": "Tierschutz",
+            "text": "Respektvolle Pflege und ethische Behandlung der Alpakas."
+          },
+          "sourcing": {
+            "title": "Verantwortungsvolle Beschaffung",
+            "text": "Naturfasern und bewusste Beschaffung."
+          },
+          "process": {
+            "title": "Ressourcenschonende Prozesse",
+            "text": "Effizienz zur Reduzierung von Abfällen."
+          },
+          "quality": {
+            "title": "Langfristige Qualität",
+            "text": "Langlebigkeit ist Nachhaltigkeit."
+          }
+        }
+      }
+    }
   }
 }

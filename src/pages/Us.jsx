@@ -1,4 +1,3 @@
-import { motion } from "framer-motion"
 import "../styles/us.css"
 import { useTranslation } from "react-i18next"
 
@@ -15,49 +14,30 @@ export default function Us() {
         <div className="us-hero__bg" aria-hidden="true" />
 
         <div className="us-hero__content">
-          <motion.h1
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, ease: "easeOut" }}
-          >
-            {t("pages.us.hero.title", "Our Vision & Mission")}
-          </motion.h1>
+          <h1>{t("pages.us.hero.title", "Our Vision & Mission")}</h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.08, ease: "easeOut" }}
-          >
+          <p>
             {t(
               "pages.us.hero.subtitle",
               "Timeless alpaca pieces crafted in Peru — designed to last, made with care."
             )}
-          </motion.p>
+          </p>
 
-          <motion.a
+          <a
             className="us-hero__cta"
             href="https://shop.everything-alpaca.com/"
             target="_blank"
             rel="noreferrer"
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.16, ease: "easeOut" }}
           >
             {t("pages.us.hero.cta", "VISIT THE SHOP")}
-          </motion.a>
+          </a>
         </div>
       </section>
 
       {/* CONTENT */}
       <section className="us-wrap">
         <div className="us-grid">
-          <motion.section
-            className="us-card"
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.55, ease: "easeOut" }}
-          >
+          <section className="us-card">
             <div className="us-card__kicker">{t("pages.us.about.kicker", "ABOUT US")}</div>
             <h2 className="us-card__title">{t("pages.us.about.title", "Everything Alpaca")}</h2>
 
@@ -74,15 +54,9 @@ export default function Us() {
                 "Everything Alpaca is present in the American, Canadian and South American markets."
               )}
             </p>
-          </motion.section>
+          </section>
 
-          <motion.aside
-            className="us-side"
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.55, delay: 0.05, ease: "easeOut" }}
-          >
+          <aside className="us-side">
             {/* ✅ Imagen:
                 /public/us/about.jpg
             */}
@@ -90,17 +64,11 @@ export default function Us() {
             <div className="us-side__note">
               {t("pages.us.about.note", "Designed in the U.S. • Crafted in Arequipa, Peru")}
             </div>
-          </motion.aside>
+          </aside>
         </div>
 
         <div className="us-two">
-          <motion.section
-            className="us-panel"
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.55, ease: "easeOut" }}
-          >
+          <section className="us-panel">
             <div className="us-panel__kicker">{t("pages.us.mission.kicker", "OUR MISSION")}</div>
             <p className="us-panel__text">
               {t(
@@ -114,15 +82,9 @@ export default function Us() {
                 "We have 4 production lines: Garments, Accessories, Home Decor and Andean Fashion."
               )}
             </p>
-          </motion.section>
+          </section>
 
-          <motion.section
-            className="us-panel"
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.55, delay: 0.06, ease: "easeOut" }}
-          >
+          <section className="us-panel">
             <div className="us-panel__kicker">{t("pages.us.vision.kicker", "OUR VISION")}</div>
             <p className="us-panel__text">
               {t(
@@ -137,16 +99,10 @@ export default function Us() {
                 "“OUR COMMITMENT IS AIMED AT EXCELLENT CUSTOMER SERVICE AND YOUR COMPLETE SATISFACTION.”"
               )}
             </div>
-          </motion.section>
+          </section>
         </div>
 
-        <motion.section
-          className="us-contact"
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.55, ease: "easeOut" }}
-        >
+        <section className="us-contact">
           <div className="us-contact__kicker">{t("pages.us.contact.kicker", "CONTACT US")}</div>
 
           <div className="us-contact__grid">
@@ -177,8 +133,8 @@ export default function Us() {
             </div>
           </div>
 
-          {/* ✅ BOTÓN ELIMINADO como pediste */}
-        </motion.section>
+          {/* ✅ botón eliminado (como pediste) */}
+        </section>
       </section>
     </main>
   )

@@ -6,78 +6,165 @@
     "wholesale": "INGROSSO"
   },
   "categories": {
-    "women": "DONNA",
-    "men": "UOMO",
-    "collectables": "COLLEZIONABILI",
-    "andean": "MODA ANDINA",
-    "home": "CASA",
-    "socks": "CALZE",
-    "accessories": "ACCESSORI"
+    "women": "Donna",
+    "men": "Uomo",
+    "collectables": "Collezionabili",
+    "andean": "Moda Andina",
+    "home": "Arredamento Casa",
+    "socks": "Calze",
+    "accessories": "Accessori"
+  },
+  "us": {
+    "contact": "Contattaci",
+    "sustainability": "Sostenibilità",
+    "visionMission": "La Nostra Visione e Missione"
   },
   "sections": {
-    "title": "IL NOSTRO IMPEGNO OLTRE LA MORBIDEZZA",
     "more": "VEDI DI PIÙ"
-  },
-  "about": {
-    "title": "Chi siamo",
-    "text": "Everything Alpaca è stata fondata nel 1998. Progettiamo e produciamo tessili premium basati su fibre naturali pregiate, principalmente lana di alpaca. La sede principale e il centro di distribuzione sono a Los Angeles (USA), mentre la produzione è ad Arequipa, Perù. Serviamo i mercati americano, canadese e sudamericano."
-  },
-  "mission": {
-    "title": "La nostra missione",
-    "text": "La nostra missione è offrire prodotti finiti di qualità eccezionale e lunga durata. Cresciamo insieme a fornitori e artigiani promuovendo una produzione etica e sostenibile con minimo impatto ambientale."
   },
   "products": {
     "featuredTitle": "Prodotti in Evidenza",
-    "featuredSubtitle": "Una selezione curata delle nostre migliori creazioni in fibra di alpaca.",
+    "featuredSubtitle": "Una selezione curata dei nostri migliori capi in fibra di alpaca.",
     "seeMore": "VEDI PIÙ PRODOTTI",
     "items": {
       "blanket": "Coperta",
       "hat": "Cappello Molinet",
-      "hatChunky": "Cappello Chunky con Pompon",
+      "hatChunky": "Cappello Chunky con Pon Pon",
       "reversible": "Reversibile Viola",
-      "chocolate": "Coperta Divano a Spina",
-      "thermal": "Biancheria Termica"
-    }
-  },
-  "sustainability": {
-    "items": {
-      "eco": {
-        "title": "Eco-Friendly",
-        "text": "La fibra di alpaca è tra le più sostenibili: biodegradabile e con impatto ambientale minimo."
-      },
-      "fair": {
-        "title": "Commercio Equo",
-        "text": "Collaboriamo con artigiani e fornitori garantendo pratiche etiche e di commercio equo in ogni fase."
-      },
-      "zero": {
-        "title": "Zero Sprechi",
-        "text": "La nostra produzione riduce gli sprechi grazie a forniture responsabili e processi efficienti."
-      },
-      "animal": {
-        "title": "Benessere Animale",
-        "text": "Ci impegniamo per il trattamento etico e la cura rispettosa delle alpaca lungo tutta la filiera."
-      }
+      "chocolate": "Coperta Divano a Spina di Pesce",
+      "thermal": "Biancheria Intima Termica"
     }
   },
   "footer": {
-    "description": "Tessuti peruviani di lusso, realizzati con cura e consapevolezza.",
+    "description": "Capi in alpaca senza tempo realizzati con cura e responsabilità.",
+    "rights": "Tutti i diritti riservati.",
     "links": {
       "title": "LINK",
       "terms": "Termini e Condizioni",
       "productIndex": "Indice Prodotti",
       "affiliate": "Diventa Affiliato",
       "categoryIndex": "Indice Categorie"
+    }
+  },
+  "pages": {
+    "services": {
+      "heroTitle": "SERVIZI",
+      "heroSubtitle": "Offriamo soluzioni in alpaca su misura per marchi, boutique e progetti personalizzati — dalla selezione dei prodotti al private label.",
+      "contactCta": "CONTATTACI",
+      "items": {
+        "privateLabel": {
+          "title": "PRIVATE LABEL",
+          "text": "Prodotti personalizzati con l’identità del tuo marchio: etichette, packaging e materiali selezionati."
+        },
+        "customization": {
+          "title": "PERSONALIZZAZIONE",
+          "text": "Colori, motivi e finiture adattati alla tua collezione e al tuo mercato."
+        },
+        "sourcing": {
+          "title": "SELEZIONE PRODOTTI",
+          "text": "Supporto nella scelta dei prodotti in alpaca più adatti al tuo pubblico: abbigliamento, accessori e arredamento."
+        },
+        "logistics": {
+          "title": "SUPPORTO LOGISTICO",
+          "text": "Assistenza per spedizioni, imballaggio, documentazione e pianificazione degli ordini."
+        }
+      }
     },
-    "subscribe": {
-      "title": "Contatta o Iscriviti",
-      "text": "Iscriviti per ricevere offerte e aggiornamenti.",
-      "placeholder": "La tua email",
-      "button": "Invia",
-      "sent": "Inviato!",
-      "error": "Si è verificato un errore.",
-      "mailSubject": "Iscrizione / Contatto",
-      "mailBody": "Ciao, vorrei iscrivermi e ricevere informazioni."
+    "wholesale": {
+      "heroTitle": "INGROSSO",
+      "heroSubtitle": "Opzioni all’ingrosso per rivenditori e distributori. Costruisci il tuo assortimento con capi premium in alpaca e una pianificazione costante dello stock.",
+      "cta": "RICHIEDI INFORMAZIONI",
+      "items": {
+        "retail": {
+          "title": "Programmi Retail",
+          "text": "Consigli sull’assortimento in base alla stagione, alla posizione e al target di clientela."
+        },
+        "volume": {
+          "title": "Prezzi per Volume",
+          "text": "Tariffe all’ingrosso competitive per acquisti in grandi quantità e partnership a lungo termine."
+        },
+        "catalog": {
+          "title": "Pianificazione Catalogo",
+          "text": "Ti aiutiamo a selezionare i best seller e organizzare le collezioni per il tuo negozio."
+        },
+        "support": {
+          "title": "Supporto",
+          "text": "Comunicazione affidabile, tracciamento ordini e assistenza post-vendita."
+        }
+      }
     },
-    "rights": "Tutti i diritti riservati."
+    "us": {
+      "hero": {
+        "title": "La Nostra Visione e Missione",
+        "subtitle": "Capi in alpaca senza tempo realizzati in Perù — progettati per durare.",
+        "cta": "VISITA IL NEGOZIO"
+      },
+      "about": {
+        "kicker": "CHI SIAMO",
+        "title": "Everything Alpaca",
+        "p1": "Everything Alpaca è stata fondata nel 1998. Progettiamo e produciamo capi tessili focalizzati su fibre naturali pregiate, principalmente lana di alpaca.",
+        "p2": "Everything Alpaca è presente nei mercati americano, canadese e sudamericano.",
+        "note": "Progettato negli USA • Realizzato ad Arequipa, Perù"
+      },
+      "mission": {
+        "kicker": "LA NOSTRA MISSIONE",
+        "p1": "La nostra missione è offrire capi finiti di qualità eccezionale e grande durata.",
+        "p2": "Abbiamo 4 linee di produzione: Abbigliamento, Accessori, Arredamento Casa e Moda Andina."
+      },
+      "vision": {
+        "kicker": "LA NOSTRA VISIONE",
+        "p1": "Diventare un marchio di alpaca affidabile a livello mondiale.",
+        "quote": "IL NOSTRO IMPEGNO È RIVOLTO A UN SERVIZIO CLIENTI ECCELLENTE E ALLA VOSTRA PIENA SODDISFAZIONE."
+      },
+      "contact": {
+        "kicker": "CONTATTACI",
+        "wholesaleLabel": "Ingrosso (USA)",
+        "otherLabel": "Altri Paesi",
+        "hoursLabel": "Orari",
+        "hoursText": "9:00 – 18:00 ORA DELLA COSTA OVEST.",
+        "addressLabel": "Indirizzo",
+        "addressText": "Via Ayacucho 204, Cercado, Arequipa – Perù"
+      }
+    },
+    "sus": {
+      "hero": {
+        "title": "Sostenibilità",
+        "subtitle": "Realizzato con rispetto per la natura, le persone e le alpaca.",
+        "cta": "VISITA IL NEGOZIO"
+      },
+      "quick": {
+        "vision": "La Nostra Visione e Missione",
+        "contact": "Contattaci",
+        "shop": "Negozio"
+      },
+      "approach": {
+        "kicker": "IL NOSTRO APPROCCIO",
+        "title": "Sostenibilità in Everything Alpaca",
+        "text": "Ci concentriamo su fibre naturali pregiate, produzione responsabile e qualità a lungo termine."
+      },
+      "sideNote": "Fibra naturale • Produzione etica • Progettato per durare",
+      "commit": {
+        "kicker": "I NOSTRI IMPEGNI",
+        "title": "I nostri valori",
+        "items": {
+          "animal": {
+            "title": "Benessere Animale",
+            "text": "Cura rispettosa e trattamento etico delle alpaca."
+          },
+          "sourcing": {
+            "title": "Approvvigionamento Responsabile",
+            "text": "Fibre naturali e selezione consapevole."
+          },
+          "process": {
+            "title": "Processi a Basso Impatto",
+            "text": "Efficienza per ridurre gli sprechi."
+          },
+          "quality": {
+            "title": "Qualità a Lungo Termine",
+            "text": "La durabilità è sostenibilità."
+          }
+        }
+      }
+    }
   }
 }

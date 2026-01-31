@@ -34,6 +34,7 @@ export default function Services() {
 
         <div className="services-card">
           <div className="services-grid">
+            {/* PROTOTYPING */}
             <div className="service-box">
               <h3>
                 {t(
@@ -49,7 +50,7 @@ export default function Services() {
               </p>
             </div>
 
-            {/* ✅ MANUFACTURING ahora incluye KNIT dentro */}
+            {/* MANUFACTURING (NO TOCADO) */}
             <div className="service-box">
               <h3>
                 {t("pages.services.items.customization.title", "MANUFACTURING")}
@@ -73,14 +74,21 @@ export default function Services() {
               </div>
             </div>
 
+            {/* LOGISTICS (limpio) */}
             <div className="service-box">
               <h3>{t("pages.services.items.logistics.title", "LOGISTICS")}</h3>
               <p>
                 {t(
                   "pages.services.items.logistics.text",
-                  "Low MOQ Garment Labeling LOGISTICS We ship your order from Los Angeles, so you do not have to worry about freight/customs."
+                  "We ship your order from Los Angeles, so you do not have to worry about freight/customs."
                 )}
               </p>
+            </div>
+
+            {/* ✅ NUEVO: LOW MOQ / GARMENT LABELING */}
+            <div className="service-box service-box-center">
+              <h3>LOW MOQ</h3>
+              <p className="service-big">Garment Labeling</p>
             </div>
           </div>
 

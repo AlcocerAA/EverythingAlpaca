@@ -9,20 +9,20 @@ export default function Carousel() {
       {
         id: "s1",
         image: "/hero/slide-1.jpg",
-        href: "https://shop.everything-alpaca.com/Reversible-LILAC-_p_768.html", // <-- cambia
-        title: "Reversible LILAC",
+        href: "https://shop.everything-alpaca.com/Herringbone-Cardigan-MENS_p_689.html", // <-- cambia
+        title: "Herringbone Cardigan MENS",
       },
       {
         id: "s2",
         image: "/hero/slide-2.jpg",
-        href: "https://shop.everything-alpaca.com/Ribbed-Beanie_p_876.html", // <-- cambia
-        title: "Ribbed Beanie",
+        href: "https://shop.everything-alpaca.com/Cable-sweater_p_107.html", // <-- cambia
+        title: "Cable sweater",
       },
       {
         id: "s3",
         image: "/hero/slide-3.jpg",
-        href: "https://shop.everything-alpaca.com/Reversible-Fingerless-Gloves-_p_875.html", // <-- cambia
-        title: "Reversible Fingerless Gloves",
+        href: "https://shop.everything-alpaca.com/Lightweight-Turtleneck_p_877.html", // <-- cambia
+        title: "Lightweight Turtleneck",
       },
     ],
     []

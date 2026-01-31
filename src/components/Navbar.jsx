@@ -50,7 +50,6 @@ export default function Navbar() {
 
   const usLinks = useMemo(
     () => [
-      { key: "contact", href: "https://shop.everything-alpaca.com/crm.asp?action=contactus" },
       { key: "sustainability", to: "/sustainability" },
       { key: "visionMission", to: "/us" },
     ],

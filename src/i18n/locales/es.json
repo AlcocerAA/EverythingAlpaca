@@ -49,7 +49,7 @@
   "pages": {
     "services": {
       "heroTitle": "SERVICIOS",
-      "heroSubtitle": "Ofrecemos soluciones de alpaca a medida para marcas, boutiques y proyectos personalizados — desde abastecimiento hasta marca privada.",
+      "heroSubtitle": "Ofrecemos soluciones de alpaca a medida para marcas, boutiques y proyectos personalizados — desde el abastecimiento hasta marca privada.",
       "contactCta": "CONTÁCTANOS",
       "items": {
         "privateLabel": {
@@ -62,7 +62,7 @@
         },
         "sourcing": {
           "title": "ABASTECIMIENTO DE PRODUCTOS",
-          "text": "Ayuda para seleccionar los artículos de alpaca adecuados para tu público: prendas, accesorios y decoración."
+          "text": "Ayuda para seleccionar los artículos de alpaca adecuados para tu público: prendas, accesorios y decoración del hogar."
         },
         "logistics": {
           "title": "SOPORTE LOGÍSTICO",
@@ -72,12 +72,12 @@
     },
     "wholesale": {
       "heroTitle": "MAYORISTA",
-      "heroSubtitle": "Opciones mayoristas para minoristas y distribuidores. Construye tu catálogo con piezas premium de alpaca y planificación de stock.",
+      "heroSubtitle": "Opciones mayoristas para minoristas y distribuidores. Construye tu catálogo con piezas premium de alpaca y planificación constante de stock.",
       "cta": "SOLICITAR INFORMACIÓN",
       "items": {
         "retail": {
           "title": "Programas para Retail",
-          "text": "Recomendaciones de surtido según temporada, ubicación y público objetivo."
+          "text": "Recomendaciones de surtido según temporada, ubicación y clientes objetivo."
         },
         "volume": {
           "title": "Precios por Volumen",
@@ -85,7 +85,7 @@
         },
         "catalog": {
           "title": "Planificación de Catálogo",
-          "text": "Te ayudamos a elegir los más vendidos y organizar colecciones para tu tienda."
+          "text": "Te ayudamos a seleccionar los más vendidos y organizar colecciones para tu tienda."
         },
         "support": {
           "title": "Soporte",
@@ -96,7 +96,7 @@
     "us": {
       "hero": {
         "title": "Nuestra Visión y Misión",
-        "subtitle": "Piezas atemporales de alpaca elaboradas en Perú — diseñadas para durar.",
+        "subtitle": "Piezas atemporales de alpaca elaboradas en Perú — diseñadas para durar, hechas con cuidado.",
         "cta": "VISITAR LA TIENDA"
       },
       "about": {
@@ -121,7 +121,7 @@
         "wholesaleLabel": "Mayorista (EE. UU.)",
         "otherLabel": "Otros Países",
         "hoursLabel": "Horario",
-        "hoursText": "9:00 a 6:00 HORA DEL OESTE.",
+        "hoursText": "9:00 a 18:00 HORA DEL OESTE.",
         "addressLabel": "Dirección",
         "addressText": "Calle Ayacucho 204, Cercado, Arequipa – Perú"
       }
@@ -164,6 +164,26 @@
             "text": "La durabilidad es sostenibilidad."
           }
         }
+      }
+    }
+  },
+  "sustainability": {
+    "items": {
+      "eco": {
+        "title": "Ecológico",
+        "text": "La fibra de alpaca es una de las fibras naturales más sostenibles, biodegradable y de mínimo impacto ambiental."
+      },
+      "fair": {
+        "title": "Comercio Justo",
+        "text": "Trabajamos de cerca con artesanos y proveedores, asegurando prácticas éticas y de comercio justo en cada etapa."
+      },
+      "zero": {
+        "title": "Cero Residuos",
+        "text": "Nuestra producción minimiza residuos mediante abastecimiento responsable y procesos de fabricación eficientes."
+      },
+      "animal": {
+        "title": "Bienestar Animal",
+        "text": "Estamos comprometidos con el trato ético y el cuidado respetuoso de las alpacas en toda la cadena de suministro."
       }
     }
   }

@@ -2,18 +2,27 @@
   background: #fffded;
   padding: 0;
   overflow-x: hidden;
+
+  /* ✅ crea un stacking context real y evita que overlays lo tapen */
+  position: relative;
+  z-index: 20;
+  isolation: isolate;
 }
 
-/* ✅ Ya no hay carrusel: ahora es layout fijo de 3 */
+/* ✅ Layout */
 .sections-wrap {
   width: 100%;
-  overflow: hidden;
   position: relative;
   user-select: none;
   -webkit-user-select: none;
 
   display: flex;
   flex-wrap: nowrap;
+
+  /* ❌ NO lo ocultes aquí en desktop (solo si es necesario) */
+  overflow: visible;
+
+  z-index: 21;
 }
 
 /* Slide */
@@ -26,6 +35,8 @@
   background: #f7f3e9;
   width: 33.3333%;
   flex: 0 0 33.3333%;
+
+  z-index: 22;
 }
 
 /* placeholder */
@@ -96,15 +107,28 @@
 }
 
 @media (max-width: 640px) {
-  /* ✅ En móvil: siguen siendo 3, pero en columna para que se vean bien */
+  /* ✅ IMPORTANTE: en móvil no recortes nada */
+  .sections {
+    overflow: visible;
+    z-index: 50;
+  }
+
   .sections-wrap {
     flex-direction: column;
+    overflow: visible;       /* ✅ antes estaba hidden */
+    gap: 0;                  /* opcional */
+
+    position: relative;
+    z-index: 51;
   }
 
   .section-slide {
     width: 100%;
     flex: 0 0 100%;
     height: clamp(360px, 55vh, 480px);
+
+    /* ✅ asegura que “aparezcan” sí o sí */
+    min-height: 360px;
   }
 
   .sections-see-more {
@@ -118,6 +142,8 @@
     letter-spacing: 0.2em;
     color: #1f1f1f;
     text-transform: uppercase;
+    position: relative;
+    z-index: 52;
   }
 
   .sections-see-more-icon {

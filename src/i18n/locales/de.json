@@ -58,7 +58,7 @@
         },
         "customization": {
           "title": "ANPASSUNG",
-          "text": "Farben, Muster und Veredelungen angepasst an Ihre Kollektion und Ihren Markt."
+          "text": "Farben, Muster und Veredelungen angepasst an Ihre Kollektion und Marktanforderungen."
         },
         "sourcing": {
           "title": "PRODUKTAUSWAHL",
@@ -72,7 +72,7 @@
     },
     "wholesale": {
       "heroTitle": "GROSSHANDEL",
-      "heroSubtitle": "Großhandelsoptionen für Einzelhändler und Distributoren. Stellen Sie Ihr Sortiment mit hochwertigen Alpakaprodukten und konstanter Lagerplanung zusammen.",
+      "heroSubtitle": "Großhandelsoptionen für Einzelhändler und Distributoren. Stellen Sie Ihr Sortiment mit hochwertigen Alpakaprodukten und konsistenter Lagerplanung zusammen.",
       "cta": "INFORMATIONEN ANFORDERN",
       "items": {
         "retail": {
@@ -96,7 +96,7 @@
     "us": {
       "hero": {
         "title": "Unsere Vision & Mission",
-        "subtitle": "Zeitlose Alpakaprodukte aus Peru — entworfen für Langlebigkeit.",
+        "subtitle": "Zeitlose Alpakaprodukte aus Peru — entworfen für Langlebigkeit, mit Sorgfalt gefertigt.",
         "cta": "ZUM SHOP"
       },
       "about": {
@@ -108,7 +108,7 @@
       },
       "mission": {
         "kicker": "UNSERE MISSION",
-        "p1": "Unsere Mission ist es, fertige Kleidungsstücke von außergewöhnlicher Qualität und Langlebigkeit anzubieten.",
+        "p1": "Unsere Mission ist es, fertige Kleidungsstücke von außergewöhnlicher Qualität und hoher Langlebigkeit anzubieten.",
         "p2": "Wir verfügen über 4 Produktionslinien: Bekleidung, Accessoires, Wohnaccessoires und Andine Mode."
       },
       "vision": {
@@ -121,7 +121,7 @@
         "wholesaleLabel": "Großhandel (USA)",
         "otherLabel": "Andere Länder",
         "hoursLabel": "Öffnungszeiten",
-        "hoursText": "9:00 – 18:00 WESTLICHE ZEIT.",
+        "hoursText": "9:00 bis 18:00 WESTLICHE ZEIT.",
         "addressLabel": "Adresse",
         "addressText": "Ayacucho-Straße 204, Cercado, Arequipa – Peru"
       }
@@ -156,7 +156,7 @@
             "text": "Naturfasern und bewusste Beschaffung."
           },
           "process": {
-            "title": "Ressourcenschonende Prozesse",
+            "title": "Ressourcenschonender Prozess",
             "text": "Effizienz zur Reduzierung von Abfällen."
           },
           "quality": {
@@ -164,6 +164,26 @@
             "text": "Langlebigkeit ist Nachhaltigkeit."
           }
         }
+      }
+    }
+  },
+  "sustainability": {
+    "items": {
+      "eco": {
+        "title": "Umweltfreundlich",
+        "text": "Alpakafaser ist eine der nachhaltigsten Naturfasern, biologisch abbaubar und mit minimaler Umweltbelastung."
+      },
+      "fair": {
+        "title": "Fairer Handel",
+        "text": "Wir arbeiten eng mit Handwerkern und Lieferanten zusammen und gewährleisten ethische und faire Handelspraktiken in jeder Phase."
+      },
+      "zero": {
+        "title": "Null Abfall",
+        "text": "Unsere Produktion minimiert Abfälle durch verantwortungsvolle Beschaffung und effiziente Herstellungsprozesse."
+      },
+      "animal": {
+        "title": "Tierschutz",
+        "text": "Wir verpflichten uns zu ethischer Behandlung und respektvoller Pflege der Alpakas entlang der gesamten Lieferkette."
       }
     }
   }

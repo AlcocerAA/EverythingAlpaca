@@ -166,5 +166,26 @@
         }
       }
     }
+  },
+
+  "sustainability": {
+    "items": {
+      "eco": {
+        "title": "Eco-Friendly",
+        "text": "Alpaca fiber is one of the most sustainable natural fibers, biodegradable and requiring minimal environmental impact."
+      },
+      "fair": {
+        "title": "Fair Trade",
+        "text": "We work closely with artisans and suppliers, ensuring ethical and fair trade practices at every stage."
+      },
+      "zero": {
+        "title": "Zero Waste",
+        "text": "Our production minimizes waste through responsible sourcing and efficient manufacturing processes."
+      },
+      "animal": {
+        "title": "Animal Welfare",
+        "text": "We are committed to ethical treatment and respectful care of alpacas throughout the supply chain."
+      }
+    }
   }
 }

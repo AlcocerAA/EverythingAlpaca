@@ -72,12 +72,12 @@
     },
     "wholesale": {
       "heroTitle": "INGROSSO",
-      "heroSubtitle": "Opzioni all’ingrosso per rivenditori e distributori. Costruisci il tuo assortimento con capi premium in alpaca e una pianificazione costante dello stock.",
+      "heroSubtitle": "Opzioni all’ingrosso per rivenditori e distributori. Costruisci il tuo assortimento con capi premium in alpaca e pianificazione costante dello stock.",
       "cta": "RICHIEDI INFORMAZIONI",
       "items": {
         "retail": {
           "title": "Programmi Retail",
-          "text": "Consigli sull’assortimento in base alla stagione, alla posizione e al target di clientela."
+          "text": "Consigli sull’assortimento in base alla stagione, alla posizione e al target."
         },
         "volume": {
           "title": "Prezzi per Volume",
@@ -96,7 +96,7 @@
     "us": {
       "hero": {
         "title": "La Nostra Visione e Missione",
-        "subtitle": "Capi in alpaca senza tempo realizzati in Perù — progettati per durare.",
+        "subtitle": "Capi in alpaca senza tempo realizzati in Perù — progettati per durare, fatti con cura.",
         "cta": "VISITA IL NEGOZIO"
       },
       "about": {
@@ -164,6 +164,26 @@
             "text": "La durabilità è sostenibilità."
           }
         }
+      }
+    }
+  },
+  "sustainability": {
+    "items": {
+      "eco": {
+        "title": "Eco-Friendly",
+        "text": "La fibra di alpaca è una delle fibre naturali più sostenibili, biodegradabile e con un impatto ambientale minimo."
+      },
+      "fair": {
+        "title": "Commercio Equo",
+        "text": "Collaboriamo strettamente con artigiani e fornitori, garantendo pratiche etiche e di commercio equo in ogni fase."
+      },
+      "zero": {
+        "title": "Zero Sprechi",
+        "text": "La nostra produzione riduce al minimo gli sprechi grazie a un approvvigionamento responsabile e a processi efficienti."
+      },
+      "animal": {
+        "title": "Benessere Animale",
+        "text": "Siamo impegnati nel trattamento etico e nella cura rispettosa delle alpaca lungo tutta la filiera."
       }
     }
   }

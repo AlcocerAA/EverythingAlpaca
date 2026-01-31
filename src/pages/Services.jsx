@@ -6,7 +6,7 @@ export default function Services() {
 
   return (
     <section className="services-hero">
-      {/* VIDEO FONDO (loop) */}
+      {/* VIDEO FONDO */}
       <video
         className="services-bgvid"
         src="/services-bg.mp4"
@@ -17,7 +17,6 @@ export default function Services() {
         preload="auto"
       />
 
-      {/* Overlay suave */}
       <div className="services-overlay" />
 
       <div className="services-content">
@@ -49,7 +48,7 @@ export default function Services() {
               </p>
             </div>
 
-            {/* ✅ MANUFACTURING (igual que lo dejaste) */}
+            {/* MANUFACTURING (intacto) */}
             <div className="service-box">
               <h3>
                 {t("pages.services.items.customization.title", "MANUFACTURING")}
@@ -73,7 +72,7 @@ export default function Services() {
               </div>
             </div>
 
-            {/* ✅ LOGISTICS (limpio) */}
+            {/* LOGISTICS limpio */}
             <div className="service-box">
               <h3>{t("pages.services.items.logistics.title", "LOGISTICS")}</h3>
               <p>
@@ -84,7 +83,7 @@ export default function Services() {
               </p>
             </div>
 
-            {/* ✅ LOW MOQ + GARMENT LABELING (como antes, pero texto parpadea) */}
+            {/* LOW MOQ + GARMENT LABELING */}
             <div className="service-box service-box-center">
               <h3>LOW MOQ</h3>
               <p className="service-big">GARMENT LABELING</p>

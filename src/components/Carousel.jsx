@@ -11,14 +11,12 @@ export default function Carousel() {
         image: "/hero/slide-1.jpg",
         href: "https://shop.everything-alpaca.com/Knitted-Mens-Infinity-Scarf-_p_685.html", // <-- cambia
         title: "Knitted Men's Infinity Scarf",
-        subtitle: "SHOP NOW",
       },
       {
         id: "s2",
         image: "/hero/slide-2.jpg",
         href: "https://shop.everything-alpaca.com/Plaid-Scarf_p_214.html", // <-- cambia
         title: "Plaid Scarf",
-        subtitle: "SHOP NOW",
       },
     ],
     []

@@ -1,57 +1,42 @@
 {
   "nav": {
-    "shop": "SHOP",
-    "collections": "KOLLEKTIONEN",
-    "sustainability": "NACHHALTIGKEIT",
-    "sale": "ANGEBOTE",
-    "faq": "FAQ"
+    "categories": "KATEGORIEN",
+    "us": "ÜBER UNS",
+    "services": "DIENSTLEISTUNGEN",
+    "wholesale": "GROSSHANDEL"
+  },
+  "categories": {
+    "women": "DAMEN",
+    "men": "HERREN",
+    "collectables": "SAMMLERSTÜCKE",
+    "andean": "ANDEANISCHE MODE",
+    "home": "WOHNEN",
+    "socks": "SOCKEN",
+    "accessories": "ACCESSOIRES"
   },
   "sections": {
     "title": "UNSER ENGAGEMENT ÜBER WEICHHEIT HINAUS",
-    "more": "MEHR ANZEIGEN",
-    "items": {
-      "woman": "DAMEN",
-      "men": "HERREN",
-      "socks": "SOCKEN",
-      "accessories": "ACCESSOIRES",
-      "home": "HOME",
-      "collectables": "SAMMLERSTÜCKE",
-      "andean": "ANDEN-MODE"
-    }
+    "more": "MEHR ERFAHREN"
   },
   "about": {
     "title": "Über uns",
-    "text": "Everything Alpaca wurde 1998 gegründet. Wir entwerfen und produzieren Textilbekleidung aus natürlichen, feinen Fasern – vor allem Alpakawolle. Unser Hauptsitz und Distributionszentrum befindet sich in Los Angeles, USA, während unser Produktionszentrum in Arequipa, Peru liegt. Everything Alpaca ist auf den amerikanischen, kanadischen und südamerikanischen Märkten vertreten."
+    "text": "Everything Alpaca wurde 1998 gegründet. Wir entwerfen und produzieren hochwertige Textilien aus feinen Naturfasern, insbesondere Alpakawolle. Unser Hauptsitz und Vertriebszentrum befinden sich in Los Angeles, USA, während unsere Produktion in Arequipa, Peru angesiedelt ist. Wir bedienen den amerikanischen, kanadischen und südamerikanischen Markt."
   },
   "mission": {
     "title": "Unsere Mission",
-    "text": "Unsere Mission ist es, ausschließlich fertige Kleidungsstücke von außergewöhnlicher Qualität und Langlebigkeit anzubieten. Deshalb wachsen wir Hand in Hand mit unseren Lieferanten und Kunsthandwerkern. Außerdem stellen wir natürliche und nachhaltige Produkte her, um den kleinsten möglichen ökologischen Fußabdruck zu hinterlassen."
+    "text": "Unsere Mission ist es, langlebige Produkte von außergewöhnlicher Qualität anzubieten. Wir wachsen gemeinsam mit unseren Lieferanten und Kunsthandwerkern und setzen auf ethische und nachhaltige Produktionsprozesse."
   },
   "footer": {
-    "description": "Luxuriöse peruanische Textilien – mit Sorgfalt und Verantwortung gefertigt.",
-    "shop": {
-      "title": "Shop",
-      "new": "Neuheiten",
-      "best": "Bestseller",
-      "sale": "Sale",
-      "offers": "Angebote"
-    },
-    "info": {
-      "title": "Information",
-      "about": "Über uns",
-      "care": "Pflegehinweise",
-      "shipping": "Versand",
-      "returns": "Rückgabe"
-    },
+    "description": "Luxuriöse peruanische Textilien, mit Sorgfalt und Verantwortung hergestellt.",
     "subscribe": {
-      "title": "Kontakt oder Newsletter",
-      "text": "Abonniere exklusive Angebote und Updates",
-      "placeholder": "Deine E-Mail",
+      "title": "Kontakt oder Abonnieren",
+      "text": "Abonnieren Sie unseren Newsletter für Neuigkeiten und Angebote.",
+      "placeholder": "Ihre E-Mail",
       "button": "Senden",
       "sent": "Gesendet!",
-      "error": "Etwas ist schiefgelaufen.",
-      "mailSubject": "Newsletter / Kontakt",
-      "mailBody": "Hallo, ich möchte mich mit dieser E-Mail anmelden"
+      "error": "Ein Fehler ist aufgetreten.",
+      "mailSubject": "Abonnement / Kontakt",
+      "mailBody": "Hallo, ich möchte Informationen erhalten und mich abonnieren."
     },
     "rights": "Alle Rechte vorbehalten."
   }

@@ -15,7 +15,7 @@
   max-width: 1240px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1.2fr;
+  grid-template-columns: 1.2fr 1fr;
   gap: 46px;
   align-items: start;
 }
@@ -103,46 +103,6 @@
   background: rgba(255, 255, 255, 0.06);
 }
 
-/* Subscribe */
-.subscribe-form {
-  display: flex;
-  gap: 12px;
-  margin-top: 4px;
-  align-items: center;
-}
-
-.subscribe-form input {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 999px;
-  color: #fff;
-  padding: 12px 16px;
-  outline: none;
-}
-
-.subscribe-form input::placeholder {
-  color: rgba(255, 255, 255, 0.55);
-}
-
-.subscribe-form button {
-  border: none;
-  border-radius: 999px;
-  padding: 12px 22px;
-  background: #9b6a45;
-  color: #fff;
-  font-family: "Cormorant Garamond", serif;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.subscribe-form button:hover {
-  transform: translateY(-1px);
-  opacity: 0.92;
-}
-
 /* Radio options */
 .subscribe-options {
   margin-top: 14px;
@@ -193,15 +153,41 @@
   font-size: 0.95rem;
 }
 
-/* Responsive */
+/* ✅ Responsive: iPad (centrar el bloque entero, sin tocar PC) */
 @media (max-width: 1024px) {
   .footer {
     padding: 56px 32px 24px;
   }
 
   .footer-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    justify-items: center;      /* ✅ centra columnas */
+    text-align: center;         /* ✅ centra texto */
+  }
+
+  .footer-col.brand {
+    align-items: center;        /* ✅ centra logo/desc/socials */
+  }
+
+  .footer-desc {
+    max-width: 520px;           /* ✅ se ve más “pro” centrado */
+  }
+
+  .socials {
+    justify-content: center;    /* ✅ centra íconos */
+  }
+
+  .footer-col:not(.brand) {
+    justify-self: center;       /* ✅ centra la columna de links */
+  }
+
+  .footer-list {
+    justify-items: center;      /* ✅ centra items */
+  }
+
+  .footer-list a:hover {
+    transform: none;            /* ✅ evita que “salte” al hover en mobile/iPad */
   }
 }
 
@@ -210,20 +196,7 @@
     padding: 46px 22px 22px;
   }
 
-  .footer-container {
-    grid-template-columns: 1fr;
-  }
-
   .footer-logo {
     width: 190px;
-  }
-
-  .subscribe-form {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .subscribe-form button {
-    width: 100%;
   }
 }

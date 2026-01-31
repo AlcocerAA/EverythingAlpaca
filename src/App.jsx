@@ -8,7 +8,11 @@ import Sustainability from "./components/Sustainability"
 import Footer from "./components/Footer"
 
 import Us from "./pages/Us"
-import SustainabilityPage from "./pages/SustainabilityPage" // ✅ ESTE ES TU ARCHIVO REAL
+import SustainabilityPage from "./pages/SustainabilityPage"
+
+// ✅ NUEVAS VISTAS
+import Services from "./pages/Services"
+import Wholesale from "./pages/Wholesale"
 
 function Home() {
   return (
@@ -29,7 +33,11 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/us" element={<Us />} />
-        <Route path="/sustainability" element={<SustainabilityPage />} /> {/* ✅ */}
+        <Route path="/sustainability" element={<SustainabilityPage />} />
+
+        {/* ✅ NUEVAS RUTAS */}
+        <Route path="/services" element={<Services />} />
+        <Route path="/wholesale" element={<Wholesale />} />
       </Routes>
 
       <Footer />

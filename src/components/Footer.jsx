@@ -1,25 +1,11 @@
 import { useTranslation } from "react-i18next"
 import "../styles/footer.css"
-import { useState } from "react"
 
 // ✅ Cambia esta ruta si tu logo está en otro lado
 const LOGO_SRC = "/logo.png"
 
 export default function Footer() {
   const { t } = useTranslation()
-  const [email, setEmail] = useState("")
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (!email.trim()) return
-
-    // ✅ ejemplo simple: mailto (sin backend)
-    const subject = encodeURIComponent(t("footer.subscribe.mailSubject"))
-    const body = encodeURIComponent(`${t("footer.subscribe.mailBody")}: ${email}`)
-    window.location.href = `mailto:contact@everything-alpaca.com?subject=${subject}&body=${body}`
-
-    setEmail("")
-  }
 
   return (
     <footer className="footer">
@@ -48,7 +34,6 @@ export default function Footer() {
               aria-label="Facebook"
               title="Facebook"
             >
-              {/* Facebook */}
               <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
                 <path
                   fill="currentColor"
@@ -65,7 +50,6 @@ export default function Footer() {
               aria-label="Pinterest"
               title="Pinterest"
             >
-              {/* Pinterest */}
               <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
                 <path
                   fill="currentColor"
@@ -82,7 +66,6 @@ export default function Footer() {
               aria-label="Instagram"
               title="Instagram"
             >
-              {/* Instagram */}
               <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
                 <path
                   fill="currentColor"
@@ -93,9 +76,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* LINKS (lo que “tienen”) */}
+        {/* LINKS */}
         <div className="footer-col">
-          {/* ✅ mejor usar keys reales; si no las tienes, al menos queda estable */}
           <h4 className="footer-title">{t("footer.links.title", "LINKS")}</h4>
 
           <ul className="footer-list">
@@ -136,24 +118,6 @@ export default function Footer() {
               </a>
             </li>
           </ul>
-        </div>
-
-        {/* MAILING LIST (lo que “tienen”) */}
-        <div className="footer-col subscribe">
-          <h4 className="footer-title">{t("footer.subscribe.title")}</h4>
-
-          <form className="subscribe-form" onSubmit={handleSubmit}>
-            <input
-              type="email"
-              placeholder={t("footer.subscribe.placeholder")}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              autoComplete="email"
-              inputMode="email"
-            />
-            <button type="submit">{t("footer.subscribe.button")}</button>
-          </form>
         </div>
       </div>
 

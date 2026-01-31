@@ -1,14 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@500;600&display=swap");
+
+html, body { overflow-x: hidden; }
+
 .products {
   background: #fffded;
   padding: 72px 0;
-  overflow-x: hidden;
+  overflow-x: hidden; /* ✅ anti “blanco” global */
 }
 
 /* Header */
 .products-head {
   text-align: center;
-  margin-bottom: 40px;
-  padding: 0 64px;
+  margin-bottom: 34px;
+  padding: 0 64px; /* ✅ el carrusel va full, el texto no */
 }
 
 .products-head h2 {
@@ -26,141 +30,96 @@
   font-size: 0.95rem;
 }
 
-/* =========================================================
-   CARRUSEL
-========================================================= */
+/* ✅ Carrusel FULL WIDTH hasta bordes */
 .products-wrap {
-  width: 100%;
-  margin: 0;
+  width: 100vw;
+  overflow: hidden;
   position: relative;
   user-select: none;
   -webkit-user-select: none;
   touch-action: pan-y pinch-zoom;
-  background: transparent;
   -webkit-tap-highlight-color: transparent;
 }
 
-.products-viewport {
-  width: 100%;
-  overflow: hidden;
-  background: #fffded; /* evita blanco */
-}
-
+/* track */
 .products-track {
   display: flex;
   flex-wrap: nowrap;
-  gap: 0;
   will-change: transform;
   transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
 }
 
+/* ✅ sin padding (para que llegue a bordes) */
 .products-slide {
   flex: 0 0 auto;
-  padding: 0;
   box-sizing: border-box;
 }
 
-/* Hold zones */
+/* hold zones */
 .products-hold-zone {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 12%;
+  width: 10%;
   z-index: 10;
-  -webkit-tap-highlight-color: transparent;
 }
 
-.products-hold-zone.left {
-  left: 0;
-}
-
-.products-hold-zone.right {
-  right: 0;
-}
-
-.products-hold-zone.left:hover {
-  cursor: w-resize;
-}
-.products-hold-zone.right:hover {
-  cursor: e-resize;
-}
+.products-hold-zone.left { left: 0; }
+.products-hold-zone.right { right: 0; }
 
 /* =========================================================
-   Cards
+   Cards estilo “tienda” (juntas, elegantes, mismo tono)
 ========================================================= */
 .product-card {
   display: block;
   text-decoration: none;
   color: #1f1f1f;
+  height: 100%;
 }
 
+/* ✅ marco suave, mismo color del sitio */
 .product-media {
   width: 100%;
   aspect-ratio: 3 / 4;
-  background: #fffded;
+  background: #fffaf0;              /* ✅ no blanco puro */
+  border: 1px solid rgba(31, 31, 31, 0.10);
   overflow: hidden;
   position: relative;
   border-radius: 0;
-
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
-
-  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+  box-shadow: none;                  /* ✅ más “catálogo” */
+  transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
 .product-card:hover .product-media {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
-  border-color: rgba(0, 0, 0, 0.08);
+  border-color: rgba(31, 31, 31, 0.18);
+  transform: translateY(-1px);
 }
 
-/* capas */
+/* imagen */
 .product-img {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: center;
-  padding: 22px;
+  padding: 28px;
   background: transparent;
-
-  -webkit-user-drag: none;
-  user-select: none;
-
-  transform: translateZ(0);
 }
 
-.product-img-base {
-  opacity: 1;
-}
-
-.product-img-incoming {
-  opacity: 0;
-  transition: opacity 0.18s ease;
-}
-
-.product-img-incoming.is-visible {
-  opacity: 1;
-}
-
-/* Ojito */
+/* ojito */
 .product-eye {
   position: absolute;
-  right: 16px;
-  bottom: 16px;
-  width: 40px;
-  height: 40px;
+  right: 14px;
+  bottom: 14px;
+  width: 38px;
+  height: 38px;
   display: grid;
   place-items: center;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.52);
   color: #fff;
-  font-size: 18px;
+  font-size: 17px;
   opacity: 0;
   transform: translateY(6px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition: opacity 0.22s ease, transform 0.22s ease;
 }
 
 .product-card:hover .product-eye {
@@ -168,30 +127,29 @@
   transform: translateY(0);
 }
 
-/* Texto abajo */
+/* texto abajo */
 .product-meta {
-  margin-top: 14px;
+  padding: 14px 10px 0;
   display: flex;
   justify-content: center;
-  padding: 0 8px 12px;
 }
 
 .product-name {
   text-align: center;
   width: 100%;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.02rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: none;
-  color: rgba(0, 0, 0, 0.78);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  opacity: 0.92;
 }
 
-/* Botón SEE MORE */
+/* Botón */
 .products-more {
   display: flex;
   justify-content: center;
-  margin-top: 38px;
+  margin-top: 36px;
 }
 
 .products-more-btn {
@@ -213,41 +171,21 @@
   opacity: 0.92;
 }
 
-/* =========================================================
-   Responsive
-========================================================= */
+/* responsive */
 @media (max-width: 1024px) {
-  .products {
-    padding: 64px 0;
-  }
-
   .products-head {
     padding: 0 32px;
   }
-
-  .products-hold-zone {
-    width: 16%;
-  }
-
-  .product-img {
-    padding: 20px;
-  }
+  .products-hold-zone { width: 14%; }
 }
 
 @media (max-width: 640px) {
   .products {
     padding: 56px 0;
   }
-
   .products-head {
     padding: 0 22px;
   }
-
-  .products-hold-zone {
-    width: 20%;
-  }
-
-  .product-img {
-    padding: 18px;
-  }
+  .products-hold-zone { width: 20%; }
+  .product-img { padding: 22px; }
 }

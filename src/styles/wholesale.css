@@ -1,0 +1,124 @@
+.wholesale-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #fffded;
+}
+
+/* VIDEO FONDO */
+.wholesale-bgvid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+/* OVERLAY OSCURO PERO VISIBLE */
+.wholesale-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(
+      900px 520px at 50% 35%,
+      rgba(0, 0, 0, 0.425),
+      rgba(0, 0, 0, 0.13)
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.075),
+      rgba(0, 0, 0, 0.123)
+    );
+}
+
+/* CONTENIDO */
+.wholesale-content {
+  position: relative;
+  z-index: 2;
+  width: min(1100px, 92%);
+  text-align: center;
+  padding: 130px 0 80px;
+}
+
+/* TEXTO SUPERIOR BLANCO */
+.wholesale-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.6rem, 5vw, 3.6rem);
+  letter-spacing: 0.18em;
+  margin: 0 0 16px;
+  color: #ffffff;
+}
+
+.wholesale-subtitle {
+  max-width: 720px;
+  margin: 0 auto 48px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.9);
+}
+
+/* CARD BLANCA (INTACTA) */
+.wholesale-card {
+  background: rgba(255,255,255,0.86);
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: 22px;
+  padding: 42px 38px 48px;
+  box-shadow: 0 18px 44px rgba(0,0,0,0.18);
+}
+
+.wholesale-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.wholesale-box {
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: 16px;
+  padding: 22px 20px;
+  text-align: left;
+}
+
+.wholesale-box h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  margin: 0 0 10px;
+  color: #1f1f1f;
+  text-transform: uppercase;
+}
+
+.wholesale-box p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin: 0;
+  color: #1f1f1f;
+}
+
+.wholesale-btn {
+  display: inline-block;
+  margin-top: 36px;
+  padding: 14px 36px;
+  border-radius: 999px;
+  background: #1f1f1f;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+}
+
+@media (max-width: 768px) {
+  .wholesale-grid { grid-template-columns: 1fr; }
+  .wholesale-card { padding: 32px 22px 36px; }
+  .wholesale-content { padding: 120px 0 70px; }
+}

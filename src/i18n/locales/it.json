@@ -1,57 +1,42 @@
 {
   "nav": {
-    "shop": "SHOP",
-    "collections": "COLLEZIONI",
-    "sustainability": "SOSTENIBILITÀ",
-    "sale": "SALDI",
-    "faq": "FAQ"
+    "categories": "CATEGORIE",
+    "us": "CHI SIAMO",
+    "services": "SERVIZI",
+    "wholesale": "INGROSSO"
+  },
+  "categories": {
+    "women": "DONNA",
+    "men": "UOMO",
+    "collectables": "COLLEZIONABILI",
+    "andean": "MODA ANDINA",
+    "home": "CASA",
+    "socks": "CALZE",
+    "accessories": "ACCESSORI"
   },
   "sections": {
     "title": "IL NOSTRO IMPEGNO OLTRE LA MORBIDEZZA",
-    "more": "VEDI DI PIÙ",
-    "items": {
-      "woman": "DONNA",
-      "men": "UOMO",
-      "socks": "CALZE",
-      "accessories": "ACCESSORI",
-      "home": "CASA",
-      "collectables": "COLLEZIONABILI",
-      "andean": "MODA ANDINA"
-    }
+    "more": "SCOPRI DI PIÙ"
   },
   "about": {
     "title": "Chi siamo",
-    "text": "Everything Alpaca è stata fondata nel 1998. Progettiamo e produciamo capi tessili in fibre naturali pregiate, principalmente lana di alpaca. La nostra sede e il centro di distribuzione si trovano a Los Angeles, Stati Uniti, mentre il centro di produzione è ad Arequipa, Perù. Everything Alpaca è presente nei mercati americano, canadese e sudamericano."
+    "text": "Everything Alpaca è stata fondata nel 1998. Progettiamo e produciamo tessuti di alta qualità basati su fibre naturali pregiate, principalmente lana di alpaca. Il nostro ufficio principale e centro di distribuzione si trovano a Los Angeles, negli Stati Uniti, mentre il nostro centro di produzione è ad Arequipa, in Perù. Serviamo i mercati americano, canadese e sudamericano."
   },
   "mission": {
     "title": "La nostra missione",
-    "text": "La nostra missione è offrire solo capi finiti di qualità eccezionale e durevoli nel tempo. Per questo cresciamo insieme ai nostri fornitori e artigiani. Inoltre, realizziamo prodotti naturali e sostenibili con l’obiettivo di generare la minore impronta ambientale possibile."
+    "text": "La nostra missione è offrire prodotti finiti di qualità eccezionale e lunga durata. Cresciamo insieme ai nostri fornitori e artigiani, promuovendo una produzione etica e sostenibile con il minimo impatto ambientale."
   },
   "footer": {
-    "description": "Tessuti peruviani di lusso, realizzati con cura e coscienza.",
-    "shop": {
-      "title": "Shop",
-      "new": "Nuovi arrivi",
-      "best": "Più venduti",
-      "sale": "Saldi",
-      "offers": "Offerte"
-    },
-    "info": {
-      "title": "Informazioni",
-      "about": "Chi siamo",
-      "care": "Guida alla cura",
-      "shipping": "Spedizione",
-      "returns": "Resi"
-    },
+    "description": "Tessuti peruviani di lusso, realizzati con cura e consapevolezza.",
     "subscribe": {
       "title": "Contattaci o Iscriviti",
-      "text": "Iscriviti per offerte e aggiornamenti esclusivi",
+      "text": "Iscriviti per ricevere novità e offerte esclusive.",
       "placeholder": "La tua email",
       "button": "Invia",
       "sent": "Inviato!",
-      "error": "Qualcosa è andato storto.",
-      "mailSubject": "Newsletter / Contatto",
-      "mailBody": "Ciao, voglio iscrivermi con questa email"
+      "error": "Si è verificato un errore.",
+      "mailSubject": "Iscrizione / Contatto",
+      "mailBody": "Ciao, desidero ricevere informazioni e iscrivermi."
     },
     "rights": "Tutti i diritti riservati."
   }

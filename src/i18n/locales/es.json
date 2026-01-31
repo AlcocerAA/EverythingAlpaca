@@ -1,57 +1,42 @@
 {
   "nav": {
-    "shop": "TIENDA",
-    "collections": "COLECCIONES",
-    "sustainability": "SOSTENIBILIDAD",
-    "sale": "OFERTAS",
-    "faq": "PREGUNTAS"
+    "categories": "CATEGORÍAS",
+    "us": "NOSOTROS",
+    "services": "SERVICIOS",
+    "wholesale": "MAYORISTA"
+  },
+  "categories": {
+    "women": "MUJER",
+    "men": "HOMBRE",
+    "collectables": "COLECCIONABLES",
+    "andean": "MODA ANDINA",
+    "home": "HOGAR",
+    "socks": "MEDIAS",
+    "accessories": "ACCESORIOS"
   },
   "sections": {
     "title": "NUESTRO COMPROMISO MÁS ALLÁ DE LA SUAVIDAD",
-    "more": "VER MÁS",
-    "items": {
-      "woman": "MUJER",
-      "men": "HOMBRE",
-      "socks": "MEDIAS",
-      "accessories": "ACCESORIOS",
-      "home": "HOGAR",
-      "collectables": "COLECCIONABLES",
-      "andean": "MODA ANDINA"
-    }
+    "more": "VER MÁS"
   },
   "about": {
     "title": "Sobre nosotros",
-    "text": "Everything Alpaca fue fundada en 1998. Diseñamos y fabricamos prendas textiles enfocadas en fibras naturales finas, principalmente lana de alpaca. Nuestra oficina principal y centro de distribución se encuentra en Los Ángeles, Estados Unidos, mientras que nuestro centro de producción está ubicado en Arequipa, Perú. Everything Alpaca está presente en los mercados americano, canadiense y sudamericano."
+    "text": "Everything Alpaca fue fundada en 1998. Diseñamos y fabricamos textiles de alta calidad enfocados en fibras naturales finas, principalmente lana de alpaca. Nuestra oficina principal y centro de distribución se encuentran en Los Ángeles, Estados Unidos, mientras que nuestro centro de producción está ubicado en Arequipa, Perú. Estamos presentes en los mercados americano, canadiense y sudamericano."
   },
   "mission": {
     "title": "Nuestra misión",
-    "text": "Nuestra misión es ofrecer únicamente prendas terminadas de calidad excepcional y durabilidad en el tiempo. Por ello, buscamos crecer de la mano con nuestros proveedores y artesanos. Además, fabricamos productos naturales y sostenibles con la intención de generar la menor huella ambiental posible."
+    "text": "Nuestra misión es ofrecer productos terminados de calidad excepcional y durabilidad en el tiempo. Crecemos junto a nuestros proveedores y artesanos, promoviendo una producción ética y sostenible que reduzca al mínimo el impacto ambiental."
   },
   "footer": {
     "description": "Textiles peruanos de lujo, hechos con cuidado y conciencia.",
-    "shop": {
-      "title": "Tienda",
-      "new": "Novedades",
-      "best": "Más vendidos",
-      "sale": "Ofertas",
-      "offers": "Promociones"
-    },
-    "info": {
-      "title": "Información",
-      "about": "Sobre nosotros",
-      "care": "Guía de cuidado",
-      "shipping": "Envíos",
-      "returns": "Devoluciones"
-    },
     "subscribe": {
       "title": "Contáctanos o Suscríbete",
-      "text": "Suscríbete para recibir ofertas y novedades",
-      "placeholder": "Tu correo",
+      "text": "Suscríbete para recibir novedades y promociones exclusivas.",
+      "placeholder": "Tu correo electrónico",
       "button": "Enviar",
       "sent": "¡Enviado!",
       "error": "Ocurrió un error.",
       "mailSubject": "Suscripción / Contacto",
-      "mailBody": "Hola, quiero suscribirme con este correo"
+      "mailBody": "Hola, deseo recibir información y suscribirme."
     },
     "rights": "Todos los derechos reservados."
   }

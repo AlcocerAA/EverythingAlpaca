@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import "../styles/products.css"
 import { useTranslation } from "react-i18next"
 
@@ -62,97 +62,48 @@ export default function Products() {
     []
   )
 
-  // ========= Image cache (anti blanco definitivo) =========
-  const [imgMap, setImgMap] = useState({})
-  const objectUrlsRef = useRef([])
-
-  const allSrcs = useMemo(() => {
-    const list = []
-    for (const p of products) {
-      for (const src of p.images || []) list.push(src)
-    }
-    return Array.from(new Set(list))
-  }, [products])
-
-  useEffect(() => {
-    let mounted = true
-    const controller = new AbortController()
-
-    const run = async () => {
-      const nextMap = {}
-      try {
-        await Promise.all(
-          allSrcs.map(async (src) => {
-            const encoded = encodeURI(src)
-
-            // si ya lo tenemos, no recargar
-            if (imgMap[encoded]) {
-              nextMap[encoded] = imgMap[encoded]
-              return
-            }
-
-            const res = await fetch(encoded, { signal: controller.signal, cache: "force-cache" })
-            if (!res.ok) throw new Error(`Image fetch failed: ${encoded} (${res.status})`)
-            const blob = await res.blob()
-            const url = URL.createObjectURL(blob)
-            objectUrlsRef.current.push(url)
-            nextMap[encoded] = url
-          })
-        )
-      } catch (e) {
-        // si alguna falla, igual seguimos con las que sí cargaron
-        // y para las que no, usamos el src normal (fallback)
-      }
-
-      if (!mounted) return
-      setImgMap((prev) => ({ ...prev, ...nextMap }))
-    }
-
-    run()
-
-    return () => {
-      mounted = false
-      controller.abort()
-      // revocar object urls
-      for (const u of objectUrlsRef.current) URL.revokeObjectURL(u)
-      objectUrlsRef.current = []
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [allSrcs])
-
-  const getCached = (src) => {
-    const encoded = encodeURI(src || "")
-    return imgMap[encoded] || encoded
-  }
-
-  // ========= Carrusel =========
+  // ======== refs ========
   const wrapRef = useRef(null)
-  const autoTimerRef = useRef(null)
   const holdTimerRef = useRef(null)
+  const autoTimerRef = useRef(null)
 
   const draggingRef = useRef(false)
   const dragStartXRef = useRef(0)
   const didDragRef = useRef(false)
   const pointerIdRef = useRef(null)
 
+  const [perView, setPerView] = useState(3)
   const [cardW, setCardW] = useState(0)
-  const [index, setIndex] = useState(1)
+  const [index, setIndex] = useState(0)
   const [animate, setAnimate] = useState(true)
   const [dragOffset, setDragOffset] = useState(0)
 
-  const slides = useMemo(() => {
-    if (!products.length) return []
-    return [products[products.length - 1], ...products, products[0]]
+  // ✅ precarga total para que NO haya delay en loop
+  useEffect(() => {
+    const all = []
+    products.forEach((p) => (p.images || []).forEach((src) => all.push(src)))
+    all.forEach((src) => {
+      const img = new Image()
+      img.src = encodeURI(src)
+    })
   }, [products])
+
+  const getPerView = (w) => {
+    if (w >= 1180) return 4
+    if (w >= 980) return 3
+    if (w >= 700) return 2
+    return 1
+  }
 
   const measure = () => {
     const wrap = wrapRef.current
     if (!wrap) return
+
+    const pv = getPerView(window.innerWidth)
+    setPerView(pv)
+
     const w = wrap.getBoundingClientRect().width
     if (!w) return
-
-    const mobile = window.innerWidth <= 640
-    const pv = mobile ? 1 : window.innerWidth <= 1024 ? 2 : 4
     setCardW(w / pv)
   }
 
@@ -166,17 +117,49 @@ export default function Products() {
     }
   }, [])
 
+  const items = useMemo(() => products, [products])
+
+  // ✅ clones según perView (esto elimina el hueco mientras avanza)
+  const slides = useMemo(() => {
+    if (!items.length) return []
+    const pv = Math.min(perView, items.length)
+    const head = items.slice(0, pv)
+    const tail = items.slice(-pv)
+    return [...tail, ...items, ...head]
+  }, [items, perView])
+
+  // ✅ index inicial = perView (porque antes están los clones)
+  useEffect(() => {
+    if (!slides.length) return
+    setAnimate(false)
+    setDragOffset(0)
+    setIndex(perView)
+    const t = setTimeout(() => setAnimate(true), 30)
+    return () => clearTimeout(t)
+  }, [slides.length, perView])
+
   const stopAuto = () => {
     if (autoTimerRef.current) clearInterval(autoTimerRef.current)
     autoTimerRef.current = null
   }
+
   const startAuto = () => {
     stopAuto()
     autoTimerRef.current = setInterval(() => {
-      setAnimate(true)
-      setDragOffset(0)
-      setIndex((p) => p + 1)
+      goNext()
     }, 4200)
+  }
+
+  const goNext = () => {
+    setAnimate(true)
+    setDragOffset(0)
+    setIndex((prev) => prev + 1)
+  }
+
+  const goPrev = () => {
+    setAnimate(true)
+    setDragOffset(0)
+    setIndex((prev) => prev - 1)
   }
 
   useEffect(() => {
@@ -184,26 +167,47 @@ export default function Products() {
     startAuto()
     return () => stopAuto()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [slides.length, cardW])
+  }, [slides.length, cardW, perView])
+
+  // ✅ Loop invisible sin “retroceso” visible
+  useEffect(() => {
+    if (!slides.length) return
+    const n = items.length
+
+    // si pasas el final real -> vuelve al inicio real (sin animación)
+    if (index >= perView + n) {
+      const tmr = setTimeout(() => {
+        setAnimate(false)
+        setDragOffset(0)
+        setIndex(perView)
+      }, 520)
+      return () => clearTimeout(tmr)
+    }
+
+    // si pasas al inicio por la izquierda -> vuelve al final real
+    if (index < perView) {
+      const tmr = setTimeout(() => {
+        setAnimate(false)
+        setDragOffset(0)
+        setIndex(perView + n - 1)
+      }, 520)
+      return () => clearTimeout(tmr)
+    }
+  }, [index, perView, items.length, slides.length])
+
+  // Hold zones
+  const startHold = (dir) => {
+    stopHold()
+    stopAuto()
+    const fn = dir === "left" ? goPrev : goNext
+    fn()
+    holdTimerRef.current = setInterval(fn, 240)
+  }
 
   const stopHold = () => {
     if (holdTimerRef.current) clearInterval(holdTimerRef.current)
     holdTimerRef.current = null
     startAuto()
-  }
-
-  const startHold = (dir) => {
-    stopHold()
-    stopAuto()
-    const step = dir === "left" ? -1 : 1
-    setAnimate(true)
-    setDragOffset(0)
-    setIndex((p) => p + step)
-    holdTimerRef.current = setInterval(() => {
-      setAnimate(true)
-      setDragOffset(0)
-      setIndex((p) => p + step)
-    }, 240)
   }
 
   const clamp = (v, min, max) => Math.max(min, Math.min(max, v))
@@ -213,7 +217,8 @@ export default function Products() {
     return value
   }
 
-  const minX = cardW ? -((slides.length - 1) * cardW) : 0
+  // ✅ bounds considerando perView (para no generar blancos)
+  const minX = cardW ? -((slides.length - perView) * cardW) : 0
   const maxX = 0
 
   const onPointerDown = (e) => {
@@ -255,23 +260,25 @@ export default function Products() {
       pointerIdRef.current = null
     }
 
-    const threshold = cardW * 0.14
+    const threshold = cardW * 0.16
     const moved = dragOffset
 
     setAnimate(true)
 
     if (moved <= -threshold) {
       setDragOffset(0)
-      setIndex((p) => p + 1)
+      setIndex((prev) => prev + 1)
     } else if (moved >= threshold) {
       setDragOffset(0)
-      setIndex((p) => p - 1)
+      setIndex((prev) => prev - 1)
     } else {
       setDragOffset(0)
     }
 
     if (didDragRef.current) {
-      setTimeout(() => (didDragRef.current = false), 90)
+      setTimeout(() => {
+        didDragRef.current = false
+      }, 90)
     }
 
     startAuto()
@@ -280,23 +287,6 @@ export default function Products() {
   const rawX = -(index * cardW) + dragOffset
   const x = animate ? clamp(rawX, minX, maxX) : rawX
 
-  // ✅ salto invisible exacto al final
-  const onTrackTransitionEnd = () => {
-    if (!slides.length) return
-    if (index === slides.length - 1) {
-      setAnimate(false)
-      setDragOffset(0)
-      setIndex(1)
-      requestAnimationFrame(() => setAnimate(true))
-    }
-    if (index === 0) {
-      setAnimate(false)
-      setDragOffset(0)
-      setIndex(slides.length - 2)
-      requestAnimationFrame(() => setAnimate(true))
-    }
-  }
-
   return (
     <section className="products" id="products">
       <div className="products-head">
@@ -304,7 +294,16 @@ export default function Products() {
         <p>{t("A curated selection of our best pieces in alpaca fiber.")}</p>
       </div>
 
-      <div className="products-wrap" ref={wrapRef} aria-label="Featured products carousel">
+      <div
+        className="products-wrap"
+        ref={wrapRef}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
+        style={{ cursor: draggingRef.current ? "grabbing" : "grab" }}
+        aria-label="Featured products carousel"
+      >
         <div
           className="products-hold-zone left"
           onPointerDown={(e) => {
@@ -321,6 +320,7 @@ export default function Products() {
           }}
           aria-hidden="true"
         />
+
         <div
           className="products-hold-zone right"
           onPointerDown={(e) => {
@@ -338,20 +338,17 @@ export default function Products() {
           aria-hidden="true"
         />
 
-        <div className="products-viewport" onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} onPointerCancel={onPointerUp}>
-          <motion.div
-            className="products-track"
-            animate={{ x }}
-            transition={animate ? { type: "spring", stiffness: 140, damping: 18 } : { duration: 0 }}
-            onTransitionEnd={onTrackTransitionEnd}
-          >
-            {slides.map((p, i) => (
-              <div key={`${p.id}-${i}`} className="products-slide" style={{ width: `${cardW}px` }}>
-                <ProductCard p={p} disableClick={didDragRef} getCached={getCached} />
-              </div>
-            ))}
-          </motion.div>
-        </div>
+        <motion.div
+          className="products-track"
+          animate={{ x }}
+          transition={animate ? { type: "spring", stiffness: 140, damping: 18 } : { duration: 0 }}
+        >
+          {slides.map((p, i) => (
+            <div key={`${p.id}-${i}`} className="products-slide" style={{ width: `${cardW}px` }}>
+              <ProductCard p={p} disableClick={didDragRef} />
+            </div>
+          ))}
+        </motion.div>
       </div>
 
       <div className="products-more">
@@ -363,24 +360,19 @@ export default function Products() {
   )
 }
 
-// ✅ Card: 2 capas (base + incoming) con fade.
-// ✅ Pero ahora NO depende de la red: usa getCached()
-function ProductCard({ p, disableClick, getCached }) {
+function ProductCard({ p, disableClick }) {
+  const [imgIndex, setImgIndex] = useState(0)
   const timerRef = useRef(null)
+
   const hasCarousel = Array.isArray(p.images) && p.images.length > 1
 
-  const [imgIndex, setImgIndex] = useState(0)
-  const [activeSrc, setActiveSrc] = useState(() => getCached(p.images?.[0]))
-  const [incomingSrc, setIncomingSrc] = useState("")
-  const [incomingVisible, setIncomingVisible] = useState(false)
-
   useEffect(() => {
-    setImgIndex(0)
-    setActiveSrc(getCached(p.images?.[0]))
-    setIncomingSrc("")
-    setIncomingVisible(false)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [p.id])
+    if (!p.images || p.images.length === 0) return
+    p.images.forEach((src) => {
+      const img = new Image()
+      img.src = encodeURI(src)
+    })
+  }, [p.images])
 
   useEffect(() => {
     return () => {
@@ -388,53 +380,22 @@ function ProductCard({ p, disableClick, getCached }) {
     }
   }, [])
 
-  const swapTo = (nextIndex) => {
-    const nextRaw = p.images?.[nextIndex]
-    if (!nextRaw) return
-    const next = getCached(nextRaw)
-
-    if (!next || next === activeSrc) {
-      setImgIndex(nextIndex)
-      return
-    }
-
-    setIncomingVisible(false)
-    setIncomingSrc(next)
-
-    // como es cached (blob url), casi siempre está instant
-    // igual mantenemos la lógica por seguridad
-    const img = new Image()
-    img.onload = () => {
-      setIncomingVisible(true)
-      setTimeout(() => {
-        setActiveSrc(next)
-        setIncomingSrc("")
-        setIncomingVisible(false)
-        setImgIndex(nextIndex)
-      }, 180)
-    }
-    img.src = next
-  }
-
   const stopHover = () => {
     if (timerRef.current) clearInterval(timerRef.current)
     timerRef.current = null
-    swapTo(0)
+    setImgIndex(0)
   }
 
   const startHover = () => {
     if (!hasCarousel) return
     if (timerRef.current) return
-
-    swapTo(1)
+    setImgIndex(1)
     timerRef.current = setInterval(() => {
-      setImgIndex((prev) => {
-        const next = (prev + 1) % p.images.length
-        swapTo(next)
-        return prev
-      })
+      setImgIndex((prev) => (prev + 1) % p.images.length)
     }, 900)
   }
+
+  const currentSrc = p.images?.[imgIndex] ? encodeURI(p.images[imgIndex]) : ""
 
   return (
     <a
@@ -450,27 +411,22 @@ function ProductCard({ p, disableClick, getCached }) {
       }}
     >
       <div className="product-media" onMouseEnter={startHover} onMouseLeave={stopHover}>
-        <img
-          src={activeSrc}
-          alt={p.title}
-          className="product-img product-img-base"
-          loading="eager"
-          decoding="async"
-          draggable="false"
-          onDragStart={(e) => e.preventDefault()}
-        />
-
-        {incomingSrc ? (
-          <img
-            src={incomingSrc}
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={`${p.id}-${imgIndex}`}
+            src={currentSrc}
             alt={p.title}
-            className={`product-img product-img-incoming ${incomingVisible ? "is-visible" : ""}`}
+            className="product-img"
+            initial={{ opacity: 0, scale: 1.01 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
+            draggable="false"
             loading="eager"
             decoding="async"
-            draggable="false"
             onDragStart={(e) => e.preventDefault()}
           />
-        ) : null}
+        </AnimatePresence>
 
         <span className="product-eye" aria-hidden="true">
           👁

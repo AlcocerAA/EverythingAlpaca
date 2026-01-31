@@ -1,237 +1,127 @@
 .sections {
-  background: #fffded; /* tu fondo */
-  padding: 0; /* pegado arriba */
-  margin: 0;
-
-  /* ✅ extra: evita mini overflow horizontal fantasma */
+  background: #fffded;
+  padding: 0;
   overflow-x: hidden;
 }
 
-/* ✅ FIXES IMPORTANTES (NO ROMPE NADA) */
+/* ✅ Ya no hay carrusel: ahora es layout fijo de 3 */
 .sections-wrap {
   width: 100%;
-  overflow: hidden; /* ✅ CLAVE: recorta y evita el bloque blanco */
-  position: relative; /* ✅ CLAVE: para que .hold-zone sea relativo a este contenedor */
-
+  overflow: hidden;
+  position: relative;
   user-select: none;
   -webkit-user-select: none;
-  touch-action: pan-y pinch-zoom; /* ✅ scroll vertical normal + zoom, drag horizontal via pointer */
 
-  /* ✅ extra: evita “flash” blanco en algunos navegadores */
-  background: #fffded;
-
-  /* ✅ mejora interacción en mobile */
-  -webkit-tap-highlight-color: transparent;
-
-  /* ✅ evita que el cursor/drag seleccione texto o imagenes */
-  -webkit-user-drag: none;
-
-  /* ✅ extra FIX: recorta 1px raro en algunos browsers */
-  contain: paint;
-}
-
-/* track */
-.sections-track {
   display: flex;
-  gap: 0; /* sin separación */
-  will-change: transform;
-
-  /* ✅ CLAVE: no permitir que se rompa a otra línea nunca */
   flex-wrap: nowrap;
-
-  /* ✅ evita “gaps” por render subpixel */
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-
-  /* ✅ FIX REAL: el track también debe tener fondo */
-  background: #fffded;
-
-  /* ✅ FIX REAL: evita que se “vea” un borde blanco al mover fuerte */
-  padding-right: 2px;
 }
 
-/* slide grande */
+/* Slide */
 .section-slide {
   position: relative;
-  flex: 0 0 auto;
-  height: 560px; /* MÁS GRANDE (PC) */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  text-decoration: none;
+  height: clamp(420px, 62vh, 560px);
   overflow: hidden;
-
-  /* ✅ evita espacios blancos por inline/anchor quirks */
   display: block;
-
-  /* ✅ mejora render y evita cortes raros */
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  text-decoration: none;
+  background: #f7f3e9;
+  width: 33.3333%;
+  flex: 0 0 33.3333%;
 }
 
-/* sombreado elegante */
+/* placeholder */
+.section-ph {
+  position: absolute;
+  inset: 0;
+  background: #f7f3e9;
+  opacity: 1;
+  transition: opacity 0.12s ease;
+}
+.section-ph.hide {
+  opacity: 0;
+}
+
+/* imagen */
+.section-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+  transform: translateZ(0);
+}
+.section-img.show {
+  opacity: 1;
+}
+
+/* overlay para texto */
 .section-slide-shade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.58),
-    rgba(0, 0, 0, 0.06)
-  );
+  background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.0) 55%);
   pointer-events: none;
+  z-index: 4;
 }
 
-/* “pop layer” invisible (solo para animar sutilmente el foco) */
+.section-slide-label {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  z-index: 6;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.92);
+}
+
 .section-slide-pop {
   position: absolute;
   inset: 0;
-  transform-origin: center;
+  z-index: 5;
   pointer-events: none;
 }
 
-/* texto */
-.section-slide-label {
-  position: absolute;
-  left: 34px;
-  bottom: 28px;
-  z-index: 3;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.25rem;
-  letter-spacing: 0.18em;
-  color: #fff;
-  text-transform: uppercase;
-  text-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
-
-  /* ✅ evita selección accidental al arrastrar */
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-/* ZONAS INVISIBLES para “mantener click” */
-.hold-zone {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 14%;
-  z-index: 10;
-
-  /* ✅ para que se sienta como control (sin seleccionar) */
-  -webkit-tap-highlight-color: transparent;
-}
-
-.hold-zone.left {
-  left: 0;
-}
-
-.hold-zone.right {
-  right: 0;
-}
-
-/* cursor “hint” */
-.hold-zone.left:hover {
-  cursor: w-resize;
-}
-.hold-zone.right:hover {
-  cursor: e-resize;
-}
-
-/* ✅ SEE MORE (solo mobile) - versión más pro */
+/* see more */
 .sections-see-more {
   display: none;
-  text-decoration: none;
-  color: rgba(25, 25, 25, 0.92);
-  font-family: "Cormorant Garamond", serif;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-
-  padding: 18px 0 16px;
-
-  /* animaciones */
-  transition: transform 0.25s ease, opacity 0.25s ease;
-  opacity: 0.85;
-  position: relative;
 }
 
-/* línea elegante debajo */
-.sections-see-more::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 8px;
-  width: 140px;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.22);
-  transform: translateX(-50%) scaleX(0.55);
-  transform-origin: center;
-  transition: transform 0.28s ease, background 0.28s ease;
-}
-
-.sections-see-more:hover {
-  opacity: 1;
-  transform: translateY(-1px);
-}
-
-.sections-see-more:hover::after {
-  transform: translateX(-50%) scaleX(1);
-  background: rgba(0, 0, 0, 0.32);
-}
-
-.sections-see-more:active {
-  transform: translateY(0px);
-}
-
-/* “V” elegante con animación */
-.sections-see-more-icon {
-  font-size: 1.05rem;
-  line-height: 1;
-  transform: translateY(-1px);
-  transition: transform 0.28s ease, opacity 0.28s ease;
-  opacity: 0.85;
-}
-
-.sections-see-more:hover .sections-see-more-icon {
-  transform: translateY(2px);
-  opacity: 1;
-}
-
-/* Mobile: se muestra */
-@media (max-width: 640px) {
-  .sections-see-more {
-    display: flex;
-  }
-}
-
-/* Tablet */
 @media (max-width: 1024px) {
   .section-slide {
-    height: 500px;
+    height: clamp(380px, 56vh, 520px);
   }
 }
 
-/* Mobile: 1 visible pero MÁS PEQUEÑO y bonito */
 @media (max-width: 640px) {
+  /* ✅ En móvil: siguen siendo 3, pero en columna para que se vean bien */
+  .sections-wrap {
+    flex-direction: column;
+  }
+
   .section-slide {
-    height: 420px; /* ✅ más pequeño (antes tenías 620px) */
-  }
-
-  .section-slide-label {
-    left: 18px;
-    bottom: 16px;
-    font-size: 1.05rem;
-    letter-spacing: 0.14em;
-  }
-
-  .hold-zone {
-    width: 20%;
+    width: 100%;
+    flex: 0 0 100%;
+    height: clamp(360px, 55vh, 480px);
   }
 
   .sections-see-more {
-    display: flex;
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    padding: 18px 0 28px;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    color: #1f1f1f;
+    text-transform: uppercase;
+  }
+
+  .sections-see-more-icon {
+    margin-left: 10px;
+    transform: translateY(1px);
   }
 }

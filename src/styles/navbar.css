@@ -1,16 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@500;600&display=swap");
 
-/* ===============================
-   FIX GLOBAL SCROLL HORIZONTAL
-================================ */
 html,
 body {
   overflow-x: hidden;
 }
 
-/* ===============================
-   NAVBAR BASE
-================================ */
 .navbar {
   position: fixed;
   top: 0;
@@ -20,23 +14,20 @@ body {
   transition: background 0.4s ease, backdrop-filter 0.4s ease;
 }
 
-/* ===============================
-   ESTADO SCROLL
-================================ */
 .navbar.scrolled {
   background: rgba(245, 242, 235, 0.92);
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
-/* ===============================
-   FILA 1
-================================ */
+/* FILA 1 */
 .navbar-top {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 18px;
   padding: 18px 0;
+  text-decoration: none;
 }
 
 .brand-text {
@@ -48,23 +39,16 @@ body {
   transition: all 0.3s ease;
 }
 
-/* ===============================
-   LOGO (FIX: blanco arriba / negro al hacer scroll)
-================================ */
 .brand-logo {
   height: 50px;
   transition: height 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
-
-  /* ✅ En hero/transparente: blanco */
   filter: brightness(0) invert(1);
 }
 
 .navbar.scrolled .brand-logo {
   height: 40px;
-
-  /* ✅ Forzar a negro real (aunque el archivo sea blanco/coloreado) */
-  filter: brightness(0) saturate(100%);
-  opacity: 0.95;
+  filter: none;
+  opacity: 1;
 }
 
 .navbar.scrolled .brand-text {
@@ -73,9 +57,7 @@ body {
   color: #1f1f1f;
 }
 
-/* ===============================
-   FILA 2
-================================ */
+/* FILA 2 */
 .navbar-bottom {
   display: flex;
   justify-content: space-between;
@@ -90,23 +72,23 @@ body {
   color: #1f1f1f;
 }
 
-/* ===============================
-   DESKTOP LINKS + UNDERLINE
-================================ */
+/* LINKS */
 .nav-left {
   display: flex;
+  align-items: center;
 }
 
-.nav-left a {
+.nav-left .nav-link {
   position: relative;
   margin-right: 32px;
   text-decoration: none;
   color: currentColor;
   letter-spacing: 0.18em;
   padding-bottom: 6px;
+  text-transform: uppercase;
 }
 
-.nav-left a::after {
+.nav-left .nav-link::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -118,19 +100,71 @@ body {
   transition: width 0.35s ease;
 }
 
-.nav-left a:hover::after {
+.nav-left .nav-link:hover::after {
   width: 100%;
 }
 
-/* ===============================
-   ICONOS
-================================ */
+/* dropdown wrappers */
+.nav-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-dropdown--white {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 0;
+  z-index: 9999;
+
+  min-width: 250px;
+  padding: 10px;
+
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.14);
+  backdrop-filter: blur(10px);
+
+  display: none;
+  animation: dropIn 0.18s ease-out;
+}
+
+.nav-item.open .nav-dropdown--white {
+  display: block;
+}
+
+.nav-dd-link {
+  display: block;
+  text-decoration: none;
+
+  padding: 12px 12px;
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: #1f1f1f;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.nav-dd-link:hover {
+  background: rgba(0, 0, 0, 0.06);
+  transform: translateX(2px);
+}
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ICONOS */
 .nav-right {
   display: flex;
   align-items: center;
 }
 
-/* 🔧 FIX BOTONES ICONOS (ELIMINA FONDO BLANCO) */
 .nav-icon {
   background: none;
   border: none;
@@ -148,20 +182,12 @@ body {
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-/* ICONO SHOP */
-.nav-right .shop-icon svg {
-  width: 26px;
-  height: 26px;
+.nav-right .nav-icon:hover svg {
+  transform: scale(1.06);
+  opacity: 0.9;
 }
 
-.nav-right .shop-icon:hover svg {
-  transform: scale(1.08);
-  opacity: 0.85;
-}
-
-/* ===============================
-   MOBILE BUTTON
-================================ */
+/* MOBILE BUTTON */
 .menu-button {
   display: none;
   background: none;
@@ -170,9 +196,7 @@ body {
   color: currentColor;
 }
 
-/* ===============================
-   MOBILE MENU
-================================ */
+/* MOBILE MENU */
 .menu-overlay {
   position: fixed;
   inset: 0;
@@ -193,7 +217,6 @@ body {
   z-index: 2001;
   display: flex;
   flex-direction: column;
-  backdrop-filter: none !important;
 }
 
 .mobile-menu.open {
@@ -214,52 +237,100 @@ body {
   gap: 22px;
 }
 
-.mobile-nav a {
+/* ✅ FIX: en móvil/iPad los links deben ser BLOQUE, con padding y wrap */
+.mobile-nav a,
+.mobile-nav a:visited,
+.mobile-nav a:active,
+.mobile-nav a:hover,
+.mobile-nav a:focus {
   font-family: "Cormorant Garamond", serif;
   font-size: 1.35rem;
   letter-spacing: 0.14em;
   color: #1f1f1f;
   text-decoration: none;
+
+  display: block;            /* <-- esto evita "WomenMen..." pegado */
+  width: 100%;
+  padding: 10px 0;
+  line-height: 1.25;
+  white-space: normal;
+  word-break: break-word;
 }
 
-/* ===============================
-   RESPONSIVE
-================================ */
+.mobile-nav a:hover {
+  opacity: 0.9;
+}
+
+/* ✅ espacio/orden dentro de cada grupo */
+.mobile-group {
+  margin-top: 18px;
+}
+
+.mobile-title {
+  font-family: inherit;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+/* ✅ iPad / móvil: hacer el panel un poco más cómodo sin tocar PC */
+@media (max-width: 1024px) {
+  .mobile-menu {
+    width: min(88vw, 360px);
+    padding: 28px 22px;
+  }
+
+  .mobile-nav a,
+  .mobile-nav a:visited,
+  .mobile-nav a:active,
+  .mobile-nav a:hover,
+  .mobile-nav a:focus {
+    letter-spacing: 0.10em; /* menos separación, se lee mejor en móvil */
+  }
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .nav-left {
     display: none;
   }
-
   .menu-button {
     display: block;
   }
-
   .navbar-bottom {
     padding: 12px 24px;
   }
 }
 
-/* ===============================
-   MOBILE LOGO FIX
-================================ */
 @media (max-width: 640px) {
-  .navbar-top {
-    gap: 10px;
+  .navbar-top { gap: 10px; }
+  .brand-logo { height: 28px; }
+  .brand-text { font-size: 1.1rem; letter-spacing: 0.2em; }
+
+  .navbar.scrolled .brand-logo {
+    filter: none;
+    opacity: 1;
   }
 
-  .brand-logo {
-    height: 28px;
+  .mobile-menu {
+    width: min(92vw, 360px);
+    padding: 26px 20px;
   }
 
-  .brand-text {
-    font-size: 1.1rem;
-    letter-spacing: 0.2em;
+  .mobile-nav a,
+  .mobile-nav a:visited,
+  .mobile-nav a:active,
+  .mobile-nav a:hover,
+  .mobile-nav a:focus {
+    font-size: 1.25rem;
+    letter-spacing: 0.10em;
+    padding: 9px 0;
   }
 }
 
-/* ===============================
-   LANGUAGE SELECTOR
-================================ */
+/* LANGUAGE */
 .lang-wrapper {
   position: relative;
 }
@@ -295,76 +366,12 @@ body {
   background: rgba(0, 0, 0, 0.05);
 }
 
-/* ===== Dropdown blanco / texto negro / tipografía navbar ===== */
-.nav-item {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
-
-.nav-item .nav-link {
-  position: relative;
-}
-
-.nav-dropdown--white {
-  position: absolute;
-  top: calc(100% + 14px);
-  left: 0;
-  z-index: 9999;
-
-  min-width: 250px;
-  padding: 10px;
-
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.14);
-  backdrop-filter: blur(10px);
-
-  display: none;
-  animation: dropIn 0.18s ease-out;
-}
-
-.nav-item.open .nav-dropdown--white {
-  display: block;
-}
-
-.nav-dropdown--white a {
-  display: block;
-  text-decoration: none;
-
-  padding: 12px 12px;
-  border-radius: 10px;
-
-  /* ✅ misma vibra del navbar */
-  font-family: inherit;
-  font-size: 0.95rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-
-  color: #1f1f1f;
-  transition: background 0.18s ease, transform 0.18s ease;
-}
-
-.nav-dropdown--white a:hover {
-  background: rgba(0, 0, 0, 0.06);
-  transform: translateX(2px);
-}
-
-@keyframes dropIn {
-  from { opacity: 0; transform: translateY(-8px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== Mobile groups (si no los tenías) ===== */
-.mobile-group {
-  margin-top: 18px;
-}
-
-.mobile-title {
-  font-family: inherit;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  opacity: 0.7;
-  margin-bottom: 10px;
+/* iPad → menú hamburguesa */
+@media (max-width: 1024px) {
+  .nav-left {
+    display: none;
+  }
+  .menu-button {
+    display: block;
+  }
 }

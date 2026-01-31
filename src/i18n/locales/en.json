@@ -1,57 +1,42 @@
 {
   "nav": {
-    "shop": "SHOP",
-    "collections": "COLLECTIONS",
-    "sustainability": "SUSTAINABILITY",
-    "sale": "SALE",
-    "faq": "FAQ"
+    "categories": "CATEGORIES",
+    "us": "US",
+    "services": "SERVICES",
+    "wholesale": "WHOLESALE"
+  },
+  "categories": {
+    "women": "WOMEN",
+    "men": "MEN",
+    "collectables": "COLLECTABLES",
+    "andean": "ANDEAN FASHION",
+    "home": "HOME",
+    "socks": "SOCKS",
+    "accessories": "ACCESSORIES"
   },
   "sections": {
     "title": "OUR COMMITMENT BEYOND SOFTNESS",
-    "more": "SEE MORE",
-    "items": {
-      "woman": "WOMAN",
-      "men": "MEN",
-      "socks": "SOCKS",
-      "accessories": "ACCESSORIES",
-      "home": "HOME",
-      "collectables": "COLLECTABLES",
-      "andean": "ANDEAN FASHION"
-    }
+    "more": "VIEW MORE"
   },
   "about": {
     "title": "About us",
-    "text": "Everything Alpaca was established in 1998. We design and manufacture textile garments focusing on natural fine fibers, mainly alpaca wool. Our main office and distribution center is located in Los Angeles, United States, while our production center is located in Arequipa, Peru. Everything Alpaca is present in the American, Canadian and South American markets."
+    "text": "Everything Alpaca was founded in 1998. We design and manufacture premium textiles focused on fine natural fibers, primarily alpaca wool. Our main office and distribution center are located in Los Angeles, United States, while our production center is based in Arequipa, Peru. We serve the American, Canadian, and South American markets."
   },
   "mission": {
     "title": "Our mission",
-    "text": "Our mission is to provide only finished garments of exceptional quality and durability over time. Therefore, it is in our best interest to grow hand in hand with our suppliers and artisans. In addition, we manufacture natural and sustainable products with the intention of generating the smallest possible environmental footprint."
+    "text": "Our mission is to deliver finished products of exceptional quality and long-lasting durability. We grow alongside our suppliers and artisans while promoting ethical and sustainable production with minimal environmental impact."
   },
   "footer": {
-    "description": "Luxury Peruvian textiles crafted with care and conscience.",
-    "shop": {
-      "title": "Shop",
-      "new": "New Arrivals",
-      "best": "Bestsellers",
-      "sale": "Sale",
-      "offers": "Offers"
-    },
-    "info": {
-      "title": "Information",
-      "about": "About us",
-      "care": "Care guide",
-      "shipping": "Shipping",
-      "returns": "Returns"
-    },
+    "description": "Luxury Peruvian textiles, crafted with care and consciousness.",
     "subscribe": {
-      "title": "Contact us or Subscribe",
-      "text": "Subscribe for exclusive offers and updates",
+      "title": "Contact or Subscribe",
+      "text": "Subscribe to receive exclusive offers and updates.",
       "placeholder": "Your email",
       "button": "Send",
       "sent": "Sent!",
-      "error": "Something went wrong.",
-      "mailSubject": "Newsletter / Contact request",
-      "mailBody": "Hello, I want to subscribe with this email"
+      "error": "An error occurred.",
+      "mailSubject": "Subscription / Contact",
+      "mailBody": "Hello, I would like to subscribe and receive information."
     },
     "rights": "All rights reserved."
   }

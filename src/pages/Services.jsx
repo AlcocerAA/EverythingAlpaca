@@ -34,7 +34,6 @@ export default function Services() {
 
         <div className="services-card">
           <div className="services-grid">
-            {/* PROTOTYPING */}
             <div className="service-box">
               <h3>
                 {t(
@@ -50,7 +49,7 @@ export default function Services() {
               </p>
             </div>
 
-            {/* MANUFACTURING (NO TOCADO) */}
+            {/* ✅ MANUFACTURING (igual que lo dejaste) */}
             <div className="service-box">
               <h3>
                 {t("pages.services.items.customization.title", "MANUFACTURING")}
@@ -74,7 +73,7 @@ export default function Services() {
               </div>
             </div>
 
-            {/* LOGISTICS (limpio) */}
+            {/* ✅ LOGISTICS (limpio) */}
             <div className="service-box">
               <h3>{t("pages.services.items.logistics.title", "LOGISTICS")}</h3>
               <p>
@@ -85,10 +84,10 @@ export default function Services() {
               </p>
             </div>
 
-            {/* ✅ NUEVO: LOW MOQ / GARMENT LABELING */}
+            {/* ✅ LOW MOQ + GARMENT LABELING (como antes, pero texto parpadea) */}
             <div className="service-box service-box-center">
               <h3>LOW MOQ</h3>
-              <p className="service-big">Garment Labeling</p>
+              <p className="service-big">GARMENT LABELING</p>
             </div>
           </div>
 

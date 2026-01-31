@@ -19,7 +19,7 @@
   z-index: 0;
 }
 
-/* OVERLAY OSCURO PERO VISIBLE */
+/* OVERLAY */
 .services-overlay {
   position: absolute;
   inset: 0;
@@ -46,7 +46,6 @@
   padding: 120px 0 70px;
 }
 
-/* TEXTO SUPERIOR BLANCO */
 .services-title {
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(2.6rem, 5vw, 3.6rem);
@@ -64,7 +63,7 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* CARD BLANCA (INTACTA) */
+/* CARD */
 .services-card {
   background: rgba(255, 255, 255, 0.86);
   border: 1px solid rgba(0, 0, 0, 0.10);
@@ -104,7 +103,7 @@
   color: #1f1f1f;
 }
 
-/* ✅ SUBSECCIÓN (KNIT dentro de MANUFACTURING) */
+/* SUB KNIT */
 .service-sub {
   margin-top: 14px;
   padding-top: 12px;
@@ -120,14 +119,54 @@
   text-transform: uppercase;
 }
 
-.service-sub p {
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.92rem;
-  line-height: 1.55;
-  margin: 0;
-  color: #1f1f1f;
+/* ✅ LOW MOQ BOX (como antes) */
+.service-box-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+/* ✅ GARMENT LABELING como antes (bloque gris clarito)
+   + SOLO el texto con efecto de parpadeo/pulso */
+.service-big {
+  margin-top: 8px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #1f1f1f;
+
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  padding: 12px 16px;
+  border-radius: 12px;
+  display: inline-block;
+
+  animation: textPulse 1.6s ease-in-out infinite;
+}
+
+/* 🔥 Parpadeo/pulso del texto (sin cambiar la caja) */
+@keyframes textPulse {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+    text-shadow: none;
+  }
+  50% {
+    opacity: 0.55;
+    transform: translateY(-1px);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    text-shadow: none;
+  }
+}
+
+/* BOTON */
 .services-btn {
   display: inline-block;
   margin-top: 34px;

@@ -91,7 +91,7 @@ export default function Wholesale() {
             <div className="wholesale-cta-block">
               <p>Wholesale account holders access your account here.</p>
               <a
-                href="https://shop.everything-alpaca.com"
+                href="https://shop.everything-alpaca.com/myaccount.asp"
                 target="_blank"
                 rel="noreferrer"
                 className="wholesale-btn"

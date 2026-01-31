@@ -9,34 +9,74 @@
     "women": "DAMEN",
     "men": "HERREN",
     "collectables": "SAMMLERSTÜCKE",
-    "andean": "ANDEANISCHE MODE",
-    "home": "WOHNEN",
+    "andean": "ANDEEN-MODE",
+    "home": "ZUHAUSE",
     "socks": "SOCKEN",
     "accessories": "ACCESSOIRES"
   },
   "sections": {
     "title": "UNSER ENGAGEMENT ÜBER WEICHHEIT HINAUS",
-    "more": "MEHR ERFAHREN"
+    "more": "MEHR ANSEHEN"
   },
   "about": {
     "title": "Über uns",
-    "text": "Everything Alpaca wurde 1998 gegründet. Wir entwerfen und produzieren hochwertige Textilien aus feinen Naturfasern, insbesondere Alpakawolle. Unser Hauptsitz und Vertriebszentrum befinden sich in Los Angeles, USA, während unsere Produktion in Arequipa, Peru angesiedelt ist. Wir bedienen den amerikanischen, kanadischen und südamerikanischen Markt."
+    "text": "Everything Alpaca wurde 1998 gegründet. Wir entwerfen und produzieren Premium-Textilien aus feinen Naturfasern, vor allem Alpakawolle. Unser Hauptbüro und Distributionszentrum befinden sich in Los Angeles (USA), unser Produktionszentrum in Arequipa (Peru). Wir bedienen den US-, kanadischen und südamerikanischen Markt."
   },
   "mission": {
     "title": "Unsere Mission",
-    "text": "Unsere Mission ist es, langlebige Produkte von außergewöhnlicher Qualität anzubieten. Wir wachsen gemeinsam mit unseren Lieferanten und Kunsthandwerkern und setzen auf ethische und nachhaltige Produktionsprozesse."
+    "text": "Unsere Mission ist es, Produkte von außergewöhnlicher Qualität und langer Haltbarkeit zu liefern. Wir wachsen gemeinsam mit Lieferanten und Kunsthandwerkern und fördern eine ethische, nachhaltige Produktion mit minimaler Umweltbelastung."
+  },
+  "products": {
+    "featuredTitle": "Ausgewählte Produkte",
+    "featuredSubtitle": "Eine kuratierte Auswahl unserer besten Stücke aus Alpakafaser.",
+    "seeMore": "MEHR PRODUKTE ANSEHEN",
+    "items": {
+      "blanket": "Decke",
+      "hat": "Molinet-Mütze",
+      "hatChunky": "Chunky-Mütze mit Pompon",
+      "reversible": "Wendeschal Lila",
+      "chocolate": "Fischgrät-Sofaüberwurf",
+      "thermal": "Thermo-Unterwäsche"
+    }
+  },
+  "sustainability": {
+    "items": {
+      "eco": {
+        "title": "Umweltfreundlich",
+        "text": "Alpakafaser ist eine der nachhaltigsten Naturfasern: biologisch abbaubar und mit minimaler Umweltbelastung."
+      },
+      "fair": {
+        "title": "Fair Trade",
+        "text": "Wir arbeiten eng mit Kunsthandwerkern und Lieferanten zusammen und achten in jeder Phase auf faire und ethische Praktiken."
+      },
+      "zero": {
+        "title": "Zero Waste",
+        "text": "Unsere Produktion minimiert Abfall durch verantwortungsvolle Beschaffung und effiziente Herstellungsprozesse."
+      },
+      "animal": {
+        "title": "Tierschutz",
+        "text": "Wir setzen uns für eine ethische Behandlung und respektvolle Pflege der Alpakas entlang der gesamten Lieferkette ein."
+      }
+    }
   },
   "footer": {
-    "description": "Luxuriöse peruanische Textilien, mit Sorgfalt und Verantwortung hergestellt.",
+    "description": "Luxuriöse peruanische Textilien, mit Sorgfalt und Bewusstsein gefertigt.",
+    "links": {
+      "title": "LINKS",
+      "terms": "Allgemeine Geschäftsbedingungen",
+      "productIndex": "Produktindex",
+      "affiliate": "Affiliate werden",
+      "categoryIndex": "Kategorienindex"
+    },
     "subscribe": {
       "title": "Kontakt oder Abonnieren",
-      "text": "Abonnieren Sie unseren Newsletter für Neuigkeiten und Angebote.",
+      "text": "Abonnieren Sie, um exklusive Angebote und Updates zu erhalten.",
       "placeholder": "Ihre E-Mail",
       "button": "Senden",
       "sent": "Gesendet!",
       "error": "Ein Fehler ist aufgetreten.",
       "mailSubject": "Abonnement / Kontakt",
-      "mailBody": "Hallo, ich möchte Informationen erhalten und mich abonnieren."
+      "mailBody": "Hallo, ich möchte abonnieren und Informationen erhalten."
     },
     "rights": "Alle Rechte vorbehalten."
   }

@@ -7,19 +7,30 @@ import de from "./locales/de.json"
 import it from "./locales/it.json"
 
 /* ===============================
-   DETECCIÓN DE IDIOMA
+   I18N SETUP (Vite + react-i18next)
+   ✅ Fixes:
+   - Soporta en-US/es-PE/etc (load: languageOnly)
+   - Normaliza el idioma guardado
+   - Guarda idioma al cambiar (localStorage)
 ================================ */
-const getBrowserLanguage = () => {
-  const saved = localStorage.getItem("i18nextLng")
-  if (saved) return saved
 
-  const lang = navigator.language.split("-")[0]
-  return ["en", "es", "de", "it"].includes(lang) ? lang : "en"
+const SUPPORTED = ["en", "es", "de", "it"]
+
+const normalizeLng = (lng) => {
+  if (!lng) return "en"
+  const base = String(lng).toLowerCase().split("-")[0]
+  return SUPPORTED.includes(base) ? base : "en"
 }
 
-/* ===============================
-   INIT I18N
-================================ */
+const getInitialLanguage = () => {
+  // 1) Preferencia guardada
+  const saved = localStorage.getItem("i18nextLng")
+  if (saved) return normalizeLng(saved)
+
+  // 2) Idioma del navegador
+  return normalizeLng(navigator.language)
+}
+
 i18n.use(initReactI18next).init({
   resources: {
     en: { translation: en },
@@ -27,22 +38,24 @@ i18n.use(initReactI18next).init({
     de: { translation: de },
     it: { translation: it },
   },
-  lng: getBrowserLanguage(),
+
+  lng: getInitialLanguage(),
   fallbackLng: "en",
-  supportedLngs: ["en", "es", "de", "it"],
+  supportedLngs: SUPPORTED,
+  load: "languageOnly",
+
   interpolation: {
     escapeValue: false,
   },
+
   react: {
     useSuspense: false,
   },
 })
 
-/* ===============================
-   GUARDAR IDIOMA AL CAMBIAR
-================================ */
+// ✅ Guardar idioma en localStorage SIEMPRE normalizado
 i18n.on("languageChanged", (lng) => {
-  localStorage.setItem("i18nextLng", lng)
+  localStorage.setItem("i18nextLng", normalizeLng(lng))
 })
 
 export default i18n

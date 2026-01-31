@@ -20,23 +20,63 @@
   },
   "about": {
     "title": "Sobre nosotros",
-    "text": "Everything Alpaca fue fundada en 1998. Diseñamos y fabricamos textiles de alta calidad enfocados en fibras naturales finas, principalmente lana de alpaca. Nuestra oficina principal y centro de distribución se encuentran en Los Ángeles, Estados Unidos, mientras que nuestro centro de producción está ubicado en Arequipa, Perú. Estamos presentes en los mercados americano, canadiense y sudamericano."
+    "text": "Everything Alpaca fue fundada en 1998. Diseñamos y fabricamos textiles premium enfocados en fibras naturales finas, principalmente lana de alpaca. Nuestra oficina principal y centro de distribución están en Los Ángeles (EE.UU.), y nuestro centro de producción está en Arequipa, Perú. Atendemos los mercados de Estados Unidos, Canadá y Sudamérica."
   },
   "mission": {
     "title": "Nuestra misión",
-    "text": "Nuestra misión es ofrecer productos terminados de calidad excepcional y durabilidad en el tiempo. Crecemos junto a nuestros proveedores y artesanos, promoviendo una producción ética y sostenible que reduzca al mínimo el impacto ambiental."
+    "text": "Nuestra misión es entregar productos terminados de calidad excepcional y gran durabilidad. Crecemos junto a nuestros proveedores y artesanos, promoviendo una producción ética y sostenible con mínimo impacto ambiental."
+  },
+  "products": {
+    "featuredTitle": "Productos Destacados",
+    "featuredSubtitle": "Una selección curada de nuestras mejores piezas en fibra de alpaca.",
+    "seeMore": "VER MÁS PRODUCTOS",
+    "items": {
+      "blanket": "Manta",
+      "hat": "Gorro Molinet",
+      "hatChunky": "Gorro Chunky con Pompon",
+      "reversible": "Reversible Morado",
+      "chocolate": "Manta Sofá Espiga",
+      "thermal": "Ropa Interior Térmica"
+    }
+  },
+  "sustainability": {
+    "items": {
+      "eco": {
+        "title": "Eco-Amigable",
+        "text": "La fibra de alpaca es una de las fibras naturales más sostenibles: biodegradable y con mínimo impacto ambiental."
+      },
+      "fair": {
+        "title": "Comercio Justo",
+        "text": "Trabajamos de cerca con artesanos y proveedores, asegurando prácticas éticas y de comercio justo en cada etapa."
+      },
+      "zero": {
+        "title": "Cero Residuos",
+        "text": "Nuestra producción minimiza residuos mediante abastecimiento responsable y procesos de fabricación eficientes."
+      },
+      "animal": {
+        "title": "Bienestar Animal",
+        "text": "Estamos comprometidos con un trato ético y el cuidado respetuoso de las alpacas en toda la cadena."
+      }
+    }
   },
   "footer": {
     "description": "Textiles peruanos de lujo, hechos con cuidado y conciencia.",
+    "links": {
+      "title": "ENLACES",
+      "terms": "Términos y condiciones",
+      "productIndex": "Índice de productos",
+      "affiliate": "Hazte afiliado",
+      "categoryIndex": "Índice de categorías"
+    },
     "subscribe": {
-      "title": "Contáctanos o Suscríbete",
-      "text": "Suscríbete para recibir novedades y promociones exclusivas.",
-      "placeholder": "Tu correo electrónico",
+      "title": "Contactar o Suscribirse",
+      "text": "Suscríbete para recibir ofertas y novedades.",
+      "placeholder": "Tu correo",
       "button": "Enviar",
       "sent": "¡Enviado!",
       "error": "Ocurrió un error.",
       "mailSubject": "Suscripción / Contacto",
-      "mailBody": "Hola, deseo recibir información y suscribirme."
+      "mailBody": "Hola, me gustaría suscribirme y recibir información."
     },
     "rights": "Todos los derechos reservados."
   }

@@ -2,36 +2,17 @@ import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Leaf, Handshake, Recycle, Heart } from "lucide-react"
 import "../styles/sustainability.css"
+import { useTranslation } from "react-i18next"
 
 const items = [
-  {
-    icon: Leaf,
-    title: "Eco-Friendly",
-    text:
-      "Alpaca fiber is one of the most sustainable natural fibers, biodegradable and requiring minimal environmental impact.",
-  },
-  {
-    icon: Handshake,
-    title: "Fair Trade",
-    text:
-      "We work closely with artisans and suppliers, ensuring ethical and fair trade practices at every stage.",
-  },
-  {
-    icon: Recycle,
-    title:
-      "Zero Waste",
-    text:
-      "Our production minimizes waste through responsible sourcing and efficient manufacturing processes.",
-  },
-  {
-    icon: Heart,
-    title: "Animal Welfare",
-    text:
-      "We are committed to ethical treatment and respectful care of alpacas throughout the supply chain.",
-  },
+  { icon: Leaf, key: "eco" },
+  { icon: Handshake, key: "fair" },
+  { icon: Recycle, key: "zero" },
+  { icon: Heart, key: "animal" },
 ]
 
 export default function Sustainability() {
+  const { t } = useTranslation()
   const [index, setIndex] = useState(0)
 
   // ✅ drag helpers
@@ -63,7 +44,6 @@ export default function Sustainability() {
   const next = () => setIndex((prev) => (prev + 1) % items.length)
   const prev = () => setIndex((prev) => (prev - 1 + items.length) % items.length)
 
-  // ✅ swipe/drag en mobile (sin flechas)
   const onPointerDown = (e) => {
     draggingRef.current = true
     offsetRef.current = 0
@@ -84,7 +64,7 @@ export default function Sustainability() {
     e.currentTarget.releasePointerCapture?.(e.pointerId)
 
     const delta = offsetRef.current
-    const threshold = 55 // ✅ sensibilidad swipe
+    const threshold = 55
 
     if (delta <= -threshold) next()
     else if (delta >= threshold) prev()
@@ -111,8 +91,8 @@ export default function Sustainability() {
               <div className="icon-circle">
                 <Icon size={34} strokeWidth={1.4} />
               </div>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
+              <h3>{t(`sustainability.items.${item.key}.title`)}</h3>
+              <p>{t(`sustainability.items.${item.key}.text`)}</p>
             </motion.div>
           )
         })}
@@ -142,8 +122,8 @@ export default function Sustainability() {
                 return <Icon size={34} strokeWidth={1.4} />
               })()}
             </div>
-            <h3>{items[index].title}</h3>
-            <p>{items[index].text}</p>
+            <h3>{t(`sustainability.items.${items[index].key}.title`)}</h3>
+            <p>{t(`sustainability.items.${items[index].key}.text`)}</p>
           </motion.div>
         </AnimatePresence>
       </div>

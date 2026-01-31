@@ -26,8 +26,48 @@
     "title": "Our mission",
     "text": "Our mission is to deliver finished products of exceptional quality and long-lasting durability. We grow alongside our suppliers and artisans while promoting ethical and sustainable production with minimal environmental impact."
   },
+  "products": {
+    "featuredTitle": "Featured Products",
+    "featuredSubtitle": "A curated selection of our best pieces in alpaca fiber.",
+    "seeMore": "SEE MORE PRODUCTS",
+    "items": {
+      "blanket": "Blanket",
+      "hat": "Molinet Hat",
+      "hatChunky": "Pompon Chunky Hat",
+      "reversible": "Reversible Purple",
+      "chocolate": "Herringbone Sofa Throw",
+      "thermal": "Thermal Underwear"
+    }
+  },
+  "sustainability": {
+    "items": {
+      "eco": {
+        "title": "Eco-Friendly",
+        "text": "Alpaca fiber is one of the most sustainable natural fibers, biodegradable and requiring minimal environmental impact."
+      },
+      "fair": {
+        "title": "Fair Trade",
+        "text": "We work closely with artisans and suppliers, ensuring ethical and fair trade practices at every stage."
+      },
+      "zero": {
+        "title": "Zero Waste",
+        "text": "Our production minimizes waste through responsible sourcing and efficient manufacturing processes."
+      },
+      "animal": {
+        "title": "Animal Welfare",
+        "text": "We are committed to ethical treatment and respectful care of alpacas throughout the supply chain."
+      }
+    }
+  },
   "footer": {
     "description": "Luxury Peruvian textiles, crafted with care and consciousness.",
+    "links": {
+      "title": "LINKS",
+      "terms": "Terms and Conditions",
+      "productIndex": "Product Index",
+      "affiliate": "Become an Affiliate",
+      "categoryIndex": "Category Index"
+    },
     "subscribe": {
       "title": "Contact or Subscribe",
       "text": "Subscribe to receive exclusive offers and updates.",

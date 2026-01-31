@@ -1,6 +1,9 @@
 import "../styles/services.css"
+import { useTranslation } from "react-i18next"
 
 export default function Services() {
+  const { t } = useTranslation()
+
   return (
     <section className="services-hero">
       {/* VIDEO FONDO (loop) */}
@@ -18,32 +21,55 @@ export default function Services() {
       <div className="services-overlay" />
 
       <div className="services-content">
-        <h1 className="services-title">SERVICES</h1>
+        <h1 className="services-title">{t("pages.services.heroTitle", "SERVICES")}</h1>
 
         <p className="services-subtitle">
-          We offer tailored alpaca solutions for brands, boutiques, and custom projects — from product sourcing to private label.
+          {t(
+            "pages.services.heroSubtitle",
+            "We offer tailored alpaca solutions for brands, boutiques, and custom projects — from product sourcing to private label."
+          )}
         </p>
 
         <div className="services-card">
           <div className="services-grid">
             <div className="service-box">
-              <h3>PRIVATE LABEL</h3>
-              <p>Custom products with your brand identity: labels, packaging, and curated materials.</p>
+              <h3>{t("pages.services.items.privateLabel.title", "PRIVATE LABEL")}</h3>
+              <p>
+                {t(
+                  "pages.services.items.privateLabel.text",
+                  "Custom products with your brand identity: labels, packaging, and curated materials."
+                )}
+              </p>
             </div>
 
             <div className="service-box">
-              <h3>CUSTOMIZATION</h3>
-              <p>Colors, patterns, and finishes adapted to your collection and market needs.</p>
+              <h3>{t("pages.services.items.customization.title", "CUSTOMIZATION")}</h3>
+              <p>
+                {t(
+                  "pages.services.items.customization.text",
+                  "Colors, patterns, and finishes adapted to your collection and market needs."
+                )}
+              </p>
             </div>
 
             <div className="service-box">
-              <h3>PRODUCT SOURCING</h3>
-              <p>Help selecting the right alpaca items for your audience: apparel, accessories and home decor.</p>
+              <h3>{t("pages.services.items.sourcing.title", "PRODUCT SOURCING")}</h3>
+              <p>
+                {t(
+                  "pages.services.items.sourcing.text",
+                  "Help selecting the right alpaca items for your audience: apparel, accessories and home decor."
+                )}
+              </p>
             </div>
 
             <div className="service-box">
-              <h3>LOGISTICS SUPPORT</h3>
-              <p>Guidance for shipping, packing, documentation and order planning.</p>
+              <h3>{t("pages.services.items.logistics.title", "LOGISTICS SUPPORT")}</h3>
+              <p>
+                {t(
+                  "pages.services.items.logistics.text",
+                  "Guidance for shipping, packing, documentation and order planning."
+                )}
+              </p>
             </div>
           </div>
 
@@ -53,7 +79,7 @@ export default function Services() {
             target="_blank"
             rel="noreferrer"
           >
-            CONTACT US
+            {t("pages.services.contactCta", "CONTACT US")}
           </a>
         </div>
       </div>

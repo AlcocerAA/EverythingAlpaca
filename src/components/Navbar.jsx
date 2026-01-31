@@ -13,7 +13,7 @@ export default function Navbar() {
 
   const closeTimer = useRef(null)
   const { t, i18n } = useTranslation()
-  const currentLang = i18n.language
+  const currentLang = (i18n.resolvedLanguage || i18n.language || "en").split("-")[0]
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40)
@@ -37,22 +37,22 @@ export default function Navbar() {
 
   const categoriesLinks = useMemo(
     () => [
-      { label: "Women", href: "https://shop.everything-alpaca.com/Womens-s/1814.htm" },
-      { label: "Men", href: "https://shop.everything-alpaca.com/Mens-s/1815.htm" },
-      { label: "Collectables", href: "https://shop.everything-alpaca.com/Collectibles-s/1899.htm" },
-      { label: "Andean Fashion", href: "https://shop.everything-alpaca.com/Andean-Fashion-s/1900.htm" },
-      { label: "Home", href: "https://shop.everything-alpaca.com/Home-s/1817.htm" },
-      { label: "Socks", href: "https://shop.everything-alpaca.com/Socks-s/1816.htm" },
-      { label: "Accessories", href: "https://shop.everything-alpaca.com/Accessories-s/1818.htm" },
+      { key: "women", href: "https://shop.everything-alpaca.com/Women_c_7.html" },
+      { key: "men", href: "https://shop.everything-alpaca.com/Men_c_70.html" },
+      { key: "collectables", href: "https://shop.everything-alpaca.com/Collectables-and-Souvenirs_c_11.html" },
+      { key: "andean", href: "https://shop.everything-alpaca.com/Andean-Fashion_c_15.html" },
+      { key: "home", href: "https://shop.everything-alpaca.com/Home-Decor_c_10.html" },
+      { key: "socks", href: "https://shop.everything-alpaca.com/Socks_c_56.html" },
+      { key: "accessories", href: "https://shop.everything-alpaca.com/Knitted-Accessories_c_9.html" },
     ],
     []
   )
 
   const usLinks = useMemo(
     () => [
-      { label: "Contact Us", href: "https://shop.everything-alpaca.com/crm.asp?action=contactus" },
-      { label: "Sustainability", to: "/sustainability" },
-      { label: "Our Vision & Mission", to: "/us" },
+      { key: "contact", href: "https://shop.everything-alpaca.com/crm.asp?action=contactus" },
+      { key: "sustainability", to: "/sustainability" },
+      { key: "visionMission", to: "/us" },
     ],
     []
   )
@@ -86,13 +86,13 @@ export default function Navbar() {
               onPointerLeave={() => scheduleClose(setCategoriesOpen)}
             >
               <a href="#" className="nav-link" onClick={(e) => e.preventDefault()}>
-                CATEGORIES
+                {t("nav.categories", "CATEGORIES")}
               </a>
 
               <div className="nav-dropdown nav-dropdown--white">
                 {categoriesLinks.map((l) => (
-                  <a key={l.label} href={l.href} className="nav-dd-link" target="_blank" onClick={closeAll}>
-                    {l.label}
+                  <a key={l.key} href={l.href} className="nav-dd-link" target="_blank" onClick={closeAll}>
+                    {t(`categories.${l.key}`, l.key)}
                   </a>
                 ))}
               </div>
@@ -109,26 +109,30 @@ export default function Navbar() {
               onPointerLeave={() => scheduleClose(setUsOpen)}
             >
               <a href="#" className="nav-link" onClick={(e) => e.preventDefault()}>
-                US
+                {t("nav.us", "US")}
               </a>
 
               <div className="nav-dropdown nav-dropdown--white">
                 {usLinks.map((l) =>
                   l.to ? (
-                    <Link key={l.label} to={l.to} className="nav-dd-link" onClick={closeAll}>
-                      {l.label}
+                    <Link key={l.key} to={l.to} className="nav-dd-link" onClick={closeAll}>
+                      {t(`us.${l.key}`, l.key)}
                     </Link>
                   ) : (
-                    <a key={l.label} href={l.href} className="nav-dd-link" onClick={closeAll}>
-                      {l.label}
+                    <a key={l.key} href={l.href} className="nav-dd-link" onClick={closeAll}>
+                      {t(`us.${l.key}`, l.key)}
                     </a>
                   )
                 )}
               </div>
             </div>
 
-            <NavLink to="/services" className="nav-link">SERVICES</NavLink>
-            <NavLink to="/wholesale" className="nav-link">WHOLESALE</NavLink>
+            <NavLink to="/services" className="nav-link">
+              {t("nav.services", "SERVICES")}
+            </NavLink>
+            <NavLink to="/wholesale" className="nav-link">
+              {t("nav.wholesale", "WHOLESALE")}
+            </NavLink>
           </nav>
 
           {/* MOBILE BTN */}
@@ -171,22 +175,32 @@ export default function Navbar() {
 
             <nav className="mobile-nav">
               <div className="mobile-group">
-                <div className="mobile-title">Categories</div>
+                <div className="mobile-title">{t("nav.categories", "CATEGORIES")}</div>
                 {categoriesLinks.map((l) => (
-                  <a key={l.label} href={l.href} target="_blank">{l.label}</a>
+                  <a key={l.key} href={l.href} target="_blank">
+                    {t(`categories.${l.key}`, l.key)}
+                  </a>
                 ))}
               </div>
 
               <div className="mobile-group">
-                <div className="mobile-title">US</div>
+                <div className="mobile-title">{t("nav.us", "US")}</div>
                 {usLinks.map((l) =>
-                  l.to ? <Link key={l.label} to={l.to}>{l.label}</Link> : <a key={l.label} href={l.href}>{l.label}</a>
+                  l.to ? (
+                    <Link key={l.key} to={l.to}>
+                      {t(`us.${l.key}`, l.key)}
+                    </Link>
+                  ) : (
+                    <a key={l.key} href={l.href}>
+                      {t(`us.${l.key}`, l.key)}
+                    </a>
+                  )
                 )}
               </div>
 
               <div className="mobile-group">
-                <Link to="/services">Services</Link>
-                <Link to="/wholesale">Wholesale</Link>
+                <Link to="/services">{t("nav.services", "SERVICES")}</Link>
+                <Link to="/wholesale">{t("nav.wholesale", "WHOLESALE")}</Link>
               </div>
             </nav>
           </div>

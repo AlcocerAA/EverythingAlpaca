@@ -16,27 +16,67 @@
   },
   "sections": {
     "title": "IL NOSTRO IMPEGNO OLTRE LA MORBIDEZZA",
-    "more": "SCOPRI DI PIÙ"
+    "more": "VEDI DI PIÙ"
   },
   "about": {
     "title": "Chi siamo",
-    "text": "Everything Alpaca è stata fondata nel 1998. Progettiamo e produciamo tessuti di alta qualità basati su fibre naturali pregiate, principalmente lana di alpaca. Il nostro ufficio principale e centro di distribuzione si trovano a Los Angeles, negli Stati Uniti, mentre il nostro centro di produzione è ad Arequipa, in Perù. Serviamo i mercati americano, canadese e sudamericano."
+    "text": "Everything Alpaca è stata fondata nel 1998. Progettiamo e produciamo tessili premium basati su fibre naturali pregiate, principalmente lana di alpaca. La sede principale e il centro di distribuzione sono a Los Angeles (USA), mentre la produzione è ad Arequipa, Perù. Serviamo i mercati americano, canadese e sudamericano."
   },
   "mission": {
     "title": "La nostra missione",
-    "text": "La nostra missione è offrire prodotti finiti di qualità eccezionale e lunga durata. Cresciamo insieme ai nostri fornitori e artigiani, promuovendo una produzione etica e sostenibile con il minimo impatto ambientale."
+    "text": "La nostra missione è offrire prodotti finiti di qualità eccezionale e lunga durata. Cresciamo insieme a fornitori e artigiani promuovendo una produzione etica e sostenibile con minimo impatto ambientale."
+  },
+  "products": {
+    "featuredTitle": "Prodotti in Evidenza",
+    "featuredSubtitle": "Una selezione curata delle nostre migliori creazioni in fibra di alpaca.",
+    "seeMore": "VEDI PIÙ PRODOTTI",
+    "items": {
+      "blanket": "Coperta",
+      "hat": "Cappello Molinet",
+      "hatChunky": "Cappello Chunky con Pompon",
+      "reversible": "Reversibile Viola",
+      "chocolate": "Coperta Divano a Spina",
+      "thermal": "Biancheria Termica"
+    }
+  },
+  "sustainability": {
+    "items": {
+      "eco": {
+        "title": "Eco-Friendly",
+        "text": "La fibra di alpaca è tra le più sostenibili: biodegradabile e con impatto ambientale minimo."
+      },
+      "fair": {
+        "title": "Commercio Equo",
+        "text": "Collaboriamo con artigiani e fornitori garantendo pratiche etiche e di commercio equo in ogni fase."
+      },
+      "zero": {
+        "title": "Zero Sprechi",
+        "text": "La nostra produzione riduce gli sprechi grazie a forniture responsabili e processi efficienti."
+      },
+      "animal": {
+        "title": "Benessere Animale",
+        "text": "Ci impegniamo per il trattamento etico e la cura rispettosa delle alpaca lungo tutta la filiera."
+      }
+    }
   },
   "footer": {
     "description": "Tessuti peruviani di lusso, realizzati con cura e consapevolezza.",
+    "links": {
+      "title": "LINK",
+      "terms": "Termini e Condizioni",
+      "productIndex": "Indice Prodotti",
+      "affiliate": "Diventa Affiliato",
+      "categoryIndex": "Indice Categorie"
+    },
     "subscribe": {
-      "title": "Contattaci o Iscriviti",
-      "text": "Iscriviti per ricevere novità e offerte esclusive.",
+      "title": "Contatta o Iscriviti",
+      "text": "Iscriviti per ricevere offerte e aggiornamenti.",
       "placeholder": "La tua email",
       "button": "Invia",
       "sent": "Inviato!",
       "error": "Si è verificato un errore.",
       "mailSubject": "Iscrizione / Contatto",
-      "mailBody": "Ciao, desidero ricevere informazioni e iscrivermi."
+      "mailBody": "Ciao, vorrei iscrivermi e ricevere informazioni."
     },
     "rights": "Tutti i diritti riservati."
   }

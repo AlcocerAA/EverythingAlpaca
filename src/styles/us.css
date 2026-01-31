@@ -48,7 +48,7 @@
     ),
     rgba(255, 253, 237, 0.28);
 
-  /* ✅ difuminado elegante (si el navegador no lo soporta, no pasa nada) */
+  /* ✅ difuminado elegante (PC) */
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 
@@ -273,26 +273,6 @@
   border-bottom-color: rgba(0,0,0,0.5);
 }
 
-.us-contact__btn {
-  display: inline-flex;
-  text-decoration: none;
-  padding: 13px 22px;
-  border-radius: 10px;
-  background: #1f1f1f;
-  color: #fff;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-size: 0.88rem;
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-
-.us-contact__btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.92;
-}
-
 /* ====== RESPONSIVE ====== */
 @media (max-width: 1024px) {
   .us-wrap {
@@ -309,6 +289,31 @@
 
   .us-contact__grid {
     grid-template-columns: 1fr;
+  }
+
+  /* ✅ ANTI-LAG FUERTE (iPad/móvil):
+     Safari sufre con backdrop-filter + pseudo-elements.
+     PC NO se toca.
+  */
+  .us-hero__bg::after {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    /* mantenemos el look sin blur */
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.28),
+        rgba(0, 0, 0, 0.16)
+      ),
+      rgba(255, 253, 237, 0.28);
+  }
+
+  /* fuerza composición más ligera */
+  .us-hero__bg,
+  .us-hero__content {
+    transform: translateZ(0);
+    will-change: transform;
   }
 }
 

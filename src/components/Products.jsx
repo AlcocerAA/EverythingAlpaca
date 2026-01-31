@@ -174,7 +174,6 @@ export default function Products() {
     if (!slides.length) return
     const n = items.length
 
-    // si pasas el final real -> vuelve al inicio real (sin animación)
     if (index >= perView + n) {
       const tmr = setTimeout(() => {
         setAnimate(false)
@@ -184,7 +183,6 @@ export default function Products() {
       return () => clearTimeout(tmr)
     }
 
-    // si pasas al inicio por la izquierda -> vuelve al final real
     if (index < perView) {
       const tmr = setTimeout(() => {
         setAnimate(false)
@@ -195,7 +193,6 @@ export default function Products() {
     }
   }, [index, perView, items.length, slides.length])
 
-  // Hold zones
   const startHold = (dir) => {
     stopHold()
     stopAuto()
@@ -217,7 +214,6 @@ export default function Products() {
     return value
   }
 
-  // ✅ bounds considerando perView (para no generar blancos)
   const minX = cardW ? -((slides.length - perView) * cardW) : 0
   const maxX = 0
 
@@ -290,8 +286,8 @@ export default function Products() {
   return (
     <section className="products" id="products">
       <div className="products-head">
-        <h2>{t("Featured Products")}</h2>
-        <p>{t("A curated selection of our best pieces in alpaca fiber.")}</p>
+        <h2>{t("products.featuredTitle", "Featured Products")}</h2>
+        <p>{t("products.featuredSubtitle", "A curated selection of our best pieces in alpaca fiber.")}</p>
       </div>
 
       <div
@@ -353,7 +349,7 @@ export default function Products() {
 
       <div className="products-more">
         <a className="products-more-btn" href="https://shop.everything-alpaca.com/" target="_blank" rel="noreferrer">
-          {t("SEE MORE PRODUCTS")}
+          {t("products.seeMore", "SEE MORE PRODUCTS")}
         </a>
       </div>
     </section>
@@ -361,6 +357,7 @@ export default function Products() {
 }
 
 function ProductCard({ p, disableClick }) {
+  const { t } = useTranslation()
   const [imgIndex, setImgIndex] = useState(0)
   const timerRef = useRef(null)
 
@@ -396,6 +393,7 @@ function ProductCard({ p, disableClick }) {
   }
 
   const currentSrc = p.images?.[imgIndex] ? encodeURI(p.images[imgIndex]) : ""
+  const translatedTitle = t(`products.items.${p.id}`, p.title)
 
   return (
     <a
@@ -415,7 +413,7 @@ function ProductCard({ p, disableClick }) {
           <motion.img
             key={`${p.id}-${imgIndex}`}
             src={currentSrc}
-            alt={p.title}
+            alt={translatedTitle}
             className="product-img"
             initial={{ opacity: 0, scale: 1.01 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -434,7 +432,7 @@ function ProductCard({ p, disableClick }) {
       </div>
 
       <div className="product-meta">
-        <div className="product-name">{p.title}</div>
+        <div className="product-name">{translatedTitle}</div>
       </div>
     </a>
   )

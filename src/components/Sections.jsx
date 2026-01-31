@@ -40,7 +40,13 @@ export default function Sections() {
               transition={{ type: "spring", stiffness: 260, damping: 18 }}
             />
 
-            <span className="section-slide-label">{t(`sections.items.${item.key}`)}</span>
+            <span className="section-slide-label">
+              {item.key === "woman"
+                ? t("categories.women", "WOMEN")
+                : item.key === "men"
+                  ? t("categories.men", "MEN")
+                  : t("categories.accessories", "ACCESSORIES")}
+            </span>
             <span className="section-slide-shade" />
           </motion.a>
         ))}
@@ -52,7 +58,7 @@ export default function Sections() {
         target="_blank"
         rel="noreferrer"
       >
-        SEE MORE <span className="sections-see-more-icon">∨</span>
+        {t("sections.more", "SEE MORE")} <span className="sections-see-more-icon">∨</span>
       </a>
     </section>
   )

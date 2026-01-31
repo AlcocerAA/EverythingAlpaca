@@ -20,12 +20,14 @@ export default function Wholesale() {
       <div className="wholesale-overlay" />
 
       <div className="wholesale-content">
-        <h1 className="wholesale-title">{t("pages.wholesale.heroTitle", "WHOLESALE")}</h1>
+        <h1 className="wholesale-title">
+          {t("pages.wholesale.heroTitle", "WHOLESALE")}
+        </h1>
 
         <p className="wholesale-subtitle">
           {t(
             "pages.wholesale.heroSubtitle",
-            "Wholesale options for retailers and distributors. Build your assortment with premium alpaca pieces and consistent stock planning."
+            "Wholesale manufacturing solutions for retailers, boutiques, and distributors. Partner with us to develop, produce, and scale premium alpaca collections with reliable lead times and consistent quality."
           )}
         </p>
 
@@ -36,7 +38,7 @@ export default function Wholesale() {
               <p>
                 {t(
                   "pages.wholesale.items.retail.text",
-                  "Assortment recommendations based on season, location and target customers."
+                  "Wholesale programs tailored to boutiques and retail chains, with curated assortments aligned to your market and customer profile."
                 )}
               </p>
             </div>
@@ -46,7 +48,7 @@ export default function Wholesale() {
               <p>
                 {t(
                   "pages.wholesale.items.volume.text",
-                  "Competitive wholesale rates for bulk purchases and long-term partnerships."
+                  "Competitive pricing structures based on order volume, supporting scalable growth and long-term wholesale partnerships."
                 )}
               </p>
             </div>
@@ -56,7 +58,7 @@ export default function Wholesale() {
               <p>
                 {t(
                   "pages.wholesale.items.catalog.text",
-                  "We help you select best-sellers and organize collections for your store."
+                  "Assistance in selecting core styles, seasonal pieces, and best-sellers to build a balanced and profitable wholesale catalog."
                 )}
               </p>
             </div>
@@ -66,7 +68,7 @@ export default function Wholesale() {
               <p>
                 {t(
                   "pages.wholesale.items.support.text",
-                  "Reliable communication, order tracking, and post-sale assistance."
+                  "Dedicated wholesale support including production coordination, order tracking, and post-delivery assistance."
                 )}
               </p>
             </div>
@@ -78,7 +80,7 @@ export default function Wholesale() {
             target="_blank"
             rel="noreferrer"
           >
-            {t("pages.wholesale.cta", "REQUEST INFO")}
+            {t("pages.wholesale.cta", "CLICK HERE")}
           </a>
         </div>
       </div>

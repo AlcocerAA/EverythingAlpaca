@@ -1,6 +1,6 @@
 {
   "nav": {
-    "categories": "CATEGORIE",
+    "categories": "CATALOGARE",
     "us": "CHI SIAMO",
     "services": "SERVIZI",
     "wholesale": "INGROSSO"
@@ -10,10 +10,10 @@
     "men": "Uomo",
     "collectables": "Collezionabili",
     "andean": "Moda Andina",
-    "home": "Arredamento Casa",
+    "home": "Arredo Casa",
     "socks": "Calze",
     "accessories": "Accessori",
-    "shawls": "Sciarpe"
+    "shawls": "Scialli"
   },
   "us": {
     "contact": "Contattaci",
@@ -26,67 +26,67 @@
   "products": {
     "featuredTitle": "Prodotti in Evidenza",
     "featuredSubtitle": "Una selezione curata dei nostri migliori capi in fibra di alpaca.",
-    "seeMore": "VEDI PIÙ PRODOTTI",
+    "seeMore": "VEDI ALTRI PRODOTTI",
     "items": {
       "blanket": "Coperta",
       "hat": "Cappello Molinet",
       "hatChunky": "Cappello Chunky con Pon Pon",
       "reversible": "Reversibile Viola",
-      "chocolate": "Coperta Divano a Spina di Pesce",
-      "thermal": "Biancheria Intima Termica"
+      "chocolate": "Plaid Divano Spina di Pesce Chocolate",
+      "thermal": "Intimo Termico"
     }
   },
   "footer": {
-    "description": "Capi in alpaca senza tempo realizzati con cura e responsabilità.",
+    "description": "Capi di alpaca senza tempo realizzati con cura e responsabilità.",
     "rights": "Tutti i diritti riservati.",
     "links": {
       "title": "LINK",
       "terms": "Termini e Condizioni",
       "productIndex": "Indice Prodotti",
-      "affiliate": "Diventa Affiliato",
+      "affiliate": "Diventa un Affiliato",
       "categoryIndex": "Indice Categorie"
     }
   },
   "pages": {
     "services": {
       "heroTitle": "SERVIZI",
-      "heroSubtitle": "Offriamo soluzioni in alpaca su misura per marchi, boutique e progetti personalizzati — dalla selezione dei prodotti al private label.",
+      "heroSubtitle": "Siamo un produttore di abbigliamento specializzato in tessuti e capi di lusso in alpaca e miste alpaca, sia tessuti che a maglia.\nTi aiutiamo a realizzare le tue idee dallo schizzo fino al prodotto finale manifatturato.",
       "contactCta": "CONTATTACI",
       "items": {
         "privateLabel": {
-          "title": "PRIVATE LABEL",
-          "text": "Prodotti personalizzati con l’identità del tuo marchio: etichette, packaging e materiali selezionati."
+          "title": "PROTOTIPAZIONE E CAMPIONATURA",
+          "text": "Possiamo collaborare per creare un prototipo fisico della tua idea e/o consegnare un campione dal tuo tech pack."
         },
         "customization": {
-          "title": "PERSONALIZZAZIONE",
-          "text": "Colori, motivi e finiture adattati alla tua collezione e al tuo mercato."
+          "title": "PRODUZIONE",
+          "text": "Tessuto (Woven)\n- Sciarpe\n- Scialli\n- Plaid\n- Coperte\nLe capacità GSM variano da pashmine super leggere a coperte robuste e tessuti reversibili."
         },
         "sourcing": {
-          "title": "SELEZIONE PRODOTTI",
-          "text": "Supporto nella scelta dei prodotti in alpaca più adatti al tuo pubblico: abbigliamento, accessori e arredamento."
+          "title": "MAGLIERIA (KNIT)",
+          "text": "Finezza 3 fino a finezza 14\n- Maglioni\n- Cardigan\n- Giacche\n- Camicie\n- Cappelli\n- Sciarpe\n- Guanti\n- Calze\n- Mantelle/Wraps"
         },
         "logistics": {
-          "title": "SUPPORTO LOGISTICO",
-          "text": "Assistenza per spedizioni, imballaggio, documentazione e pianificazione degli ordini."
+          "title": "LOGISTICA",
+          "text": "MOQ basso\nEtichettatura dei capi\nLOGISTICA\nSpediamo il tuo ordine da Los Angeles, così non devi preoccuparti di trasporto/dogana."
         }
       }
     },
     "wholesale": {
       "heroTitle": "INGROSSO",
-      "heroSubtitle": "Opzioni all’ingrosso per rivenditori e distributori. Costruisci il tuo assortimento con capi premium in alpaca e pianificazione costante dello stock.",
-      "cta": "RICHIEDI INFORMAZIONI",
+      "heroSubtitle": "Opzioni all’ingrosso per rivenditori e distributori. Costruisci il tuo assortimento con capi premium in alpaca e una pianificazione stock costante.",
+      "cta": "CLICCA QUI",
       "items": {
         "retail": {
           "title": "Programmi Retail",
-          "text": "Consigli sull’assortimento in base alla stagione, alla posizione e al target."
+          "text": "Consigli di assortimento in base a stagione, località e clienti target."
         },
         "volume": {
           "title": "Prezzi per Volume",
-          "text": "Tariffe all’ingrosso competitive per acquisti in grandi quantità e partnership a lungo termine."
+          "text": "Tariffe all’ingrosso competitive per acquisti in quantità e partnership a lungo termine."
         },
         "catalog": {
           "title": "Pianificazione Catalogo",
-          "text": "Ti aiutiamo a selezionare i best seller e organizzare le collezioni per il tuo negozio."
+          "text": "Ti aiutiamo a scegliere i best-seller e organizzare collezioni per il tuo negozio."
         },
         "support": {
           "title": "Supporto",
@@ -97,34 +97,34 @@
     "us": {
       "hero": {
         "title": "La Nostra Visione e Missione",
-        "subtitle": "Capi in alpaca senza tempo realizzati in Perù — progettati per durare, fatti con cura.",
+        "subtitle": "Capi senza tempo in alpaca realizzati in Perù — progettati per durare, fatti con cura.",
         "cta": "VISITA IL NEGOZIO"
       },
       "about": {
         "kicker": "CHI SIAMO",
         "title": "Everything Alpaca",
-        "p1": "Everything Alpaca è stata fondata nel 1998. Progettiamo e produciamo capi tessili focalizzati su fibre naturali pregiate, principalmente lana di alpaca.",
+        "p1": "Everything Alpaca è stata fondata nel 1998. Progettiamo e produciamo capi tessili concentrandoci su fibre naturali pregiate, principalmente lana di alpaca.",
         "p2": "Everything Alpaca è presente nei mercati americano, canadese e sudamericano.",
         "note": "Progettato negli USA • Realizzato ad Arequipa, Perù"
       },
       "mission": {
         "kicker": "LA NOSTRA MISSIONE",
-        "p1": "La nostra missione è offrire capi finiti di qualità eccezionale e grande durata.",
-        "p2": "Abbiamo 4 linee di produzione: Abbigliamento, Accessori, Arredamento Casa e Moda Andina."
+        "p1": "La nostra missione è fornire capi finiti di qualità e durata eccezionali.",
+        "p2": "Abbiamo 4 linee di produzione: Abbigliamento, Accessori, Arredo Casa e Moda Andina."
       },
       "vision": {
         "kicker": "LA NOSTRA VISIONE",
-        "p1": "Diventare un marchio di alpaca affidabile a livello mondiale.",
-        "quote": "IL NOSTRO IMPEGNO È RIVOLTO A UN SERVIZIO CLIENTI ECCELLENTE E ALLA VOSTRA PIENA SODDISFAZIONE."
+        "p1": "Essere un marchio di alpaca affidabile in tutto il mondo.",
+        "quote": "IL NOSTRO IMPEGNO È ORIENTATO A UN SERVIZIO CLIENTI ECCELLENTE E ALLA TUA COMPLETA SODDISFAZIONE."
       },
       "contact": {
         "kicker": "CONTATTACI",
         "wholesaleLabel": "Ingrosso (USA)",
         "otherLabel": "Altri Paesi",
         "hoursLabel": "Orari",
-        "hoursText": "9:00 – 18:00 ORA DELLA COSTA OVEST.",
+        "hoursText": "9.00 - 6.00 WEST.",
         "addressLabel": "Indirizzo",
-        "addressText": "Via Ayacucho 204, Cercado, Arequipa – Perù"
+        "addressText": "Calle Ayacucho 204, Cercado, Arequipa – Perù"
       }
     },
     "sus": {
@@ -146,7 +146,7 @@
       "sideNote": "Fibra naturale • Produzione etica • Progettato per durare",
       "commit": {
         "kicker": "I NOSTRI IMPEGNI",
-        "title": "I nostri valori",
+        "title": "Ciò in cui crediamo",
         "items": {
           "animal": {
             "title": "Benessere Animale",
@@ -154,15 +154,15 @@
           },
           "sourcing": {
             "title": "Approvvigionamento Responsabile",
-            "text": "Fibre naturali e selezione consapevole."
+            "text": "Fibre naturali e approvvigionamento consapevole."
           },
           "process": {
-            "title": "Processi a Basso Impatto",
+            "title": "Processo a Basso Impatto",
             "text": "Efficienza per ridurre gli sprechi."
           },
           "quality": {
-            "title": "Qualità a Lungo Termine",
-            "text": "La durabilità è sostenibilità."
+            "title": "Qualità di Lunga Durata",
+            "text": "La durata è sostenibilità."
           }
         }
       }
@@ -176,11 +176,11 @@
       },
       "fair": {
         "title": "Commercio Equo",
-        "text": "Collaboriamo strettamente con artigiani e fornitori, garantendo pratiche etiche e di commercio equo in ogni fase."
+        "text": "Lavoriamo a stretto contatto con artigiani e fornitori, garantendo pratiche etiche e di commercio equo in ogni fase."
       },
       "zero": {
         "title": "Zero Sprechi",
-        "text": "La nostra produzione riduce al minimo gli sprechi grazie a un approvvigionamento responsabile e a processi efficienti."
+        "text": "La nostra produzione riduce al minimo gli sprechi attraverso approvvigionamento responsabile e processi produttivi efficienti."
       },
       "animal": {
         "title": "Benessere Animale",

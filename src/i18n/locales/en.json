@@ -1,6 +1,6 @@
 {
   "nav": {
-    "categories": "CATEGORIES",
+    "categories": "CATALOG",
     "us": "US",
     "services": "SERVICES",
     "wholesale": "WHOLESALE"
@@ -50,47 +50,47 @@
   "pages": {
     "services": {
       "heroTitle": "SERVICES",
-      "heroSubtitle": "We offer tailored alpaca solutions for brands, boutiques, and custom projects — from product sourcing to private label.",
+      "heroSubtitle": "We are a clothing manufacturer that specializes in woven and knitted luxurious Alpaca and Alpaca blends textiles and apparel.\nWe help you realize your ideas from the sketch board to a final manufactured product.",
       "contactCta": "CONTACT US",
       "items": {
         "privateLabel": {
-          "title": "PRIVATE LABEL",
-          "text": "Custom products with your brand identity: labels, packaging, and curated materials."
+          "title": "PROTOTYPING AND SAMPLING",
+          "text": "We can collaborate to create a physical prototype of your idea and/or deliver a sample from your tech pack."
         },
         "customization": {
-          "title": "CUSTOMIZATION",
-          "text": "Colors, patterns, and finishes adapted to your collection and market needs."
+          "title": "MANUFACTURING",
+          "text": "Woven\n- Scarves\n- Shawls\n- Throws\n- Blankets\nGSM capabilities vary from super lightweight pashminas to robust blankets and reversible fabrics"
         },
         "sourcing": {
-          "title": "PRODUCT SOURCING",
-          "text": "Help selecting the right alpaca items for your audience: apparel, accessories and home decor."
+          "title": "KNIT",
+          "text": "Knit gauge 3 to gauge 14\n- Sweater\n- Cardigans\n- Jackets\n- Shirts\n- Hats\n- Scarves\n- Gloves\n- Socks\n- Capes/Wraps"
         },
         "logistics": {
-          "title": "LOGISTICS SUPPORT",
-          "text": "Guidance for shipping, packing, documentation and order planning."
+          "title": "LOGISTICS",
+          "text": "Low MOQ\nGarment Labeling\nLOGISTICS\nWe ship your order from Los Angeles, so you do not have to worry about freight/customs."
         }
       }
     },
     "wholesale": {
       "heroTitle": "WHOLESALE",
-      "heroSubtitle": "Wholesale options for retailers and distributors. Build your assortment with premium alpaca pieces and consistent stock planning.",
-      "cta": "REQUEST INFO",
+      "heroSubtitle": "Wholesale manufacturing solutions for retailers, boutiques, and distributors. Partner with us to develop, produce, and scale premium alpaca collections with reliable lead times and consistent quality.",
+      "cta": "CLICK HERE",
       "items": {
         "retail": {
           "title": "Retail Programs",
-          "text": "Assortment recommendations based on season, location and target customers."
+          "text": "Wholesale programs tailored to boutiques and retail chains, with curated assortments aligned to your market and customer profile."
         },
         "volume": {
           "title": "Volume Pricing",
-          "text": "Competitive wholesale rates for bulk purchases and long-term partnerships."
+          "text": "Competitive pricing structures based on order volume, supporting scalable growth and long-term wholesale partnerships."
         },
         "catalog": {
           "title": "Catalog Planning",
-          "text": "We help you select best-sellers and organize collections for your store."
+          "text": "Assistance in selecting core styles, seasonal pieces, and best-sellers to build a balanced and profitable wholesale catalog."
         },
         "support": {
           "title": "Support",
-          "text": "Reliable communication, order tracking, and post-sale assistance."
+          "text": "Dedicated wholesale support including production coordination, order tracking, and post-delivery assistance."
         }
       }
     },
@@ -168,7 +168,6 @@
       }
     }
   },
-
   "sustainability": {
     "items": {
       "eco": {

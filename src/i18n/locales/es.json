@@ -29,10 +29,10 @@
     "seeMore": "VER MÁS PRODUCTOS",
     "items": {
       "blanket": "Manta",
-      "hat": "Sombrero Molinet",
-      "hatChunky": "Sombrero Chunky con Pompón",
-      "reversible": "Reversible Púrpura",
-      "chocolate": "Manta para Sofá Espiga",
+      "hat": "Gorro Molinet",
+      "hatChunky": "Gorro Chunky con Pompon",
+      "reversible": "Reversible Morado",
+      "chocolate": "Manta Sofá Espiga Chocolate",
       "thermal": "Ropa Interior Térmica"
     }
   },
@@ -43,86 +43,86 @@
       "title": "ENLACES",
       "terms": "Términos y Condiciones",
       "productIndex": "Índice de Productos",
-      "affiliate": "Conviértete en Afiliado",
+      "affiliate": "Hazte Afiliado",
       "categoryIndex": "Índice de Categorías"
     }
   },
   "pages": {
     "services": {
       "heroTitle": "SERVICIOS",
-      "heroSubtitle": "Ofrecemos soluciones de alpaca a medida para marcas, boutiques y proyectos personalizados — desde el abastecimiento hasta marca privada.",
+      "heroSubtitle": "Somos un fabricante de ropa especializado en textiles y prendas de alpaca y mezclas de alpaca, tejidos y de punto, de lujo.\nAyudamos a hacer realidad tus ideas desde el boceto hasta el producto final manufacturado.",
       "contactCta": "CONTÁCTANOS",
       "items": {
         "privateLabel": {
-          "title": "MARCA PRIVADA",
-          "text": "Productos personalizados con tu identidad de marca: etiquetas, empaques y materiales seleccionados."
+          "title": "PROTOTIPADO Y MUESTREO",
+          "text": "Podemos colaborar para crear un prototipo físico de tu idea y/o entregar una muestra a partir de tu tech pack."
         },
         "customization": {
-          "title": "PERSONALIZACIÓN",
-          "text": "Colores, patrones y acabados adaptados a tu colección y mercado."
+          "title": "MANUFACTURA",
+          "text": "Tejido\n- Bufandas\n- Chales\n- Mantas decorativas\n- Mantas\nLas capacidades de GSM varían desde pashminas muy livianas hasta mantas robustas y telas reversibles"
         },
         "sourcing": {
-          "title": "ABASTECIMIENTO DE PRODUCTOS",
-          "text": "Ayuda para seleccionar los artículos de alpaca adecuados para tu público: prendas, accesorios y decoración del hogar."
+          "title": "PUNTO",
+          "text": "Galga 3 a galga 14\n- Suéter\n- Cárdigans\n- Chaquetas\n- Camisas\n- Gorros\n- Bufandas\n- Guantes\n- Medias\n- Capas/Wraps"
         },
         "logistics": {
-          "title": "SOPORTE LOGÍSTICO",
-          "text": "Asesoría en envíos, embalaje, documentación y planificación de pedidos."
+          "title": "LOGÍSTICA",
+          "text": "MOQ bajo\nEtiquetado de prendas\nLOGÍSTICA\nEnviamos tu pedido desde Los Ángeles, para que no tengas que preocuparte por flete/aduanas."
         }
       }
     },
     "wholesale": {
       "heroTitle": "MAYORISTA",
-      "heroSubtitle": "Opciones mayoristas para minoristas y distribuidores. Construye tu catálogo con piezas premium de alpaca y planificación constante de stock.",
-      "cta": "SOLICITAR INFORMACIÓN",
+      "heroSubtitle": "Soluciones de manufactura mayorista para minoristas, boutiques y distribuidores. Asóciate con nosotros para desarrollar, producir y escalar colecciones premium de alpaca con tiempos de entrega confiables y calidad constante.",
+      "cta": "CLICKEA AQUÍ",
       "items": {
         "retail": {
-          "title": "Programas para Retail",
-          "text": "Recomendaciones de surtido según temporada, ubicación y clientes objetivo."
+          "title": "Programas Retail",
+          "text": "Programas mayoristas diseñados para boutiques y cadenas retail, con surtidos alineados a tu mercado y perfil de cliente."
         },
         "volume": {
           "title": "Precios por Volumen",
-          "text": "Tarifas mayoristas competitivas para compras al por mayor y alianzas a largo plazo."
+          "text": "Estructuras de precios competitivas basadas en volumen de pedido, ideales para crecimiento escalable y alianzas a largo plazo."
         },
         "catalog": {
           "title": "Planificación de Catálogo",
-          "text": "Te ayudamos a seleccionar los más vendidos y organizar colecciones para tu tienda."
+          "text": "Apoyo en la selección de estilos base, piezas de temporada y best-sellers para un catálogo mayorista equilibrado y rentable."
         },
         "support": {
           "title": "Soporte",
-          "text": "Comunicación confiable, seguimiento de pedidos y asistencia postventa."
+          "text": "Soporte mayorista dedicado que incluye coordinación de producción, seguimiento de pedidos y asistencia postventa."
         }
       }
     },
     "us": {
       "hero": {
         "title": "Nuestra Visión y Misión",
-        "subtitle": "Piezas atemporales de alpaca elaboradas en Perú — diseñadas para durar, hechas con cuidado.",
+        "subtitle": "Piezas atemporales de alpaca hechas en Perú — diseñadas para durar, hechas con cuidado.",
         "cta": "VISITAR LA TIENDA"
       },
       "about": {
         "kicker": "SOBRE NOSOTROS",
         "title": "Everything Alpaca",
-        "p1": "Everything Alpaca fue fundada en 1998. Diseñamos y fabricamos prendas textiles enfocadas en fibras finas naturales, principalmente lana de alpaca.",
-        "p2": "Everything Alpaca está presente en los mercados estadounidense, canadiense y sudamericano.",
+        "p1": "Everything Alpaca fue fundada en 1998. Diseñamos y fabricamos prendas textiles enfocadas en fibras naturales finas, principalmente lana de alpaca.",
+        "p2": "Everything Alpaca está presente en los mercados americano, canadiense y sudamericano.",
         "note": "Diseñado en EE. UU. • Elaborado en Arequipa, Perú"
       },
       "mission": {
         "kicker": "NUESTRA MISIÓN",
-        "p1": "Nuestra misión es ofrecer prendas terminadas de calidad excepcional y gran durabilidad.",
-        "p2": "Contamos con 4 líneas de producción: Prendas, Accesorios, Decoración del Hogar y Moda Andina."
+        "p1": "Nuestra misión es ofrecer prendas terminadas de calidad y durabilidad excepcionales.",
+        "p2": "Tenemos 4 líneas de producción: Prendas, Accesorios, Decoración del Hogar y Moda Andina."
       },
       "vision": {
         "kicker": "NUESTRA VISIÓN",
         "p1": "Ser una marca de alpaca confiable a nivel mundial.",
-        "quote": "NUESTRO COMPROMISO ESTÁ ORIENTADO A UN SERVICIO AL CLIENTE EXCELENTE Y A SU TOTAL SATISFACCIÓN."
+        "quote": "NUESTRO COMPROMISO ESTÁ ORIENTADO A UN SERVICIO AL CLIENTE EXCELENTE Y A TU COMPLETA SATISFACCIÓN."
       },
       "contact": {
         "kicker": "CONTÁCTANOS",
         "wholesaleLabel": "Mayorista (EE. UU.)",
         "otherLabel": "Otros Países",
         "hoursLabel": "Horario",
-        "hoursText": "9:00 a 18:00 HORA DEL OESTE.",
+        "hoursText": "9.00 a 6.00 WEST.",
         "addressLabel": "Dirección",
         "addressText": "Calle Ayacucho 204, Cercado, Arequipa – Perú"
       }
@@ -130,7 +130,7 @@
     "sus": {
       "hero": {
         "title": "Sostenibilidad",
-        "subtitle": "Elaborado con respeto por la naturaleza, las personas y las alpacas.",
+        "subtitle": "Hecho con respeto por la naturaleza, las personas y las alpacas.",
         "cta": "VISITAR LA TIENDA"
       },
       "quick": {
@@ -141,7 +141,7 @@
       "approach": {
         "kicker": "NUESTRO ENFOQUE",
         "title": "Sostenibilidad en Everything Alpaca",
-        "text": "Nos enfocamos en fibras finas naturales, producción responsable y calidad a largo plazo."
+        "text": "Nos enfocamos en fibras naturales finas, producción responsable y calidad a largo plazo."
       },
       "sideNote": "Fibra natural • Producción ética • Diseñado para durar",
       "commit": {
@@ -158,7 +158,7 @@
           },
           "process": {
             "title": "Proceso de Bajo Impacto",
-            "text": "Eficiencia para reducir desperdicios."
+            "text": "Eficiencia para reducir residuos."
           },
           "quality": {
             "title": "Calidad a Largo Plazo",
@@ -172,19 +172,19 @@
     "items": {
       "eco": {
         "title": "Ecológico",
-        "text": "La fibra de alpaca es una de las fibras naturales más sostenibles, biodegradable y de mínimo impacto ambiental."
+        "text": "La fibra de alpaca es una de las fibras naturales más sostenibles, biodegradable y de bajo impacto ambiental."
       },
       "fair": {
         "title": "Comercio Justo",
-        "text": "Trabajamos de cerca con artesanos y proveedores, asegurando prácticas éticas y de comercio justo en cada etapa."
+        "text": "Trabajamos estrechamente con artesanos y proveedores, asegurando prácticas éticas y de comercio justo en cada etapa."
       },
       "zero": {
         "title": "Cero Residuos",
-        "text": "Nuestra producción minimiza residuos mediante abastecimiento responsable y procesos de fabricación eficientes."
+        "text": "Nuestra producción minimiza residuos mediante abastecimiento responsable y procesos eficientes."
       },
       "animal": {
         "title": "Bienestar Animal",
-        "text": "Estamos comprometidos con el trato ético y el cuidado respetuoso de las alpacas en toda la cadena de suministro."
+        "text": "Estamos comprometidos con el trato ético y el cuidado respetuoso de las alpacas en toda la cadena."
       }
     }
   }

@@ -375,3 +375,52 @@ body {
     display: block;
   }
 }
+
+/* =========================================================
+   ✅ iPad/Móvil en HORIZONTAL: navbar scrolleable
+   - No cambia keys ni JSX
+========================================================= */
+@media (max-width: 1024px) and (orientation: landscape) {
+  /* hacemos que la fila 2 pueda scrollear */
+  .navbar-bottom {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; /* scroll suave iOS */
+    scroll-behavior: smooth;
+    padding-left: 18px;
+    padding-right: 18px;
+    gap: 14px;
+  }
+
+  /* ocultar scrollbar (pero que siga scrolleando) */
+  .navbar-bottom::-webkit-scrollbar {
+    display: none;
+  }
+  .navbar-bottom {
+    scrollbar-width: none; /* Firefox */
+  }
+
+  /* clave: el contenido no debe partirse a otra línea */
+  .nav-left,
+  .nav-right {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  /* tus links en una sola línea y con tamaño más compacto */
+  .nav-left .nav-link {
+    margin-right: 18px;
+    white-space: nowrap;
+  }
+
+  /* icons también en una sola línea */
+  .nav-right svg {
+    margin-left: 18px;
+  }
+
+  /* opcional: en horizontal, el logo arriba come espacio.
+     Si quieres que NO sea tan alto, puedes reducir padding un poco */
+  .navbar-top {
+    padding: 10px 0;
+  }
+}

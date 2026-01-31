@@ -45,7 +45,6 @@ export default function Navbar() {
       { key: "socks", href: "https://shop.everything-alpaca.com/Socks_c_56.html" },
       { key: "accessories", href: "https://shop.everything-alpaca.com/Knitted-Accessories_c_9.html" },
       { key: "Shawls", href: "https://shop.everything-alpaca.com/Woven-Scarves-and-Shawls-_c_14.html" },
-
     ],
     []
   )
@@ -76,7 +75,7 @@ export default function Navbar() {
         {/* NAV */}
         <div className="navbar-bottom">
           <nav className="nav-left" onPointerEnter={clearCloseTimer}>
-            {/* CATEGORIES */}
+            {/* ✅ 1) CATALOGO (mismo key nav.categories) */}
             <div
               className={`nav-item ${categoriesOpen ? "open" : ""}`}
               onPointerEnter={() => {
@@ -87,7 +86,7 @@ export default function Navbar() {
               onPointerLeave={() => scheduleClose(setCategoriesOpen)}
             >
               <a href="#" className="nav-link" onClick={(e) => e.preventDefault()}>
-                {t("nav.categories", "CATEGORIES")}
+                {t("nav.categories", "CATALOGO")}
               </a>
 
               <div className="nav-dropdown nav-dropdown--white">
@@ -99,7 +98,17 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* US */}
+            {/* ✅ 2) SERVICES */}
+            <NavLink to="/services" className="nav-link" onPointerEnter={closeAll}>
+              {t("nav.services", "SERVICES")}
+            </NavLink>
+
+            {/* ✅ 3) WHOLESALE */}
+            <NavLink to="/wholesale" className="nav-link" onPointerEnter={closeAll}>
+              {t("nav.wholesale", "WHOLESALE")}
+            </NavLink>
+
+            {/* ✅ 4) US (al final) */}
             <div
               className={`nav-item ${usOpen ? "open" : ""}`}
               onPointerEnter={() => {
@@ -127,13 +136,6 @@ export default function Navbar() {
                 )}
               </div>
             </div>
-
-            <NavLink to="/services" className="nav-link">
-              {t("nav.services", "SERVICES")}
-            </NavLink>
-            <NavLink to="/wholesale" className="nav-link">
-              {t("nav.wholesale", "WHOLESALE")}
-            </NavLink>
           </nav>
 
           {/* MOBILE BTN */}
@@ -175,8 +177,9 @@ export default function Navbar() {
             </button>
 
             <nav className="mobile-nav">
+              {/* ✅ 1) CATALOGO (mismo key nav.categories) */}
               <div className="mobile-group">
-                <div className="mobile-title">{t("nav.categories", "CATEGORIES")}</div>
+                <div className="mobile-title">{t("nav.categories", "CATALOGO")}</div>
                 {categoriesLinks.map((l) => (
                   <a key={l.key} href={l.href} target="_blank">
                     {t(`categories.${l.key}`, l.key)}
@@ -184,24 +187,34 @@ export default function Navbar() {
                 ))}
               </div>
 
+              {/* ✅ 2) SERVICES */}
+              <div className="mobile-group">
+                <Link to="/services" onClick={() => setMenuOpen(false)}>
+                  {t("nav.services", "SERVICES")}
+                </Link>
+              </div>
+
+              {/* ✅ 3) WHOLESALE */}
+              <div className="mobile-group">
+                <Link to="/wholesale" onClick={() => setMenuOpen(false)}>
+                  {t("nav.wholesale", "WHOLESALE")}
+                </Link>
+              </div>
+
+              {/* ✅ 4) US al final */}
               <div className="mobile-group">
                 <div className="mobile-title">{t("nav.us", "US")}</div>
                 {usLinks.map((l) =>
                   l.to ? (
-                    <Link key={l.key} to={l.to}>
+                    <Link key={l.key} to={l.to} onClick={() => setMenuOpen(false)}>
                       {t(`us.${l.key}`, l.key)}
                     </Link>
                   ) : (
-                    <a key={l.key} href={l.href}>
+                    <a key={l.key} href={l.href} onClick={() => setMenuOpen(false)}>
                       {t(`us.${l.key}`, l.key)}
                     </a>
                   )
                 )}
-              </div>
-
-              <div className="mobile-group">
-                <Link to="/services">{t("nav.services", "SERVICES")}</Link>
-                <Link to="/wholesale">{t("nav.wholesale", "WHOLESALE")}</Link>
               </div>
             </nav>
           </div>

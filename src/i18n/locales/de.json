@@ -1,15 +1,15 @@
 {
   "nav": {
-    "categories": "KATEGORIEN",
+    "categories": "KATALOG",
     "us": "ÜBER UNS",
-    "services": "DIENSTLEISTUNGEN",
+    "services": "SERVICES",
     "wholesale": "GROSSHANDEL"
   },
   "categories": {
     "women": "Damen",
     "men": "Herren",
     "collectables": "Sammlerstücke",
-    "andean": "Andine Mode",
+    "andean": "Anden-Mode",
     "home": "Wohnaccessoires",
     "socks": "Socken",
     "accessories": "Accessoires",
@@ -21,23 +21,23 @@
     "visionMission": "Unsere Vision & Mission"
   },
   "sections": {
-    "more": "MEHR ANZEIGEN"
+    "more": "MEHR ANSEHEN"
   },
   "products": {
     "featuredTitle": "Ausgewählte Produkte",
     "featuredSubtitle": "Eine kuratierte Auswahl unserer besten Stücke aus Alpakafaser.",
-    "seeMore": "MEHR PRODUKTE ANZEIGEN",
+    "seeMore": "MEHR PRODUKTE ANSEHEN",
     "items": {
       "blanket": "Decke",
-      "hat": "Molinet-Hut",
-      "hatChunky": "Chunky-Hut mit Pompon",
+      "hat": "Molinet-Mütze",
+      "hatChunky": "Chunky-Mütze mit Bommel",
       "reversible": "Wendbar Lila",
-      "chocolate": "Fischgrät-Sofadecke",
+      "chocolate": "Fischgrät Sofa-Throw Chocolate",
       "thermal": "Thermounterwäsche"
     }
   },
   "footer": {
-    "description": "Zeitlose Alpakabekleidung, mit Sorgfalt und Verantwortung gefertigt.",
+    "description": "Zeitlose Alpakaprodukte, sorgfältig und verantwortungsvoll gefertigt.",
     "rights": "Alle Rechte vorbehalten.",
     "links": {
       "title": "LINKS",
@@ -49,89 +49,89 @@
   },
   "pages": {
     "services": {
-      "heroTitle": "DIENSTLEISTUNGEN",
-      "heroSubtitle": "Wir bieten maßgeschneiderte Alpakalösungen für Marken, Boutiquen und individuelle Projekte — von der Produktauswahl bis zum Private Label.",
-      "contactCta": "KONTAKTIEREN SIE UNS",
+      "heroTitle": "SERVICES",
+      "heroSubtitle": "Wir sind ein Bekleidungshersteller, spezialisiert auf luxuriöse Alpakatextilien und Alpakamischungen – gewebt und gestrickt – sowie entsprechende Bekleidung.\nWir helfen dir, deine Ideen vom Skizzenbrett bis zum final gefertigten Produkt umzusetzen.",
+      "contactCta": "KONTAKT",
       "items": {
         "privateLabel": {
-          "title": "PRIVATE LABEL",
-          "text": "Individuelle Produkte mit Ihrer Markenidentität: Etiketten, Verpackungen und ausgewählte Materialien."
+          "title": "PROTOTYPING UND SAMPLING",
+          "text": "Wir können gemeinsam einen physischen Prototyp deiner Idee erstellen und/oder ein Muster auf Basis deines Tech Packs liefern."
         },
         "customization": {
-          "title": "ANPASSUNG",
-          "text": "Farben, Muster und Veredelungen angepasst an Ihre Kollektion und Marktanforderungen."
+          "title": "FERTIGUNG",
+          "text": "Gewebt (Woven)\n- Schals\n- Tücher\n- Throws\n- Decken\nDie GSM-Möglichkeiten reichen von super leichten Pashminas bis zu robusten Decken und wendbaren Stoffen."
         },
         "sourcing": {
-          "title": "PRODUKTAUSWAHL",
-          "text": "Unterstützung bei der Auswahl der passenden Alpakaprodukte für Ihre Zielgruppe: Bekleidung, Accessoires und Wohnaccessoires."
+          "title": "STRICK (KNIT)",
+          "text": "Strickstärke von Gauge 3 bis Gauge 14\n- Pullover\n- Cardigans\n- Jacken\n- Hemden\n- Mützen\n- Schals\n- Handschuhe\n- Socken\n- Capes/Wraps"
         },
         "logistics": {
-          "title": "LOGISTISCHE UNTERSTÜTZUNG",
-          "text": "Beratung zu Versand, Verpackung, Dokumentation und Bestellplanung."
+          "title": "LOGISTIK",
+          "text": "Niedrige MOQ\nEtikettierung von Kleidungsstücken\nLOGISTIK\nWir versenden deine Bestellung aus Los Angeles, sodass du dir keine Sorgen um Fracht/Zoll machen musst."
         }
       }
     },
     "wholesale": {
       "heroTitle": "GROSSHANDEL",
-      "heroSubtitle": "Großhandelsoptionen für Einzelhändler und Distributoren. Stellen Sie Ihr Sortiment mit hochwertigen Alpakaprodukten und konsistenter Lagerplanung zusammen.",
-      "cta": "INFORMATIONEN ANFORDERN",
+      "heroSubtitle": "Großhandelsoptionen für Einzelhändler und Distributoren. Baue dein Sortiment mit Premium-Alpakastücken und verlässlicher Bestandsplanung auf.",
+      "cta": "KLICKE HIER",
       "items": {
         "retail": {
-          "title": "Einzelhandelsprogramme",
+          "title": "Retail-Programme",
           "text": "Sortimentsempfehlungen basierend auf Saison, Standort und Zielkunden."
         },
         "volume": {
           "title": "Mengenpreise",
-          "text": "Wettbewerbsfähige Großhandelspreise für Großbestellungen und langfristige Partnerschaften."
+          "text": "Wettbewerbsfähige Großhandelspreise für größere Bestellungen und langfristige Partnerschaften."
         },
         "catalog": {
           "title": "Katalogplanung",
-          "text": "Wir helfen Ihnen bei der Auswahl der Bestseller und der Organisation der Kollektionen für Ihr Geschäft."
+          "text": "Wir helfen dir, Bestseller auszuwählen und Kollektionen für deinen Shop zu strukturieren."
         },
         "support": {
           "title": "Support",
-          "text": "Zuverlässige Kommunikation, Auftragsverfolgung und After-Sales-Service."
+          "text": "Zuverlässige Kommunikation, Order-Tracking und After-Sales-Unterstützung."
         }
       }
     },
     "us": {
       "hero": {
         "title": "Unsere Vision & Mission",
-        "subtitle": "Zeitlose Alpakaprodukte aus Peru — entworfen für Langlebigkeit, mit Sorgfalt gefertigt.",
-        "cta": "ZUM SHOP"
+        "subtitle": "Zeitlose Alpaka-Stücke aus Peru — gemacht, um zu halten, mit Sorgfalt gefertigt.",
+        "cta": "SHOP BESUCHEN"
       },
       "about": {
         "kicker": "ÜBER UNS",
         "title": "Everything Alpaca",
-        "p1": "Everything Alpaca wurde 1998 gegründet. Wir entwerfen und produzieren Textilbekleidung mit Fokus auf feine Naturfasern, hauptsächlich Alpakawolle.",
-        "p2": "Everything Alpaca ist auf den amerikanischen, kanadischen und südamerikanischen Märkten vertreten.",
-        "note": "Entworfen in den USA • Gefertigt in Arequipa, Peru"
+        "p1": "Everything Alpaca wurde 1998 gegründet. Wir designen und produzieren Textilbekleidung mit Fokus auf natürliche, feine Fasern – vor allem Alpakawolle.",
+        "p2": "Everything Alpaca ist in den amerikanischen, kanadischen und südamerikanischen Märkten präsent.",
+        "note": "In den USA entworfen • In Arequipa, Peru gefertigt"
       },
       "mission": {
         "kicker": "UNSERE MISSION",
-        "p1": "Unsere Mission ist es, fertige Kleidungsstücke von außergewöhnlicher Qualität und hoher Langlebigkeit anzubieten.",
-        "p2": "Wir verfügen über 4 Produktionslinien: Bekleidung, Accessoires, Wohnaccessoires und Andine Mode."
+        "p1": "Unsere Mission ist es, fertige Kleidungsstücke von außergewöhnlicher Qualität und Langlebigkeit zu liefern.",
+        "p2": "Wir haben 4 Produktionslinien: Bekleidung, Accessoires, Wohnaccessoires und Anden-Mode."
       },
       "vision": {
         "kicker": "UNSERE VISION",
-        "p1": "Eine weltweit vertrauenswürdige Alpakamarke zu werden.",
-        "quote": "UNSER ENGAGEMENT GILT EXZELLENTEM KUNDENSERVICE UND IHRER VOLLSTÄNDIGEN ZUFRIEDENHEIT."
+        "p1": "Eine weltweit vertrauenswürdige Alpakamarke zu sein.",
+        "quote": "UNSER ENGAGEMENT ZIELT AUF EXZELLENTEN KUNDENSERVICE UND DEINE VOLLSTÄNDIGE ZUFRIEDENHEIT."
       },
       "contact": {
         "kicker": "KONTAKT",
         "wholesaleLabel": "Großhandel (USA)",
         "otherLabel": "Andere Länder",
         "hoursLabel": "Öffnungszeiten",
-        "hoursText": "9:00 bis 18:00 WESTLICHE ZEIT.",
+        "hoursText": "9.00 bis 18.00 WEST.",
         "addressLabel": "Adresse",
-        "addressText": "Ayacucho-Straße 204, Cercado, Arequipa – Peru"
+        "addressText": "Ayacucho Straße 204, Cercado, Arequipa – Peru"
       }
     },
     "sus": {
       "hero": {
         "title": "Nachhaltigkeit",
         "subtitle": "Mit Respekt für Natur, Menschen und Alpakas gefertigt.",
-        "cta": "ZUM SHOP"
+        "cta": "SHOP BESUCHEN"
       },
       "quick": {
         "vision": "Unsere Vision & Mission",
@@ -141,7 +141,7 @@
       "approach": {
         "kicker": "UNSER ANSATZ",
         "title": "Nachhaltigkeit bei Everything Alpaca",
-        "text": "Wir konzentrieren uns auf feine Naturfasern, verantwortungsvolle Produktion und langfristige Qualität."
+        "text": "Wir setzen auf natürliche, feine Fasern, verantwortungsvolle Produktion und langlebige Qualität."
       },
       "sideNote": "Naturfaser • Ethische Produktion • Für Langlebigkeit entworfen",
       "commit": {
@@ -149,16 +149,16 @@
         "title": "Wofür wir stehen",
         "items": {
           "animal": {
-            "title": "Tierschutz",
-            "text": "Respektvolle Pflege und ethische Behandlung der Alpakas."
+            "title": "Tierwohl",
+            "text": "Respektvolle Pflege und ethische Behandlung von Alpakas."
           },
           "sourcing": {
             "title": "Verantwortungsvolle Beschaffung",
-            "text": "Naturfasern und bewusste Beschaffung."
+            "text": "Natürliche Fasern und bewusste Beschaffung."
           },
           "process": {
-            "title": "Ressourcenschonender Prozess",
-            "text": "Effizienz zur Reduzierung von Abfällen."
+            "title": "Prozess mit geringem Einfluss",
+            "text": "Effizienz zur Reduzierung von Abfall."
           },
           "quality": {
             "title": "Langfristige Qualität",
@@ -172,19 +172,19 @@
     "items": {
       "eco": {
         "title": "Umweltfreundlich",
-        "text": "Alpakafaser ist eine der nachhaltigsten Naturfasern, biologisch abbaubar und mit minimaler Umweltbelastung."
+        "text": "Alpakafaser ist eine der nachhaltigsten Naturfasern, biologisch abbaubar und mit minimalem Umwelteinfluss."
       },
       "fair": {
-        "title": "Fairer Handel",
-        "text": "Wir arbeiten eng mit Handwerkern und Lieferanten zusammen und gewährleisten ethische und faire Handelspraktiken in jeder Phase."
+        "title": "Fair Trade",
+        "text": "Wir arbeiten eng mit Handwerkern und Lieferanten zusammen und stellen in jeder Phase ethische und faire Handelspraktiken sicher."
       },
       "zero": {
-        "title": "Null Abfall",
-        "text": "Unsere Produktion minimiert Abfälle durch verantwortungsvolle Beschaffung und effiziente Herstellungsprozesse."
+        "title": "Zero Waste",
+        "text": "Unsere Produktion minimiert Abfall durch verantwortungsvolle Beschaffung und effiziente Fertigungsprozesse."
       },
       "animal": {
-        "title": "Tierschutz",
-        "text": "Wir verpflichten uns zu ethischer Behandlung und respektvoller Pflege der Alpakas entlang der gesamten Lieferkette."
+        "title": "Tierwohl",
+        "text": "Wir verpflichten uns zu ethischer Behandlung und respektvoller Pflege von Alpakas entlang der gesamten Lieferkette."
       }
     }
   }

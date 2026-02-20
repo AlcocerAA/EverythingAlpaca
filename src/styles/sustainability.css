@@ -1,37 +1,41 @@
 .sustainability {
   background: #fbf8ee;
-  padding: 90px 64px;
-
-  /* ✅ extra: evita overflow horizontal fantasma */
+  padding: 100px 64px;
   overflow-x: hidden;
 }
 
 /* ================= DESKTOP ================= */
 .sustainability-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 36px;
+
+  /* ✅ ahora 2 columnas reales */
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 60px;
+
+  /* ✅ centrado profesional */
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .sustain-card {
   background: #fffdf6;
-  padding: 44px 30px;
-  border-radius: 22px;
+  padding: 56px 40px;
+  border-radius: 24px;
   text-align: center;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
   transition: all 0.35s ease;
 
-  /* ✅ evita selección rara en algunos móviles */
   user-select: none;
   -webkit-user-select: none;
 }
 
 .icon-circle {
-  width: 72px;
-  height: 72px;
-  margin: 0 auto 22px;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 26px;
   border-radius: 50%;
-  background: rgba(0,0,0,0.04);
+  background: rgba(0,0,0,0.05);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,14 +44,14 @@
 
 .sustain-card h3 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.8rem;
-  margin-bottom: 14px;
+  font-size: 2rem;
+  margin-bottom: 18px;
 }
 
 .sustain-card p {
   font-family: "Montserrat", sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.7;
   opacity: 0.85;
 }
 
@@ -58,20 +62,16 @@
   justify-content: center;
   gap: 16px;
 
-  /* ✅ CLAVE para swipe pro */
   width: 100%;
   overflow: hidden;
   position: relative;
 
-  /* ✅ permite scroll vertical normal, pero swipe horizontal dentro */
   touch-action: pan-y;
 
-  /* ✅ evita highlight azul/selección */
   -webkit-tap-highlight-color: transparent;
   user-select: none;
   -webkit-user-select: none;
 
-  /* ✅ para que el drag se sienta suave */
   cursor: grab;
 }
 
@@ -81,23 +81,19 @@
 
 .sustain-card.mobile {
   width: 100%;
-  max-width: 360px; /* un poquito más pro en pantallas medianas */
+  max-width: 360px;
   margin: 0 auto;
-
-  /* ✅ más “estable” visualmente */
   transform: translateZ(0);
 }
 
-/* (lo dejamos por si vuelves a usar flechas, pero ya no se muestran) */
-.arrow {
-  background: none;
-  border: none;
-  font-size: 34px;
-  cursor: pointer;
-  color: #1f1f1f;
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+  .sustainability-grid {
+    max-width: 90%;
+  }
 }
 
-/* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
   .sustainability-grid {
     display: none;
@@ -110,10 +106,10 @@
 
 @media (max-width: 640px) {
   .sustainability {
-    padding: 70px 24px;
+    padding: 80px 24px;
   }
 
   .sustain-card.mobile {
-    max-width: 320px; /* como lo tenías, para que se vea bien en celu */
+    max-width: 320px;
   }
 }

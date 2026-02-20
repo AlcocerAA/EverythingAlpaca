@@ -58,17 +58,26 @@ export default function Navbar() {
   return (
     <>
       <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
-        {/* LOGO */}
         <Link to="/" className="navbar-top" onClick={() => setMenuOpen(false)}>
           <span className="brand-text">EVERYTHING</span>
           <img src="/logo/alpaca-logo.png" className="brand-logo" alt="Everything Alpaca" />
           <span className="brand-text">ALPACA</span>
         </Link>
 
-        {/* NAV */}
         <div className="navbar-bottom">
           <nav className="nav-left" onPointerEnter={clearCloseTimer}>
-            {/* 1) CATEGORIES */}
+
+            {/* WHOLESALE */}
+            <NavLink to="/wholesale" className="nav-link" onPointerEnter={closeAll}>
+              {t("nav.wholesale", "WHOLESALE")}
+            </NavLink>
+
+            {/* SERVICES */}
+            <NavLink to="/services" className="nav-link" onPointerEnter={closeAll}>
+              {t("nav.services", "SERVICES")}
+            </NavLink>
+
+            {/* CATALOG */}
             <div
               className={`nav-item ${categoriesOpen ? "open" : ""}`}
               onPointerEnter={() => {
@@ -90,16 +99,6 @@ export default function Navbar() {
                 ))}
               </div>
             </div>
-
-            {/* SERVICES */}
-            <NavLink to="/services" className="nav-link" onPointerEnter={closeAll}>
-              {t("nav.services", "SERVICES")}
-            </NavLink>
-
-            {/* WHOLESALE */}
-            <NavLink to="/wholesale" className="nav-link" onPointerEnter={closeAll}>
-              {t("nav.wholesale", "WHOLESALE")}
-            </NavLink>
 
             {/* US */}
             <div
@@ -129,14 +128,13 @@ export default function Navbar() {
                 )}
               </div>
             </div>
+
           </nav>
 
-          {/* MOBILE BTN */}
           <button className="menu-button" onClick={() => setMenuOpen(true)}>
             <Menu size={26} />
           </button>
 
-          {/* RIGHT */}
           <div className="nav-right">
             <a href="https://shop.everything-alpaca.com/myaccount.asp" className="nav-icon">
               <User />
@@ -145,7 +143,6 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* MOBILE MENU */}
       {menuOpen && (
         <div className="menu-overlay" onClick={() => setMenuOpen(false)}>
           <div className="mobile-menu open" onClick={(e) => e.stopPropagation()}>
@@ -154,13 +151,11 @@ export default function Navbar() {
             </button>
 
             <nav className="mobile-nav">
+
               <div className="mobile-group">
-                <div className="mobile-title">{t("nav.categories", "CATALOG")}</div>
-                {categoriesLinks.map((l) => (
-                  <a key={l.key} href={l.href} target="_blank">
-                    {t(`categories.${l.key}`, l.key)}
-                  </a>
-                ))}
+                <Link to="/wholesale" onClick={() => setMenuOpen(false)}>
+                  {t("nav.wholesale", "WHOLESALE")}
+                </Link>
               </div>
 
               <div className="mobile-group">
@@ -170,9 +165,12 @@ export default function Navbar() {
               </div>
 
               <div className="mobile-group">
-                <Link to="/wholesale" onClick={() => setMenuOpen(false)}>
-                  {t("nav.wholesale", "WHOLESALE")}
-                </Link>
+                <div className="mobile-title">{t("nav.categories", "CATALOG")}</div>
+                {categoriesLinks.map((l) => (
+                  <a key={l.key} href={l.href} target="_blank">
+                    {t(`categories.${l.key}`, l.key)}
+                  </a>
+                ))}
               </div>
 
               <div className="mobile-group">
@@ -189,6 +187,7 @@ export default function Navbar() {
                   )
                 )}
               </div>
+
             </nav>
           </div>
         </div>

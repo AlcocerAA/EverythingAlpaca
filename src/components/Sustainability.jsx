@@ -1,26 +1,22 @@
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Leaf, Handshake, Recycle, Heart } from "lucide-react"
+import { Leaf, Recycle } from "lucide-react"
 import "../styles/sustainability.css"
 import { useTranslation } from "react-i18next"
 
 const items = [
   { icon: Leaf, key: "eco" },
-  { icon: Handshake, key: "fair" },
   { icon: Recycle, key: "zero" },
-  { icon: Heart, key: "animal" },
 ]
 
 export default function Sustainability() {
   const { t } = useTranslation()
   const [index, setIndex] = useState(0)
 
-  // ✅ drag helpers
   const startXRef = useRef(0)
   const draggingRef = useRef(false)
   const offsetRef = useRef(0)
 
-  // ✅ auto
   const intervalRef = useRef(null)
 
   const stopAuto = () => {
@@ -98,7 +94,7 @@ export default function Sustainability() {
         })}
       </div>
 
-      {/* MOBILE (sin flechas, swipe/drag) */}
+      {/* MOBILE */}
       <div
         className="sustainability-mobile"
         onPointerDown={onPointerDown}

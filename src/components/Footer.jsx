@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next"
 import "../styles/footer.css"
 
-// ✅ Cambia esta ruta si tu logo está en otro lado
 const LOGO_SRC = "/logo.png"
 
 export default function Footer() {
@@ -10,6 +9,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
+        
         {/* BRAND / LOGO */}
         <div className="footer-col brand">
           <a href="/" className="footer-logo" aria-label="Everything Alpaca Home">
@@ -22,9 +22,7 @@ export default function Footer() {
             />
           </a>
 
-          <p className="footer-desc">{t("footer.description")}</p>
-
-          {/* Social icons linkeables */}
+          {/* Social icons */}
           <div className="socials" aria-label="Social links">
             <a
               className="social-btn"

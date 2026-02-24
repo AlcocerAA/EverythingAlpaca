@@ -6,16 +6,30 @@ export default function Services() {
 
   return (
     <section className="services-hero">
-      {/* VIDEO FONDO */}
+      
+      {/* VIDEO DESKTOP / IPAD */}
       <video
-        className="services-bgvid"
-        src="/services-bg.mp4"
+        className="services-bgvid services-bgvid-horizontal"
         autoPlay
         muted
         loop
         playsInline
         preload="auto"
-      />
+      >
+        <source src="/videos/services-horizontal.mp4" type="video/mp4" />
+      </video>
+
+      {/* VIDEO MOBILE */}
+      <video
+        className="services-bgvid services-bgvid-vertical"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+      >
+        <source src="/videos/services-vertical.mp4" type="video/mp4" />
+      </video>
 
       <div className="services-overlay" />
 
@@ -48,13 +62,11 @@ export default function Services() {
               </p>
             </div>
 
-            {/* MANUFACTURING (intacto, solo formateado como pediste) */}
             <div className="service-box">
               <h3>
                 {t("pages.services.items.customization.title", "MANUFACTURING")}
               </h3>
 
-              {/* ✅ Woven editado como KNIT */}
               <div className="service-sub service-sub-woven">
                 <h4>WOVEN</h4>
                 <p>
@@ -67,7 +79,6 @@ export default function Services() {
                 </p>
               </div>
 
-              {/* ✅ KNIT con salto después de gauge 14 */}
               <div className="service-sub">
                 <h4>{t("pages.services.items.sourcing.title", "KNIT")}</h4>
                 <p>
@@ -81,7 +92,6 @@ export default function Services() {
               </div>
             </div>
 
-            {/* LOGISTICS limpio */}
             <div className="service-box">
               <h3>{t("pages.services.items.logistics.title", "LOGISTICS")}</h3>
               <p>
@@ -92,7 +102,6 @@ export default function Services() {
               </p>
             </div>
 
-            {/* LOW MOQ + GARMENT LABELING */}
             <div className="service-box service-box-center">
               <h3>LOW MOQ</h3>
               <p className="service-big">GARMENT LABELING</p>

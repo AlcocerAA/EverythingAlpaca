@@ -11,7 +11,7 @@
   position: relative;
   width: 100%;
   overflow: hidden; /* ✅ anti “blanco” por arrastre */
-  min-height: clamp(360px, 54vh, 520px); /* ✅ altura similar a US (no gigante) */
+  min-height: clamp(700px, 54vh, 520px); /* ✅ altura similar a US (no gigante) */
   padding-top: 110px; /* deja espacio al navbar */
   display: grid;
   place-items: center;

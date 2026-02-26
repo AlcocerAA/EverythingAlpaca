@@ -6,16 +6,30 @@ export default function Wholesale() {
 
   return (
     <section className="wholesale-hero">
-      {/* VIDEO FONDO */}
+      
+      {/* VIDEO DESKTOP / IPAD */}
       <video
-        className="wholesale-bgvid"
-        src="/wholesale-bg.mp4"
+        className="wholesale-bgvid wholesale-bgvid-horizontal"
         autoPlay
         muted
         loop
         playsInline
         preload="auto"
-      />
+      >
+        <source src="/videos/wholesale-horizontal.mp4" type="video/mp4" />
+      </video>
+
+      {/* VIDEO MOBILE */}
+      <video
+        className="wholesale-bgvid wholesale-bgvid-vertical"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+      >
+        <source src="/videos/wholesale-vertical.mp4" type="video/mp4" />
+      </video>
 
       <div className="wholesale-overlay" />
 
@@ -74,7 +88,6 @@ export default function Wholesale() {
             </div>
           </div>
 
-          {/* CTA HORIZONTAL */}
           <div className="wholesale-cta-row">
             <div className="wholesale-cta-block">
               <p>Become a wholesale customer. Contact us now.</p>
